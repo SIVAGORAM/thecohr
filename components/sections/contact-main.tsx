@@ -296,20 +296,29 @@ export function ContactMain() {
                 <p className="text-sm text-slate-600 max-w-md mx-auto">
                   Thank you for reaching out to The Co HR. Our HR specialists will review your message and contact you within 24 hours.
                 </p>
-                <button
-                  onClick={() => {
-                    setIsSuccess(false);
-                    setFormData({
-                      fullName: "",
-                      businessEmail: "",
-                      phoneNumber: "",
-                      message: "",
-                    });
-                  }}
-                  className="mt-2 text-xs font-bold text-[#0066FF] underline hover:text-blue-700 cursor-pointer"
-                >
-                  Send another message
-                </button>
+                <div className="flex items-center justify-center gap-4 pt-2">
+                  <button
+                    onClick={() => {
+                      setIsSuccess(false);
+                      setFormData({
+                        fullName: "",
+                        businessEmail: "",
+                        phoneNumber: "",
+                        message: "",
+                      });
+                    }}
+                    className="text-xs font-bold text-[#0066FF] underline hover:text-blue-700 cursor-pointer"
+                  >
+                    Send another message
+                  </button>
+                  <span className="text-slate-300">|</span>
+                  <a
+                    href="/thank-you"
+                    className="text-xs font-bold text-slate-600 hover:text-[#0066FF] transition-colors"
+                  >
+                    View Confirmation Page →
+                  </a>
+                </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">

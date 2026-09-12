@@ -4,6 +4,8 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { JsonLd } from "@/components/seo/json-ld";
 import { WhatsAppButton } from "@/components/ui/whatsapp-button";
+import { CookieBanner } from "@/components/ui/cookie-banner";
+import { MobileStickyCTA } from "@/components/ui/mobile-sticky-cta";
 import "./globals.css";
 
 const sora = Sora({
@@ -92,6 +94,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <main className="flex-1">{children}</main>
         <Footer />
         <WhatsAppButton />
+        <MobileStickyCTA />
+        <CookieBanner />
       </body>
     </html>
   );
