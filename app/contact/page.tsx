@@ -36,7 +36,7 @@ const contactSchema = {
   "mainEntity": {
     "@type": "Organization",
     "name": "The Co HR Private Limited",
-    "telephone": "+91 98765 43210",
+    "telephone": "+91 90197 24365",
     "email": "info@thecohr.com",
     "address": {
       "@type": "PostalAddress",

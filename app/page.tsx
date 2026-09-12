@@ -30,7 +30,7 @@ const localBusinessSchema = {
   "name": "The Co HR",
   "image": "https://www.thecohr.com/logo.png",
   "url": "https://www.thecohr.com",
-  "telephone": "+919876543210",
+  "telephone": "+91 90197 24365",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "123 Business Avenue, Tech Park",

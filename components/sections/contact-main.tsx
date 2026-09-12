@@ -477,10 +477,10 @@ export function ContactMain() {
                 <div>
                   <h4 className="text-sm font-bold text-[#051332]">Call Us</h4>
                   <a
-                    href="tel:+919876543210"
+                    href="tel:+919019724365"
                     className="text-sm font-bold text-[#0066FF] hover:underline block"
                   >
-                    +91 98765 43210
+                    +91 90197 24365
                   </a>
                   <p className="text-xs font-medium text-slate-500 mt-0.5">
                     Mon - Fri, 9:00 AM - 6:00 PM (IST)

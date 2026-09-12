@@ -199,7 +199,7 @@ export function Footer() {
                 </div>
                 <div className="min-w-0">
                   <a href="tel:+919019724365" className="text-white font-medium hover:text-[#00A3FF] transition-colors block">
-                    +91-90197 24365
+                    +91 90197 24365
                   </a>
                   <span className="text-[11px] text-slate-400 block mt-0.5 whitespace-nowrap">Mon - Sat, 9:00 AM - 6:00 PM</span>
                 </div>

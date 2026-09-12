@@ -194,7 +194,7 @@ export const contactContent = {
   reassurance: "Whether you're looking for a modern HR ERP platform, reliable outsourced HR services, or expert training, The Co HR is your single partner for complete HR transformation.",
   info: {
     email: "info@thecohr.com",
-    phone: "+91-90197 24365",
+    phone: "+91 90197 24365",
     address: "Hyderabad, India",
     social: [
       { platform: "LinkedIn", url: "https://www.linkedin.com/in/the-co-hr-1a4842428/" },

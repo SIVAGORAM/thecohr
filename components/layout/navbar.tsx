@@ -297,13 +297,13 @@ export function Navbar() {
             <div className="h-9 w-px bg-slate-200" />
 
             {/* Phone Info Block */}
-            <a href="tel:+919876543210" className="flex items-center gap-3 group">
+            <a href="tel:+919019724365" className="flex items-center gap-3 group">
               <div className="w-10 h-10 rounded-full bg-blue-50 text-[#0066FF] flex items-center justify-center transition-transform duration-200 group-hover:scale-105 shadow-sm">
                 <PhoneCall className="w-4 h-4" />
               </div>
               <div className="flex flex-col">
                 <span className="text-[15px] font-bold text-slate-900 group-hover:text-[#0066FF] transition-colors leading-snug">
-                  +91 98765 43210
+                  +91 90197 24365
                 </span>
                 <span className="text-[11px] text-slate-500 font-medium leading-none">
                   Mon - Fri, 9:00 AM - 6:00 PM
@@ -429,13 +429,13 @@ export function Navbar() {
 
                 <div className="mt-auto pt-4 border-t border-slate-100 flex flex-col gap-4">
                   <a
-                    href="tel:+919876543210"
+                    href="tel:+919019724365"
                     className="flex items-center justify-center gap-3 text-sm font-bold text-slate-800"
                   >
                     <div className="w-8 h-8 rounded-full bg-blue-50 text-[#0066FF] flex items-center justify-center">
                       <PhoneCall className="w-4 h-4" />
                     </div>
-                    <span>+91 98765 43210</span>
+                    <span>+91 90197 24365</span>
                   </a>
 
                   <Link

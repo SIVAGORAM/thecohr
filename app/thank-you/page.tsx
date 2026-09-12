@@ -37,11 +37,11 @@ export default function ThankYouPage() {
           </h2>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs sm:text-sm font-bold">
             <a
-              href="tel:+919876543210"
+              href="tel:+919019724365"
               className="flex items-center gap-2 text-[#0066FF] hover:underline"
             >
               <Phone className="w-4 h-4" />
-              <span>+91 98765 43210</span>
+              <span>+91 90197 24365</span>
             </a>
             <a
               href="mailto:info@thecohr.com"
