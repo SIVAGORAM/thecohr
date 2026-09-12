@@ -1,0 +1,595 @@
+"use client";
+
+import { useState, useRef, useEffect } from "react";
+import { motion } from "framer-motion";
+import {
+  User,
+  Mail,
+  Phone,
+  MessageSquare,
+  MapPin,
+  Globe,
+  ArrowRight,
+  CheckCircle2,
+  ChevronDown,
+  Search,
+  AlertCircle,
+  Loader2,
+} from "lucide-react";
+
+interface Country {
+  code: string;
+  name: string;
+  flag: string;
+  dial: string;
+}
+
+const allCountries: Country[] = [
+  { code: "AF", name: "Afghanistan", flag: "🇦🇫", dial: "+93" },
+  { code: "AL", name: "Albania", flag: "🇦🇱", dial: "+355" },
+  { code: "DZ", name: "Algeria", flag: "🇩🇿", dial: "+213" },
+  { code: "AR", name: "Argentina", flag: "🇦🇷", dial: "+54" },
+  { code: "AU", name: "Australia", flag: "🇦🇺", dial: "+61" },
+  { code: "AT", name: "Austria", flag: "🇦🇹", dial: "+43" },
+  { code: "BD", name: "Bangladesh", flag: "🇧🇩", dial: "+880" },
+  { code: "BE", name: "Belgium", flag: "🇧🇪", dial: "+32" },
+  { code: "BR", name: "Brazil", flag: "🇧🇷", dial: "+55" },
+  { code: "CA", name: "Canada", flag: "🇨🇦", dial: "+1" },
+  { code: "CL", name: "Chile", flag: "🇨🇱", dial: "+56" },
+  { code: "CN", name: "China", flag: "🇨🇳", dial: "+86" },
+  { code: "CO", name: "Colombia", flag: "🇨🇴", dial: "+57" },
+  { code: "DK", name: "Denmark", flag: "🇩🇰", dial: "+45" },
+  { code: "EG", name: "Egypt", flag: "🇪🇬", dial: "+20" },
+  { code: "FI", name: "Finland", flag: "🇫🇮", dial: "+358" },
+  { code: "FR", name: "France", flag: "🇫🇷", dial: "+33" },
+  { code: "DE", name: "Germany", flag: "🇩🇪", dial: "+49" },
+  { code: "GR", name: "Greece", flag: "🇬🇷", dial: "+30" },
+  { code: "HK", name: "Hong Kong", flag: "🇭🇰", dial: "+852" },
+  { code: "IN", name: "India", flag: "🇮🇳", dial: "+91" },
+  { code: "ID", name: "Indonesia", flag: "🇮🇩", dial: "+62" },
+  { code: "IE", name: "Ireland", flag: "🇮🇪", dial: "+353" },
+  { code: "IL", name: "Israel", flag: "🇮🇱", dial: "+972" },
+  { code: "IT", name: "Italy", flag: "🇮🇹", dial: "+39" },
+  { code: "JP", name: "Japan", flag: "🇯🇵", dial: "+81" },
+  { code: "KE", name: "Kenya", flag: "🇰🇪", dial: "+254" },
+  { code: "KW", name: "Kuwait", flag: "🇰🇼", dial: "+965" },
+  { code: "MY", name: "Malaysia", flag: "🇲🇾", dial: "+60" },
+  { code: "MX", name: "Mexico", flag: "🇲🇽", dial: "+52" },
+  { code: "NP", name: "Nepal", flag: "🇳🇵", dial: "+977" },
+  { code: "NL", name: "Netherlands", flag: "🇳🇱", dial: "+31" },
+  { code: "NZ", name: "New Zealand", flag: "🇳🇿", dial: "+64" },
+  { code: "NG", name: "Nigeria", flag: "🇳🇬", dial: "+234" },
+  { code: "NO", name: "Norway", flag: "🇳🇴", dial: "+47" },
+  { code: "OM", name: "Oman", flag: "🇴🇲", dial: "+968" },
+  { code: "PK", name: "Pakistan", flag: "🇵🇰", dial: "+92" },
+  { code: "PH", name: "Philippines", flag: "🇵🇭", dial: "+63" },
+  { code: "PL", name: "Poland", flag: "🇵🇱", dial: "+48" },
+  { code: "PT", name: "Portugal", flag: "🇵🇹", dial: "+351" },
+  { code: "QA", name: "Qatar", flag: "🇶🇦", dial: "+974" },
+  { code: "RU", name: "Russia", flag: "🇷🇺", dial: "+7" },
+  { code: "SA", name: "Saudi Arabia", flag: "🇸🇦", dial: "+966" },
+  { code: "SG", name: "Singapore", flag: "🇸🇬", dial: "+65" },
+  { code: "ZA", name: "South Africa", flag: "🇿🇦", dial: "+27" },
+  { code: "KR", name: "South Korea", flag: "🇰🇷", dial: "+82" },
+  { code: "ES", name: "Spain", flag: "🇪🇸", dial: "+34" },
+  { code: "LK", name: "Sri Lanka", flag: "🇱🇰", dial: "+94" },
+  { code: "SE", name: "Sweden", flag: "🇸🇪", dial: "+46" },
+  { code: "CH", name: "Switzerland", flag: "🇨🇭", dial: "+41" },
+  { code: "TH", name: "Thailand", flag: "🇹🇭", dial: "+66" },
+  { code: "TR", name: "Turkey", flag: "🇹🇷", dial: "+90" },
+  { code: "AE", name: "UAE", flag: "🇦🇪", dial: "+971" },
+  { code: "GB", name: "United Kingdom", flag: "🇬🇧", dial: "+44" },
+  { code: "US", name: "United States", flag: "🇺🇸", dial: "+1" },
+  { code: "VN", name: "Vietnam", flag: "🇻🇳", dial: "+84" },
+].sort((a, b) => a.name.localeCompare(b.name));
+
+function CountrySelector({
+  selected,
+  onSelect,
+}: {
+  selected: Country;
+  onSelect: (country: Country) => void;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [search, setSearch] = useState("");
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const filtered = allCountries.filter(
+    (c) =>
+      c.name.toLowerCase().includes(search.toLowerCase()) ||
+      c.dial.includes(search) ||
+      c.code.toLowerCase().includes(search.toLowerCase())
+  );
+
+  const defaultIndia = allCountries.find((c) => c.code === "IN") || allCountries[0];
+  const activeCountry = selected || defaultIndia;
+
+  return (
+    <div className="relative shrink-0 z-30" ref={dropdownRef}>
+      {/* Trigger Button */}
+      <button
+        type="button"
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center justify-between gap-1.5 bg-slate-50/80 hover:bg-slate-100/90 border border-slate-200 rounded-xl px-3 py-3 w-[115px] shrink-0 font-bold text-xs sm:text-sm text-slate-800 transition-all focus:outline-none focus:border-[#0066FF] cursor-pointer select-none"
+      >
+        <span className="flex items-center gap-1.5 truncate">
+          <span>{activeCountry.flag}</span>
+          <span>{activeCountry.dial}</span>
+        </span>
+        <ChevronDown className={`w-3.5 h-3.5 text-slate-400 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+      </button>
+
+      {/* Floating Dropdown Popover */}
+      {isOpen && (
+        <div className="absolute top-full left-0 mt-1.5 w-[260px] sm:w-[280px] bg-white border border-slate-200 rounded-2xl shadow-2xl z-50 p-2.5 space-y-2">
+          {/* Search Input */}
+          <div className="relative">
+            <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-3 pointer-events-none" />
+            <input
+              type="text"
+              autoFocus
+              placeholder="Search country or code..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full pl-9 pr-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0066FF] focus:bg-white"
+            />
+          </div>
+
+          {/* Scrollable List */}
+          <div className="max-h-[200px] overflow-y-auto divide-y divide-slate-50 pr-1">
+            {filtered.length === 0 ? (
+              <div className="text-xs text-slate-400 text-center py-4">No countries found</div>
+            ) : (
+              filtered.map((c) => (
+                <button
+                  key={`${c.code}-${c.dial}`}
+                  type="button"
+                  onClick={() => {
+                    onSelect(c);
+                    setIsOpen(false);
+                    setSearch("");
+                  }}
+                  className={`w-full flex items-center justify-between px-2.5 py-2 text-xs font-medium rounded-lg text-left transition-colors cursor-pointer ${
+                    c.code === activeCountry.code ? "bg-blue-50 text-[#0066FF] font-bold" : "hover:bg-slate-50 text-slate-700"
+                  }`}
+                >
+                  <span className="flex items-center gap-2 truncate pr-2">
+                    <span className="text-base">{c.flag}</span>
+                    <span className="truncate">{c.name}</span>
+                    <span className="text-[10px] text-slate-400 uppercase font-mono">({c.code})</span>
+                  </span>
+                  <span className="font-bold shrink-0">{c.dial}</span>
+                </button>
+              ))
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export function ContactMain() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const defaultIndia = allCountries.find((c) => c.code === "IN") || allCountries[0];
+  const [selectedCountry, setSelectedCountry] = useState<Country>(defaultIndia);
+  const [formData, setFormData] = useState({
+    fullName: "",
+    businessEmail: "",
+    phoneNumber: "",
+    message: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setErrorMessage(null);
+
+    // Frontend Validations
+    const trimmedName = formData.fullName.trim();
+    if (!trimmedName || trimmedName.length < 2) {
+      setErrorMessage("Please enter your full name (at least 2 characters).");
+      return;
+    }
+    if (/^\d+$/.test(trimmedName)) {
+      setErrorMessage("Full name cannot contain only numbers.");
+      return;
+    }
+
+    const trimmedEmail = formData.businessEmail.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!trimmedEmail || !emailRegex.test(trimmedEmail)) {
+      setErrorMessage("Please enter a valid business email address.");
+      return;
+    }
+
+    const phoneDigits = formData.phoneNumber.replace(/\D/g, "");
+    if (!formData.phoneNumber || phoneDigits.length < 6 || phoneDigits.length > 15) {
+      setErrorMessage("Please enter a valid phone number (6 to 15 digits).");
+      return;
+    }
+
+    const trimmedMsg = formData.message.trim();
+    if (!trimmedMsg || trimmedMsg.length < 10) {
+      setErrorMessage("Your message must be at least 10 characters long.");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fullName: trimmedName,
+          businessEmail: trimmedEmail,
+          countryCode: `${selectedCountry.flag} ${selectedCountry.dial}`,
+          phoneNumber: formData.phoneNumber.trim(),
+          message: trimmedMsg,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "We couldn't send your message right now. Please try again.");
+      }
+
+      setIsSuccess(true);
+      setFormData({
+        fullName: "",
+        businessEmail: "",
+        phoneNumber: "",
+        message: "",
+      });
+    } catch (err: any) {
+      setErrorMessage(err.message || "We couldn't send your message right now. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <section className="bg-white py-4 sm:py-6 lg:py-8">
+      <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          
+          {/* ==================== LEFT COLUMN: Send Us a Message ==================== */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/80 shadow-[0_4px_24px_rgba(0,0,0,0.04)]"
+          >
+            <div className="mb-6 space-y-1">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#051332] tracking-tight">
+                Send Us a Message
+              </h2>
+              <p className="text-sm sm:text-base text-slate-500 font-medium">
+                Fill out the form below and our team will get back to you shortly.
+              </p>
+            </div>
+
+            {isSuccess ? (
+              <div className="bg-blue-50/60 rounded-2xl p-8 text-center space-y-3 border border-blue-100 my-8">
+                <div className="w-14 h-14 bg-[#0066FF] text-white rounded-full flex items-center justify-center mx-auto shadow-md">
+                  <CheckCircle2 className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-bold text-[#051332]">
+                  Message Sent Successfully!
+                </h3>
+                <p className="text-sm text-slate-600 max-w-md mx-auto">
+                  Thank you for reaching out to The Co HR. Our HR specialists will review your message and contact you within 24 hours.
+                </p>
+                <button
+                  onClick={() => {
+                    setIsSuccess(false);
+                    setFormData({
+                      fullName: "",
+                      businessEmail: "",
+                      phoneNumber: "",
+                      message: "",
+                    });
+                  }}
+                  className="mt-2 text-xs font-bold text-[#0066FF] underline hover:text-blue-700 cursor-pointer"
+                >
+                  Send another message
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-5">
+                {/* Row 1: Full Name & Business Email */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {/* Full Name */}
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-bold text-[#051332] flex items-center gap-1">
+                      Full Name <span className="text-red-500">*</span>
+                    </label>
+                    <div className="relative">
+                      <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                        <User className="w-4 h-4" />
+                      </div>
+                      <input
+                        type="text"
+                        required
+                        minLength={2}
+                        maxLength={100}
+                        placeholder="Enter your name"
+                        value={formData.fullName}
+                        onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                        className="w-full pl-10 pr-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl text-sm font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0066FF] focus:bg-white transition-all"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Business Email */}
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-bold text-[#051332] flex items-center gap-1">
+                      Business Email <span className="text-red-500">*</span>
+                    </label>
+                    <div className="relative">
+                      <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                        <Mail className="w-4 h-4" />
+                      </div>
+                      <input
+                        type="email"
+                        required
+                        placeholder="Enter your email"
+                        value={formData.businessEmail}
+                        onChange={(e) => setFormData({ ...formData, businessEmail: e.target.value })}
+                        className="w-full pl-10 pr-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl text-sm font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0066FF] focus:bg-white transition-all"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Row 2: Phone Number with Custom Searchable Country Selector */}
+                <div className="space-y-1.5">
+                  <label className="text-xs font-bold text-[#051332] flex items-center gap-1">
+                    Phone Number <span className="text-red-500">*</span>
+                  </label>
+                  <div className="flex items-center gap-2">
+                    {/* Custom Searchable Country Selector */}
+                    <CountrySelector
+                      selected={selectedCountry}
+                      onSelect={(country) => setSelectedCountry(country)}
+                    />
+
+                    {/* Input */}
+                    <div className="relative flex-1">
+                      <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                        <Phone className="w-4 h-4" />
+                      </div>
+                      <input
+                        type="tel"
+                        required
+                        minLength={6}
+                        maxLength={20}
+                        placeholder="Enter your phone number"
+                        value={formData.phoneNumber}
+                        onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
+                        className="w-full pl-10 pr-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl text-sm font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0066FF] focus:bg-white transition-all"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Row 3: Message Textarea */}
+                <div className="space-y-1.5">
+                  <label className="text-xs font-bold text-[#051332] flex items-center gap-1">
+                    Your Message <span className="text-red-500">*</span>
+                  </label>
+                  <div className="relative">
+                    <div className="absolute top-3.5 left-3.5 pointer-events-none text-slate-400">
+                      <MessageSquare className="w-4 h-4" />
+                    </div>
+                    <textarea
+                      required
+                      rows={4}
+                      minLength={10}
+                      maxLength={3000}
+                      placeholder="How can we help you?"
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      className="w-full pl-10 pr-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl text-sm font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0066FF] focus:bg-white transition-all resize-none"
+                    />
+                  </div>
+                </div>
+
+                {/* Error Banner */}
+                {errorMessage && (
+                  <div className="p-3.5 bg-red-50 border border-red-200 rounded-xl text-xs font-semibold text-red-600 flex items-center gap-2">
+                    <AlertCircle className="w-4 h-4 text-red-500 shrink-0" />
+                    <span>{errorMessage}</span>
+                  </div>
+                )}
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-[#0066FF] hover:bg-[#0052CC] disabled:bg-blue-400 text-white font-bold text-base py-3.5 sm:py-4 px-6 rounded-2xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 mt-6 cursor-pointer disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      <span>Sending Message...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Send Message</span>
+                      <ArrowRight className="w-5 h-5" />
+                    </>
+                  )}
+                </button>
+              </form>
+            )}
+          </motion.div>
+
+
+          {/* ==================== RIGHT COLUMN: Get in Touch ==================== */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="lg:col-span-5 bg-[#F0F6FF] rounded-3xl p-6 sm:p-8 border border-blue-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] space-y-6"
+          >
+            <div>
+              <h2 className="text-2xl font-bold text-[#051332]">
+                Get in Touch
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-500 font-medium mt-1">
+                Choose the most convenient way to reach us.
+              </p>
+            </div>
+
+            <div className="space-y-5">
+              {/* Item 1: Call Us */}
+              <div className="flex items-start gap-4">
+                <div className="w-11 h-11 rounded-full bg-blue-100 flex items-center justify-center text-[#0066FF] shrink-0 mt-0.5 shadow-sm">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold text-[#051332]">Call Us</h4>
+                  <a
+                    href="tel:+919876543210"
+                    className="text-sm font-bold text-[#0066FF] hover:underline block"
+                  >
+                    +91 98765 43210
+                  </a>
+                  <p className="text-xs font-medium text-slate-500 mt-0.5">
+                    Mon - Fri, 9:00 AM - 6:00 PM (IST)
+                  </p>
+                </div>
+              </div>
+
+              {/* Item 2: Email Us */}
+              <div className="flex items-start gap-4">
+                <div className="w-11 h-11 rounded-full bg-blue-100 flex items-center justify-center text-[#0066FF] shrink-0 mt-0.5 shadow-sm">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold text-[#051332]">Email Us</h4>
+                  <a
+                    href="mailto:info@thecohr.com"
+                    className="text-sm font-bold text-[#0066FF] hover:underline block"
+                  >
+                    info@thecohr.com
+                  </a>
+                  <p className="text-xs font-medium text-slate-500 mt-0.5">
+                    We typically respond within 24 hours.
+                  </p>
+                </div>
+              </div>
+
+              {/* Item 3: Visit Us */}
+              <div className="flex items-start gap-4">
+                <div className="w-11 h-11 rounded-full bg-blue-100 flex items-center justify-center text-[#0066FF] shrink-0 mt-0.5 shadow-sm">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold text-[#051332]">Visit Us</h4>
+                  <p className="text-xs font-semibold text-slate-700 mt-0.5">
+                    The Co HR Private Limited
+                  </p>
+                  <p className="text-xs font-medium text-slate-500">
+                    Hyderabad, Telangana, India - 500081
+                  </p>
+                  <a
+                    href="https://maps.google.com/?q=Hyderabad,+Telangana"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs font-bold text-[#0066FF] hover:underline mt-1"
+                  >
+                    <span>Get Directions</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Item 4: Follow Us */}
+              <div className="flex items-start gap-4 pt-2 border-t border-blue-100/80">
+                <div className="w-11 h-11 rounded-full bg-blue-100 flex items-center justify-center text-[#0066FF] shrink-0 mt-0.5 shadow-sm">
+                  <Globe className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold text-[#051332]">Follow Us</h4>
+                  <div className="flex items-center gap-2.5 mt-2">
+                    {/* LinkedIn */}
+                    <a
+                      href="https://linkedin.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-8 h-8 rounded-lg bg-[#0066FF] text-white flex items-center justify-center hover:opacity-90 transition-opacity shadow-sm"
+                      aria-label="LinkedIn"
+                    >
+                      <svg className="w-4 h-4 fill-white" viewBox="0 0 24 24">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                      </svg>
+                    </a>
+                    {/* Facebook */}
+                    <a
+                      href="https://facebook.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-8 h-8 rounded-lg bg-[#1877F2] text-white flex items-center justify-center hover:opacity-90 transition-opacity shadow-sm"
+                      aria-label="Facebook"
+                    >
+                      <svg className="w-4 h-4 fill-white" viewBox="0 0 24 24">
+                        <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.12 8.44 9.88v-6.99H7.9v-2.89h2.54V9.79c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.89h-2.34v6.99C18.34 21.12 22 16.99 22 12z"/>
+                      </svg>
+                    </a>
+                    {/* YouTube */}
+                    <a
+                      href="https://youtube.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-8 h-8 rounded-lg bg-[#FF0000] text-white flex items-center justify-center hover:opacity-90 transition-opacity shadow-sm"
+                      aria-label="YouTube"
+                    >
+                      <svg className="w-4 h-4 fill-white" viewBox="0 0 24 24">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                      </svg>
+                    </a>
+                    {/* Instagram */}
+                    <a
+                      href="https://instagram.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#FFB900] via-[#E0040B] to-[#8A00D4] text-white flex items-center justify-center hover:opacity-90 transition-opacity shadow-sm"
+                      aria-label="Instagram"
+                    >
+                      <svg className="w-4 h-4 stroke-white fill-none" viewBox="0 0 24 24" strokeWidth="2">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </motion.div>
+
+        </div>
+      </div>
+    </section>
+  );
+}
