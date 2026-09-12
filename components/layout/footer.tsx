@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -15,11 +16,46 @@ import {
   Send,
   Lock,
   Leaf,
-  ArrowRight
+  ArrowRight,
+  CheckCircle2,
+  Loader2
 } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterSubmitting, setNewsletterSubmitting] = useState(false);
+  const [newsletterSubscribed, setNewsletterSubscribed] = useState(false);
+  const [newsletterError, setNewsletterError] = useState("");
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newsletterEmail || newsletterSubmitting) return;
+
+    setNewsletterSubmitting(true);
+    setNewsletterError("");
+
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: newsletterEmail }),
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || "Subscription failed. Please try again.");
+      }
+
+      setNewsletterSubscribed(true);
+      setNewsletterEmail("");
+    } catch (err: any) {
+      setNewsletterError(err.message || "Failed to subscribe. Please try again.");
+    } finally {
+      setNewsletterSubmitting(false);
+    }
+  };
 
   return (
     <footer className="relative bg-[#020612] text-slate-300 pt-12 lg:pt-16 pb-8 overflow-hidden font-sans border-t border-slate-800/60">
@@ -268,28 +304,54 @@ export function Footer() {
                 </p>
 
                 {/* Email Input */}
-                <form onSubmit={(e) => e.preventDefault()} className="space-y-3">
-                  <div className="relative flex items-center bg-[#050D24] border border-blue-900/80 rounded-full p-1 sm:p-1.5 focus-within:border-blue-500/80 transition-all shadow-inner">
-                    <input
-                      type="email"
-                      placeholder="Your email address"
-                      className="w-full bg-transparent px-3 sm:px-4 text-xs text-white placeholder-slate-500 focus:outline-none min-w-0"
-                      required
-                    />
-                    <button
-                      type="submit"
-                      className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#0055FF] text-white flex items-center justify-center hover:bg-blue-500 shrink-0 transition-transform active:scale-95 shadow-md"
-                      aria-label="Subscribe"
-                    >
-                      <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                    </button>
+                {newsletterSubscribed ? (
+                  <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-4 text-center space-y-1">
+                    <div className="flex items-center justify-center gap-2 text-emerald-400 font-bold text-xs sm:text-sm">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                      <span>Subscribed Successfully!</span>
+                    </div>
+                    <p className="text-[11px] text-slate-300">
+                      Thank you! You will receive our latest HR insights & updates.
+                    </p>
                   </div>
-                  
-                  <div className="flex items-center gap-1.5 text-[11px] text-slate-400 px-2">
-                    <Lock className="w-3.5 h-3.5 text-[#00A3FF]" />
-                    <span>We respect your privacy.</span>
-                  </div>
-                </form>
+                ) : (
+                  <form onSubmit={handleNewsletterSubmit} className="space-y-3">
+                    <div className="relative flex items-center bg-[#050D24] border border-blue-900/80 rounded-full p-1 sm:p-1.5 focus-within:border-blue-500/80 transition-all shadow-inner">
+                      <input
+                        type="email"
+                        placeholder="Your email address"
+                        value={newsletterEmail}
+                        onChange={(e) => setNewsletterEmail(e.target.value)}
+                        disabled={newsletterSubmitting}
+                        className="w-full bg-transparent px-3 sm:px-4 text-xs text-white placeholder-slate-500 focus:outline-none min-w-0 disabled:opacity-50"
+                        required
+                      />
+                      <button
+                        type="submit"
+                        disabled={newsletterSubmitting}
+                        className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#0055FF] text-white flex items-center justify-center hover:bg-blue-500 shrink-0 transition-transform active:scale-95 shadow-md disabled:opacity-50 cursor-pointer"
+                        aria-label="Subscribe"
+                      >
+                        {newsletterSubmitting ? (
+                          <Loader2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 animate-spin" />
+                        ) : (
+                          <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                        )}
+                      </button>
+                    </div>
+
+                    {newsletterError && (
+                      <p className="text-[11px] text-red-400 font-medium px-2">
+                        {newsletterError}
+                      </p>
+                    )}
+                    
+                    <div className="flex items-center gap-1.5 text-[11px] text-slate-400 px-2">
+                      <Lock className="w-3.5 h-3.5 text-[#00A3FF]" />
+                      <span>We respect your privacy.</span>
+                    </div>
+                  </form>
+                )}
               </div>
 
               {/* Solid Vibrant Corner Gradient Swoop from Mockup */}
