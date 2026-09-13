@@ -2,13 +2,9 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Shield, ArrowLeft } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | The Co HR",
-  description: "Learn how The Co HR collects, protects, and handles your personal data in compliance with enterprise privacy standards.",
-  alternates: {
-    canonical: "/privacy-policy",
-  },
-};
+import { constructMetadata, ROUTES_SEO } from "@/lib/seo";
+
+export const metadata: Metadata = constructMetadata(ROUTES_SEO.privacyPolicy);
 
 export default function PrivacyPolicyPage() {
   return (

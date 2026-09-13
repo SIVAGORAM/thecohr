@@ -2,13 +2,9 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { FileText, ArrowLeft } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "Terms of Service | The Co HR",
-  description: "Read the Terms of Service and Conditions of use for The Co HR website, HR ERP software, and outsourced HR services.",
-  alternates: {
-    canonical: "/terms-of-service",
-  },
-};
+import { constructMetadata, ROUTES_SEO } from "@/lib/seo";
+
+export const metadata: Metadata = constructMetadata(ROUTES_SEO.termsOfService);
 
 export default function TermsOfServicePage() {
   return (

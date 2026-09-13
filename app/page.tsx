@@ -18,11 +18,9 @@ const HomeCta = dynamic(() =>
   import("@/components/sections/home-cta").then((mod) => mod.HomeCta)
 );
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "/",
-  },
-};
+import { constructMetadata, ROUTES_SEO } from "@/lib/seo";
+
+export const metadata: Metadata = constructMetadata(ROUTES_SEO.home);
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -31,12 +29,32 @@ const localBusinessSchema = {
   "image": "https://www.thecohr.com/logo.png",
   "url": "https://www.thecohr.com",
   "telephone": "+91 90197 24365",
+  "email": "info@thecohr.com",
+  "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "123 Business Avenue, Tech Park",
-    "addressLocality": "City",
-    "postalCode": "400001",
+    "streetAddress": "Hitech City, Tech Hub",
+    "addressLocality": "Hyderabad",
+    "addressRegion": "Telangana",
+    "postalCode": "500081",
     "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 17.4486,
+    "longitude": 78.3808
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "09:00",
+    "closes": "18:00"
   }
 };
 

@@ -11,13 +11,9 @@ const ContactCTA = dynamic(() =>
   import("@/components/sections/contact-cta").then((mod) => mod.ContactCTA)
 );
 
-export const metadata: Metadata = {
-  title: "Contact Us | The Co HR - Let's Build a Better Workplace Together",
-  description: "Get in touch with The Co HR for HR ERP Software, Remote HR Services, and ERP Training. Contact our HR specialists in Hyderabad, India today.",
-  alternates: {
-    canonical: "/contact",
-  },
-};
+import { constructMetadata, ROUTES_SEO } from "@/lib/seo";
+
+export const metadata: Metadata = constructMetadata(ROUTES_SEO.contact);
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",

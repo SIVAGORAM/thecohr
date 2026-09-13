@@ -13,13 +13,9 @@ const ServicesCTA = dynamic(() =>
   import("@/components/sections/services-cta").then((mod) => mod.ServicesCTA)
 );
 
-export const metadata: Metadata = {
-  title: "Services | The Co HR - One Platform. One Partner. Complete HR Solutions.",
-  description: "Explore complete HR solutions by The Co HR: HR ERP Software, Remote HR Services, and ERP Training & Upskilling designed for modern organizations.",
-  alternates: {
-    canonical: "/services",
-  },
-};
+import { constructMetadata, ROUTES_SEO } from "@/lib/seo";
+
+export const metadata: Metadata = constructMetadata(ROUTES_SEO.services);
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",

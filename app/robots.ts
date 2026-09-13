@@ -1,13 +1,28 @@
 import { MetadataRoute } from 'next';
-
-const DOMAIN = 'https://www.thecohr.com';
+import { SITE_CONFIG } from '@/lib/seo';
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-    },
-    sitemap: `${DOMAIN}/sitemap.xml`,
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: [
+          '/api/',
+          '/wp-admin/',
+          '/wp-includes/',
+          '/wp-json/',
+          '/wp-content/plugins/',
+          '/*.php$',
+          '/*feed*',
+          '/*rss*',
+          '/category/',
+          '/tag/',
+          '/author/',
+          '/*?*',
+        ],
+      },
+    ],
+    sitemap: `${SITE_CONFIG.domain}/sitemap.xml`,
   };
 }

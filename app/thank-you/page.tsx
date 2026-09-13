@@ -2,13 +2,9 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle2, ArrowRight, Home, Phone, Mail } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "Thank You | The Co HR",
-  description: "Thank you for reaching out to The Co HR. Our HR specialists have received your message and will get back to you shortly.",
-  alternates: {
-    canonical: "/thank-you",
-  },
-};
+import { constructMetadata, ROUTES_SEO } from "@/lib/seo";
+
+export const metadata: Metadata = constructMetadata(ROUTES_SEO.thankYou);
 
 export default function ThankYouPage() {
   return (

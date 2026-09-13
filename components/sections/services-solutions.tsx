@@ -106,7 +106,7 @@ export function ServicesSolutions() {
                   height={380}
                   className="w-full h-auto object-cover"
                   sizes="(max-width: 1024px) 100vw, 33vw"
-                  loading="lazy"
+                  priority
                 />
               </div>
 

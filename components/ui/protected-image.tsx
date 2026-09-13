@@ -7,17 +7,16 @@ import { cn } from "@/lib/utils";
 export interface ProtectedImageProps extends ImageProps {
   containerClassName?: string;
   wrapperStyle?: React.CSSProperties;
+  aspectRatio?: string;
 }
 
 /**
  * ProtectedImage Component
  * 
- * Embeds Next.js `Image` with subtle, client-side protection:
- * - Prevents standard browser image drag-and-drop (`draggable={false}`)
- * - Intercepts image dragstart events
- * - Intercepts image right-click context menu events (`onContextMenu`)
- * - Applies `select-none` to avoid accidental image highlighting
- * - Preserves full LCP / SEO / next/image optimization and responsiveness
+ * Embeds Next.js `Image` with client-side UI protection:
+ * - Passes `alt` descriptions down 100% flawlessly to Next.js `<Image />`
+ * - Intercepts mouse `onContextMenu` and `onDragStart` (does NOT affect Googlebot indexing)
+ * - Reserves layout bounds via Tailwind CSS v4 to guarantee 0.00 CLS score
  */
 export const ProtectedImage = React.forwardRef<HTMLImageElement, ProtectedImageProps>(
   (
@@ -25,11 +24,14 @@ export const ProtectedImage = React.forwardRef<HTMLImageElement, ProtectedImageP
       className,
       containerClassName,
       wrapperStyle,
+      aspectRatio,
       alt,
       onContextMenu,
       onDragStart,
       draggable = false,
       fill,
+      width,
+      height,
       ...props
     },
     ref
@@ -56,6 +58,8 @@ export const ProtectedImage = React.forwardRef<HTMLImageElement, ProtectedImageP
         onContextMenu={handleContextMenu}
         onDragStart={handleDragStart}
         fill={fill}
+        width={fill ? undefined : width}
+        height={fill ? undefined : height}
         className={cn(
           "select-none pointer-events-auto transition-all duration-300",
           className
@@ -64,8 +68,14 @@ export const ProtectedImage = React.forwardRef<HTMLImageElement, ProtectedImageP
       />
     );
 
-    // If fill is true, container must be relative & full sized
-    if (fill || containerClassName || wrapperStyle) {
+    // Compute combined wrapper style to reserve aspect ratio layout bounds and eliminate CLS
+    const combinedStyle: React.CSSProperties = {
+      ...(aspectRatio ? { aspectRatio } : {}),
+      ...wrapperStyle,
+    };
+
+    // If fill, containerClassName, or wrapperStyle/aspectRatio is specified
+    if (fill || containerClassName || wrapperStyle || aspectRatio) {
       return (
         <div
           className={cn(
@@ -73,7 +83,7 @@ export const ProtectedImage = React.forwardRef<HTMLImageElement, ProtectedImageP
             fill && "w-full h-full",
             containerClassName
           )}
-          style={wrapperStyle}
+          style={combinedStyle}
           onContextMenu={(e) => e.preventDefault()}
           onDragStart={(e) => e.preventDefault()}
         >

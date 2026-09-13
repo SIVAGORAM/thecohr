@@ -14,13 +14,9 @@ const AboutCTA = dynamic(() =>
   import("@/components/sections/about-cta").then((mod) => mod.AboutCTA)
 );
 
-export const metadata: Metadata = {
-  title: "About Us | The Co HR - Empowering Businesses Through People & Technology",
-  description: "The Co HR was founded with one clear vision — to simplify Human Resource Management for businesses of every size. Integrating HR ERP software, outsourced services, and training.",
-  alternates: {
-    canonical: "/about",
-  },
-};
+import { constructMetadata, ROUTES_SEO } from "@/lib/seo";
+
+export const metadata: Metadata = constructMetadata(ROUTES_SEO.about);
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
