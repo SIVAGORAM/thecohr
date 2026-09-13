@@ -15,7 +15,7 @@ export function EcosystemStats() {
 
   return (
     <section className="bg-[#F0F7FF] relative overflow-hidden py-4" style={{ marginTop: 0 }}>
-      
+
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
         {/* Top-right blue triangle accents */}
@@ -23,15 +23,15 @@ export function EcosystemStats() {
           <polygon points="60,0 100,0 100,50" fill="currentColor" />
           <polygon points="80,0 100,0 100,25" fill="rgba(0,85,255,0.15)" />
         </svg>
-        
+
         {/* Dot patterns */}
         <div className="absolute top-12 left-[38%] grid grid-cols-5 gap-3 opacity-25 hidden lg:grid">
-          {Array.from({length: 20}).map((_, i) => (
+          {Array.from({ length: 20 }).map((_, i) => (
             <div key={i} className="w-1.5 h-1.5 rounded-full bg-[#0055FF]" />
           ))}
         </div>
         <div className="absolute top-8 right-[18%] grid grid-cols-4 gap-3 opacity-25 hidden lg:grid">
-          {Array.from({length: 12}).map((_, i) => (
+          {Array.from({ length: 12 }).map((_, i) => (
             <div key={i} className="w-1.5 h-1.5 rounded-full bg-[#0055FF]" />
           ))}
         </div>
@@ -40,7 +40,7 @@ export function EcosystemStats() {
       <div className="mx-auto max-w-[1500px] relative z-10">
         {/* Use a 2-column layout with the image overlapping slightly */}
         <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch">
-          
+
           {/* Left Column: Text & Features */}
           <div className="flex flex-col justify-center py-6 lg:py-8 px-6 lg:pl-12 lg:pr-6 relative z-20">
             {/* Pill Eyebrow */}
@@ -49,9 +49,11 @@ export function EcosystemStats() {
             </FadeIn>
 
             {/* Heading */}
-            <FadeIn direction="up" delay={0.1} className="text-[28px] sm:text-[34px] lg:text-[36px] xl:text-[44px] 2xl:text-[48px] font-heading font-extrabold text-[#111827] tracking-[-0.02em] leading-[1.12] mb-5">
+            <FadeIn direction="up" delay={0.1} className="text-[28px] sm:text-[34px] lg:text-[36px] xl:text-[44px] 2xl:text-[48px] font-heading font-extrabold text-[#111827] tracking-[-0.02em] leading-[1.25] sm:leading-[1.18] mb-5">
               <h2>
-                <span className="border-b-[3px] border-[#22C55E] pb-1">Technology + Expertise + Learning</span>{" "}
+                <span className="underline decoration-[#22C55E] decoration-[3px] underline-offset-[6px] sm:underline-offset-[8px]">
+                  Technology + Expertise + Learning
+                </span>{" "}
                 <br className="hidden xl:block" />
                 for a <span className="text-[#0055FF]">Stronger Tomorrow</span>
               </h2>
@@ -96,7 +98,7 @@ export function EcosystemStats() {
 
           {/* Right Column: Image & Stats */}
           <div className="relative min-h-[400px] sm:min-h-[450px] lg:min-h-0 lg:-ml-12 xl:-ml-16 mt-8 lg:mt-0">
-            
+
             {/* Image — fills right column completely, rounded on left only on desktop */}
             <FadeIn direction="left" duration={0.6} className="relative w-full h-full min-h-[400px] sm:min-h-[450px] lg:min-h-[520px] overflow-hidden rounded-[32px] lg:rounded-l-[40px] lg:rounded-r-none">
               <ProtectedImage
@@ -106,7 +108,7 @@ export function EcosystemStats() {
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              
+
               {/* Soft left-edge fade into background */}
               <div className="absolute inset-y-0 -left-1 w-20 bg-gradient-to-r from-[#F0F7FF] to-transparent hidden lg:block" />
             </FadeIn>
