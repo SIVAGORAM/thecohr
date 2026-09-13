@@ -194,7 +194,7 @@ export function Hero() {
         </div>
 
         {/* Right Column Mobile (Image & Reorganized UI) */}
-        <div className="lg:col-span-6 relative w-full block lg:hidden flex-col items-center mt-2">
+        <div className="lg:col-span-6 relative w-full block lg:hidden flex-col items-center mt-2 pointer-events-auto z-40">
           
           {/* Mobile Calligraphy Text placed elegantly above the image */}
           <div className="w-full flex justify-end mb-[-12px] pr-3 relative z-20 pointer-events-none -rotate-6">
@@ -262,7 +262,7 @@ export function Hero() {
           {/* Mobile Floating UI: HR Transformation Card cleanly overlapping below */}
           <Link
             href="/services"
-            className="w-[92%] -mt-6 mx-auto relative z-30 bg-white rounded-[24px] p-3.5 shadow-[0_8px_30px_rgb(0,0,0,0.15)] border border-gray-100 hover:border-blue-200 flex items-center justify-between group cursor-pointer transition-all duration-200 active:scale-[0.98]"
+            className="w-[92%] -mt-6 mx-auto relative z-50 bg-white rounded-[24px] p-3.5 shadow-[0_8px_30px_rgb(0,0,0,0.15)] border border-gray-100 hover:border-blue-200 flex items-center justify-between group cursor-pointer transition-all duration-200 active:scale-[0.98] pointer-events-auto"
           >
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-xl bg-[#0055FF] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
