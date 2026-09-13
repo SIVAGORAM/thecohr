@@ -17,7 +17,6 @@ export function OurStory() {
                 height={500}
                 className="w-full h-auto object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                loading="lazy"
               />
             </div>
           </FadeIn>

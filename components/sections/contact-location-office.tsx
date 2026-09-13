@@ -103,7 +103,6 @@ export function ContactLocationOffice() {
                 height={380}
                 className="w-full h-52 sm:h-60 object-cover transform hover:scale-102 transition-transform duration-500"
                 sizes="(max-width: 1024px) 100vw, 40vw"
-                loading="lazy"
               />
             </div>
           </FadeIn>

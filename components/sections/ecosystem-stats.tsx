@@ -105,7 +105,6 @@ export function EcosystemStats() {
                 fill
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                loading="lazy"
               />
               
               {/* Soft left-edge fade into background */}
