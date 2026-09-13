@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { FadeIn } from "@/components/ui/fade-in";
 import { Lightbulb, ShieldCheck, Users, Star, Handshake, TrendingUp } from "lucide-react";
 
 const values = [
@@ -59,12 +57,11 @@ export function CoreValues() {
           {values.map((item, index) => {
             const Icon = item.icon;
             return (
-              <motion.div
+              <FadeIn
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
+                direction="up"
+                duration={0.4}
+                delay={index * 0.08}
                 className="bg-white rounded-2xl p-4 sm:p-5 border border-blue-50/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-lg hover:border-blue-100 transition-all flex flex-col items-center text-center group h-full"
               >
                 <div className="w-12 h-12 rounded-xl bg-blue-50/80 group-hover:bg-[#0066FF] group-hover:text-white transition-colors flex items-center justify-center text-[#0066FF] mb-3 shrink-0">
@@ -73,10 +70,10 @@ export function CoreValues() {
                 <h3 className="text-base sm:text-lg font-bold text-[#051332] mb-1.5 leading-snug">
                   {item.title}
                 </h3>
-                <p className="text-slate-500 text-xs sm:text-sm leading-normal">
+                <p className="text-[#64748B] text-xs sm:text-sm leading-normal">
                   {item.description}
                 </p>
-              </motion.div>
+              </FadeIn>
             );
           })}
         </div>
@@ -85,4 +82,3 @@ export function CoreValues() {
     </section>
   );
 }
-

@@ -1,9 +1,7 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { FadeIn } from "@/components/ui/fade-in";
 import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
-import Image from "next/image";
+import { ProtectedImage } from "@/components/ui/protected-image";
 import { homeContent } from "@/lib/content";
 import { cn } from "@/lib/utils";
 import { ArrowRight, Users, BarChart2, Lightbulb } from "lucide-react";
@@ -16,7 +14,7 @@ const iconsMap: Record<string, React.ReactNode> = {
 };
 
 export function HomeCta() {
-  const { eyebrow, heading, body, ctas, floatingList } = homeContent.finalCTA;
+  const { eyebrow, body, ctas, floatingList } = homeContent.finalCTA;
 
   return (
     <section className="bg-white pt-2 pb-8 lg:pt-4 lg:pb-12 px-4 sm:px-6 lg:px-12 relative">
@@ -38,46 +36,25 @@ export function HomeCta() {
           {/* Left Content */}
           <div className="lg:col-span-5 flex flex-col justify-center py-10 lg:py-14 pl-6 lg:pl-12 pr-6 z-20">
             {/* Eyebrow */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="flex items-center gap-3 mb-3"
-            >
+            <FadeIn direction="up" className="flex items-center gap-3 mb-3">
               <div className="h-[2px] w-8 bg-[#0055FF]" />
               <span className="text-[12px] font-bold tracking-[0.16em] text-[#0055FF] uppercase">
                 {eyebrow}
               </span>
-            </motion.div>
+            </FadeIn>
             
-            <motion.h2
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-[30px] sm:text-[36px] lg:text-[40px] font-heading font-extrabold text-[#111827] tracking-tight leading-[1.15] mb-4"
-            >
-              Let&apos;s Build a Better <span className="text-[#0055FF]">Workplace Together</span>
-            </motion.h2>
+            <FadeIn direction="up" delay={0.1} className="text-[30px] sm:text-[36px] lg:text-[40px] font-heading font-extrabold text-[#111827] tracking-tight leading-[1.15] mb-4">
+              <h2>
+                Let&apos;s Build a Better <span className="text-[#0055FF]">Workplace Together</span>
+              </h2>
+            </FadeIn>
             
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-[15px] text-gray-600 leading-relaxed mb-6 max-w-md"
-            >
-              {body}
-            </motion.p>
+            <FadeIn direction="up" delay={0.2} className="text-[15px] text-gray-600 leading-relaxed mb-6 max-w-md">
+              <p>{body}</p>
+            </FadeIn>
 
             {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="flex flex-wrap items-center gap-4"
-            >
+            <FadeIn direction="up" delay={0.3} className="flex flex-wrap items-center gap-4">
               <Link 
                 href="/contact"
                 className={cn(
@@ -96,7 +73,7 @@ export function HomeCta() {
               >
                 {ctas.secondary}
               </Link>
-            </motion.div>
+            </FadeIn>
           </div>
 
           {/* Right Visual Area: Photo + Floating Card + Calligraphy */}
@@ -104,13 +81,13 @@ export function HomeCta() {
             
             {/* The Full Photo */}
             <div className="absolute inset-0 w-full h-full overflow-hidden">
-              <Image
+              <ProtectedImage
                 src="/images/cta-businessman.jpg"
                 alt="Professional working at desk"
                 fill
-                priority
+                loading="lazy"
                 className="object-cover object-center"
-                sizes="(max-width: 1024px) 100vw, 58vw"
+                sizes="(max-width: 1024px) 100vw, 55vw"
               />
               
               {/* Soft left-edge blend into banner background */}
@@ -121,13 +98,7 @@ export function HomeCta() {
             </div>
 
             {/* Floating List Card: Overlapping the left of the photo */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="relative z-30 ml-4 lg:-ml-12 my-6 lg:my-0 bg-white rounded-[22px] p-5 shadow-[0_14px_40px_rgba(0,0,0,0.08)] border border-blue-50/90 flex flex-col gap-4 w-[245px] shrink-0"
-            >
+            <FadeIn direction="up" delay={0.4} className="relative z-30 ml-4 lg:-ml-12 my-6 lg:my-0 bg-white rounded-[22px] p-5 shadow-[0_14px_40px_rgba(0,0,0,0.08)] border border-blue-50/90 flex flex-col gap-4 w-[245px] shrink-0">
               {floatingList?.map((item) => (
                 <div key={item.label} className="flex items-center gap-3.5">
                   <div className="w-9 h-9 rounded-full bg-[#EBF4FF] flex items-center justify-center shrink-0">
@@ -143,16 +114,10 @@ export function HomeCta() {
                   </div>
                 </div>
               ))}
-            </motion.div>
+            </FadeIn>
 
-            {/* Floating Calligraphy: Located in the top right over the bookshelf background */}
-            <motion.div
-              initial={{ opacity: 0, rotate: -12 }}
-              whileInView={{ opacity: 1, rotate: -6 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5, type: "spring" }}
-              className="absolute top-5 right-4 sm:right-6 lg:right-8 z-30 text-[#0055FF] pointer-events-none select-none hidden sm:block font-[family-name:var(--font-playball)]"
-            >
+            {/* Floating Calligraphy */}
+            <div className="absolute top-5 right-4 sm:right-6 lg:right-8 z-30 text-[#0055FF] pointer-events-none select-none hidden sm:block font-[family-name:var(--font-playball)] -rotate-6">
               <span className="text-[20px] sm:text-[23px] lg:text-[26px] leading-[1.15] whitespace-nowrap block">
                 Better People<br />
                 Brighter Possibilities
@@ -160,7 +125,7 @@ export function HomeCta() {
               <svg className="w-28 mt-0.5 text-[#22C55E]" viewBox="0 0 100 12" preserveAspectRatio="none">
                 <path d="M2 9 Q50 1 98 5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
               </svg>
-            </motion.div>
+            </div>
 
           </div>
 

@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { FadeIn } from "@/components/ui/fade-in";
 import { homeContent } from "@/lib/content";
 import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
@@ -51,88 +49,50 @@ export function IndustryExpertise() {
         
         {/* Header with calligraphy */}
         <div className="text-center mb-6 relative">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex items-center justify-center gap-4 mb-3"
-          >
+          <FadeIn direction="up" className="flex items-center justify-center gap-4 mb-3">
             <div className="h-[1px] w-12 sm:w-16 bg-[#BFDBFE]" />
             <span className="text-[11px] sm:text-xs font-bold tracking-[0.2em] text-[#0055FF] uppercase">
               {eyebrow}
             </span>
             <div className="h-[1px] w-12 sm:w-16 bg-[#BFDBFE]" />
-          </motion.div>
+          </FadeIn>
           
-          <motion.h2
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-[32px] sm:text-[38px] lg:text-[44px] font-heading font-bold text-[#111827] tracking-tight mb-2"
-          >
-            {heading.split("Industry")[0]}<span className="text-[#0055FF]">Industry</span>
-          </motion.h2>
+          <FadeIn direction="up" delay={0.1} className="text-[32px] sm:text-[38px] lg:text-[44px] font-heading font-bold text-[#111827] tracking-tight mb-2">
+            <h2>
+              {heading.split("Industry")[0]}<span className="text-[#0055FF]">Industry</span>
+            </h2>
+          </FadeIn>
           
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-[16px] text-gray-500"
-          >
-            {subheading}
-          </motion.p>
+          <FadeIn direction="up" delay={0.2} className="text-[16px] text-gray-500">
+            <p>{subheading}</p>
+          </FadeIn>
 
           {/* Floating Calligraphy */}
-          <motion.div
-            initial={{ opacity: 0, rotate: -15 }}
-            whileInView={{ opacity: 1, rotate: -8 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5, type: "spring" }}
-            className="absolute top-2 right-4 lg:right-16 text-[#0055FF] text-[22px] lg:text-[28px] leading-tight hidden sm:block font-[family-name:var(--font-playball)]"
-          >
+          <div className="absolute top-2 right-4 lg:right-16 text-[#0055FF] text-[22px] lg:text-[28px] leading-tight hidden sm:block font-[family-name:var(--font-playball)] -rotate-6">
             Different Industries<br />
             Stronger Workforces
-          </motion.div>
+          </div>
         </div>
       </div>
 
-      {/* Infinite Scrolling Marquee */}
+      {/* Infinite Scrolling Marquee using pure CSS */}
       <div className="relative mb-8">
         {/* Gradient fade edges */}
         <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
         
         <div className="overflow-hidden">
-          <motion.div
-            className="flex gap-4 w-max"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{
-              x: {
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: 30,
-                ease: "linear"
-              }
-            }}
-          >
+          <div className="flex gap-4 w-max animate-marquee">
             {duplicatedList.map((industry, idx) => (
               <IndustryCard key={`${industry.name}-${idx}`} industry={industry} />
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
 
       {/* View All Button */}
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="flex justify-center"
-        >
+        <FadeIn direction="up" delay={0.3} className="flex justify-center">
           <Link 
             href="/services"
             className={cn(
@@ -142,7 +102,7 @@ export function IndustryExpertise() {
           >
             {cta} <ArrowRight className="w-4 h-4" />
           </Link>
-        </motion.div>
+        </FadeIn>
       </div>
 
     </section>

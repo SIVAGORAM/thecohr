@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { FadeIn } from "@/components/ui/fade-in";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -11,13 +9,7 @@ export function AboutCTA() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Column: CTA Text & Buttons */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="lg:col-span-7 space-y-6"
-          >
+          <FadeIn direction="right" duration={0.6} className="lg:col-span-7 space-y-6">
             <div className="text-xs font-bold uppercase tracking-widest text-[#0066FF]">
               LET'S BUILD A STRONGER TOMORROW
             </div>
@@ -46,16 +38,10 @@ export function AboutCTA() {
                 Talk to an Expert
               </Link>
             </div>
-          </motion.div>
+          </FadeIn>
 
           {/* Right Column: Cursive Calligraphy & Swoosh */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="lg:col-span-5 flex flex-col items-start lg:items-end justify-center relative py-6"
-          >
+          <FadeIn direction="left" duration={0.6} delay={0.1} className="lg:col-span-5 flex flex-col items-start lg:items-end justify-center relative py-6">
             <div className="relative inline-block text-left lg:text-right transform lg:-rotate-2">
               <span className="block text-3xl sm:text-4xl lg:text-[42px] text-[#2B74E2] font-normal leading-tight font-[family-name:var(--font-playball)]">
                 Better People
@@ -86,7 +72,7 @@ export function AboutCTA() {
                 <path d="M100 180C100 180 120 120 170 100C120 80 100 20 100 20C100 20 80 80 30 100C80 120 100 180 100 180Z" fill="#0066FF" fillOpacity="0.08" />
               </svg>
             </div>
-          </motion.div>
+          </FadeIn>
 
         </div>
       </div>

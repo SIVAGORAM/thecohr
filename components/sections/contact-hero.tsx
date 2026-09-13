@@ -1,7 +1,5 @@
-"use client";
-
-import { motion } from "framer-motion";
-import Image from "next/image";
+import { FadeIn } from "@/components/ui/fade-in";
+import { ProtectedImage } from "@/components/ui/protected-image";
 import { Clock, Settings, Users } from "lucide-react";
 
 export function ContactHero() {
@@ -11,12 +9,7 @@ export function ContactHero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Column: Text & 3 Features */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="lg:col-span-6 space-y-5 sm:space-y-6"
-          >
+          <FadeIn direction="right" duration={0.6} className="lg:col-span-6 space-y-5 sm:space-y-6">
             {/* Eyebrow with decorative line */}
             <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#0066FF]">
               <span>CONTACT US</span>
@@ -82,26 +75,22 @@ export function ContactHero() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </FadeIn>
 
           {/* Right Column: Hero Photo */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="lg:col-span-6 relative flex items-center justify-end"
-          >
+          <FadeIn direction="left" duration={0.6} delay={0.1} className="lg:col-span-6 relative flex items-center justify-end">
             <div className="relative rounded-3xl overflow-hidden shadow-xl max-w-[620px] w-full">
-              <Image
+              <ProtectedImage
                 src="/images/contact-woman.jpg"
                 alt="Let's Build a Better Workplace Together - The Co HR"
                 width={700}
                 height={480}
                 className="w-full h-auto object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
               />
             </div>
-          </motion.div>
+          </FadeIn>
 
         </div>
       </div>

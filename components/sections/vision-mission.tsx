@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { FadeIn } from "@/components/ui/fade-in";
 import { Eye, Target } from "lucide-react";
 
 export function VisionMission() {
@@ -25,11 +23,9 @@ export function VisionMission() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           
           {/* Our Vision Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
+          <FadeIn
+            direction="up"
+            duration={0.5}
             className="relative bg-gradient-to-br from-[#EDF5FF] via-[#F2F7FF] to-[#E3F0FF] rounded-3xl p-8 sm:p-10 border border-blue-100/80 shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col sm:flex-row items-start gap-6"
           >
             {/* Soft decorative background circles */}
@@ -47,14 +43,13 @@ export function VisionMission() {
                 To become the most trusted global HR transformation partner by delivering innovative technology, expert HR services, and world-class learning solutions that empower organisations and their people.
               </p>
             </div>
-          </motion.div>
+          </FadeIn>
 
           {/* Our Mission Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+          <FadeIn
+            direction="up"
+            duration={0.5}
+            delay={0.1}
             className="relative bg-gradient-to-br from-[#E6FAF6] via-[#EFFBF8] to-[#DBF7F1] rounded-3xl p-8 sm:p-10 border border-emerald-100/80 shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col sm:flex-row items-start gap-6"
           >
             {/* Soft decorative background circles */}
@@ -72,11 +67,10 @@ export function VisionMission() {
                 To simplify HR through integrated software, expert services, and practical training that improve productivity, compliance, employee engagement, and business performance.
               </p>
             </div>
-          </motion.div>
+          </FadeIn>
 
         </div>
       </div>
     </section>
   );
 }
-

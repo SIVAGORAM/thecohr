@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { FadeIn } from "@/components/ui/fade-in";
 import { homeContent } from "@/lib/content";
 import Link from "next/link";
 import { ArrowRight, Check, Monitor, GraduationCap, Users } from "lucide-react";
@@ -41,38 +39,23 @@ export function CoreServices() {
         
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto mb-10">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex items-center justify-center gap-4 mb-4"
-          >
+          <FadeIn direction="up" className="flex items-center justify-center gap-4 mb-4">
             <div className="h-[1px] w-12 sm:w-16 bg-[#BFDBFE]" />
             <span className="text-[11px] sm:text-xs font-bold tracking-[0.2em] text-[#0055FF] uppercase">
               {eyebrow}
             </span>
             <div className="h-[1px] w-12 sm:w-16 bg-[#BFDBFE]" />
-          </motion.div>
+          </FadeIn>
           
-          <motion.h2
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-[32px] sm:text-4xl md:text-[44px] font-heading font-bold text-[#111827] tracking-tight mb-6 leading-tight"
-          >
-            {headingParts[0]} <span className="text-[#0055FF]">Three Powerful HR Solutions.</span>
-          </motion.h2>
+          <FadeIn direction="up" delay={0.1} className="text-[32px] sm:text-4xl md:text-[44px] font-heading font-bold text-[#111827] tracking-tight mb-6 leading-tight">
+            <h2>
+              {headingParts[0]} <span className="text-[#0055FF]">Three Powerful HR Solutions.</span>
+            </h2>
+          </FadeIn>
           
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-base sm:text-[17px] text-gray-600 max-w-3xl mx-auto leading-relaxed"
-          >
-            {subheading}
-          </motion.p>
+          <FadeIn direction="up" delay={0.2} className="text-base sm:text-[17px] text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p>{subheading}</p>
+          </FadeIn>
         </div>
 
         {/* 3 Column Grid */}
@@ -81,12 +64,10 @@ export function CoreServices() {
             const theme = cardThemes[idx];
             
             return (
-              <motion.div
+              <FadeIn
                 key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.15 }}
+                direction="up"
+                delay={idx * 0.15}
                 className="bg-white rounded-[24px] p-8 lg:p-10 shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-blue-50/80 flex flex-col h-full hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group"
               >
                 {/* Background Accent Shapes */}
@@ -159,7 +140,7 @@ export function CoreServices() {
                   </div>
 
                 </div>
-              </motion.div>
+              </FadeIn>
             );
           })}
         </div>

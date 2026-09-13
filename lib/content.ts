@@ -58,7 +58,7 @@ export const homeContent = {
     eyebrow: "COMPLETE HR ECOSYSTEM",
     heading: "Technology + Expertise + Learning for a Stronger Tomorrow",
     description: "Unlike traditional HR software providers, we offer technology, services, and training together — so you get a seamless HR transformation experience.",
-    videoCta: "Watch Our Story (2 min)",
+    secondaryCta: "Talk to an Expert",
     stats: [
       { value: "100+", label: "Businesses Supported" },
       { value: "10+", label: "Industries Served" },
@@ -107,7 +107,7 @@ export const homeContent = {
     heading: "More Than Software. A True HR Partner.",
     paragraph: "We help businesses simplify HR, stay compliant, and create better employee experiences through technology, expertise, and learning.",
     cta: "Learn More About Us",
-    videoCta: "Watch Our Story (2 min)",
+    secondaryCta: "Talk to an Expert",
     stats: [
       { value: "500+", label: "Happy Clients" },
       { value: "1M+", label: "Employees Managed" },

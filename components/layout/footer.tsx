@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { ProtectedImage } from "@/components/ui/protected-image";
 import {
   ChevronRight,
   Monitor,
@@ -93,7 +93,7 @@ export function Footer() {
           <div className="sm:col-span-2 lg:col-span-3 space-y-5 sm:space-y-6">
             {/* Logo */}
             <Link href="/" className="inline-block bg-white px-4 py-2.5 rounded-2xl shadow-md border border-slate-100 hover:scale-[1.01] transition-transform">
-              <Image
+              <ProtectedImage
                 src="/logo.png"
                 alt="The Co HR Logo"
                 width={320}
@@ -167,11 +167,9 @@ export function Footer() {
                 { label: "Home", href: "/" },
                 { label: "About Us", href: "/about" },
                 { label: "Services", href: "/services" },
-                { label: "Industries", href: "/industries" },
-                { label: "Why The Co HR", href: "/why-us" },
-                { label: "Resources", href: "/resources" },
-                { label: "Careers", href: "/careers" },
-                { label: "Contact", href: "/contact" },
+                { label: "Contact Us", href: "/contact" },
+                { label: "Privacy Policy", href: "/privacy-policy" },
+                { label: "Terms & Conditions", href: "/terms-of-service" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link href={link.href} className="group flex items-center justify-between text-slate-400 hover:text-white transition-colors">
@@ -192,9 +190,8 @@ export function Footer() {
               {[
                 { label: "HR ERP Software", icon: <Monitor className="w-4 h-4 text-[#00A3FF]" />, href: "/services#hr-erp-software" },
                 { label: "Remote HR Services", icon: <Users className="w-4 h-4 text-[#00A3FF]" />, href: "/services#remote-hr-services" },
-                { label: "ERP Training", icon: <GraduationCap className="w-4 h-4 text-[#00A3FF]" />, href: "/services#erp-training" },
-                { label: "Implementation Support", icon: <Settings className="w-4 h-4 text-[#00A3FF]" />, href: "/services#implementation-support" },
-                { label: "Ongoing Support", icon: <Headset className="w-4 h-4 text-[#00A3FF]" />, href: "/services#ongoing-support" },
+                { label: "ERP Training & Upskilling", icon: <GraduationCap className="w-4 h-4 text-[#00A3FF]" />, href: "/services#erp-training" },
+                { label: "Book a Demo", icon: <Headset className="w-4 h-4 text-[#00A3FF]" />, href: "/contact" },
               ].map((service) => (
                 <li key={service.label}>
                   <Link href={service.href} className="group flex items-center gap-3 text-xs lg:text-sm text-slate-400 hover:text-white transition-colors">

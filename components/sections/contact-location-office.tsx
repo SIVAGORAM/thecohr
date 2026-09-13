@@ -1,7 +1,5 @@
-"use client";
-
-import { motion } from "framer-motion";
-import Image from "next/image";
+import { FadeIn } from "@/components/ui/fade-in";
+import { ProtectedImage } from "@/components/ui/protected-image";
 import { Building2, MapPin, Plus, Minus } from "lucide-react";
 
 export function ContactLocationOffice() {
@@ -11,11 +9,9 @@ export function ContactLocationOffice() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
           {/* ==================== LEFT CARD: Hyderabad Map Graphic ==================== */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+          <FadeIn
+            direction="up"
+            duration={0.5}
             className="lg:col-span-7 bg-[#F4F8FB] rounded-3xl border border-slate-200/80 shadow-sm relative overflow-hidden min-h-[300px] flex flex-col justify-between p-6 sm:p-8"
           >
             {/* Map Visual Background Grid & Landmarks */}
@@ -71,14 +67,13 @@ export function ContactLocationOffice() {
                 <Minus className="w-4 h-4" />
               </button>
             </div>
-          </motion.div>
+          </FadeIn>
 
           {/* ==================== RIGHT CARD: Our Office Photo Card ==================== */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+          <FadeIn
+            direction="up"
+            duration={0.5}
+            delay={0.1}
             className="lg:col-span-5 bg-[#F0F6FF] rounded-3xl p-6 sm:p-8 border border-blue-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] flex flex-col justify-between"
           >
             {/* Office Info Header */}
@@ -101,15 +96,17 @@ export function ContactLocationOffice() {
 
             {/* Office Image */}
             <div className="relative rounded-2xl overflow-hidden border border-blue-100 shadow-md bg-white">
-              <Image
+              <ProtectedImage
                 src="/images/contact-office.jpg"
                 alt="The Co HR Office - Hyderabad"
                 width={600}
                 height={380}
                 className="w-full h-52 sm:h-60 object-cover transform hover:scale-102 transition-transform duration-500"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                loading="lazy"
               />
             </div>
-          </motion.div>
+          </FadeIn>
 
         </div>
       </div>

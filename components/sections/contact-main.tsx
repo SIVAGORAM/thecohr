@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { motion } from "framer-motion";
+import { FadeIn } from "@/components/ui/fade-in";
 import {
   User,
   Mail,
@@ -269,11 +269,9 @@ export function ContactMain() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
           {/* ==================== LEFT COLUMN: Send Us a Message ==================== */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+          <FadeIn
+            direction="up"
+            duration={0.5}
             className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/80 shadow-[0_4px_24px_rgba(0,0,0,0.04)]"
           >
             <div className="mb-6 space-y-1">
@@ -448,15 +446,14 @@ export function ContactMain() {
                 </button>
               </form>
             )}
-          </motion.div>
+          </FadeIn>
 
 
           {/* ==================== RIGHT COLUMN: Get in Touch ==================== */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+          <FadeIn
+            direction="up"
+            duration={0.5}
+            delay={0.1}
             className="lg:col-span-5 bg-[#F0F6FF] rounded-3xl p-6 sm:p-8 border border-blue-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] space-y-6"
           >
             <div>
@@ -542,7 +539,7 @@ export function ContactMain() {
                   <div className="flex items-center gap-2.5 mt-2">
                     {/* LinkedIn */}
                     <a
-                      href="https://linkedin.com"
+                      href="https://www.linkedin.com/in/the-co-hr-1a4842428/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-8 h-8 rounded-lg bg-[#0066FF] text-white flex items-center justify-center hover:opacity-90 transition-opacity shadow-sm"
@@ -552,9 +549,21 @@ export function ContactMain() {
                         <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
                       </svg>
                     </a>
+                    {/* X (Twitter) */}
+                    <a
+                      href="https://x.com/thecohr"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-8 h-8 rounded-lg bg-[#0f172a] text-white flex items-center justify-center hover:opacity-90 transition-opacity shadow-sm"
+                      aria-label="X (Twitter)"
+                    >
+                      <svg className="w-3.5 h-3.5 fill-white" viewBox="0 0 24 24">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                      </svg>
+                    </a>
                     {/* Facebook */}
                     <a
-                      href="https://facebook.com"
+                      href="https://www.facebook.com/people/TheCo-HR/pfbid0Y9dBJZkUCq9jrpMwukbksVvaF3b7EPD6GvEdWDWLHTAEtzFMZmmxKznuax2S5Gsql/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-8 h-8 rounded-lg bg-[#1877F2] text-white flex items-center justify-center hover:opacity-90 transition-opacity shadow-sm"
@@ -564,21 +573,9 @@ export function ContactMain() {
                         <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.12 8.44 9.88v-6.99H7.9v-2.89h2.54V9.79c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.89h-2.34v6.99C18.34 21.12 22 16.99 22 12z"/>
                       </svg>
                     </a>
-                    {/* YouTube */}
-                    <a
-                      href="https://youtube.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-8 h-8 rounded-lg bg-[#FF0000] text-white flex items-center justify-center hover:opacity-90 transition-opacity shadow-sm"
-                      aria-label="YouTube"
-                    >
-                      <svg className="w-4 h-4 fill-white" viewBox="0 0 24 24">
-                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                      </svg>
-                    </a>
                     {/* Instagram */}
                     <a
-                      href="https://instagram.com"
+                      href="https://www.instagram.com/thecohr_com/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#FFB900] via-[#E0040B] to-[#8A00D4] text-white flex items-center justify-center hover:opacity-90 transition-opacity shadow-sm"
@@ -595,7 +592,7 @@ export function ContactMain() {
               </div>
 
             </div>
-          </motion.div>
+          </FadeIn>
 
         </div>
       </div>

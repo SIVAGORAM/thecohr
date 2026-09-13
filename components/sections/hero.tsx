@@ -1,9 +1,7 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { FadeIn } from "@/components/ui/fade-in";
 import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
-import Image from "next/image";
+import { ProtectedImage } from "@/components/ui/protected-image";
 import { homeContent } from "@/lib/content";
 import { cn } from "@/lib/utils";
 import { ArrowRight, Settings, Handshake, Users, UserPlus, TrendingUp, Trophy } from "lucide-react";
@@ -16,7 +14,7 @@ const badgeIcons: Record<string, React.ReactNode> = {
 };
 
 export function Hero() {
-  const { overline, headline, subheading, ctas, trustBadges } = homeContent.hero;
+  const { overline, headline, ctas, trustBadges } = homeContent.hero;
   const headlineParts = headline.split("Smarter.");
 
   return (
@@ -28,7 +26,7 @@ export function Hero() {
         <div className="absolute inset-y-0 left-0 w-[50%] bg-gradient-to-r from-[#F4F9FF] via-[#F4F9FF]/90 to-transparent z-10" />
 
         <div className="relative w-full h-full">
-          <Image
+          <ProtectedImage
             src="/images/hero-new.jpg"
             alt="The Co HR Platform Overview"
             fill
@@ -38,10 +36,9 @@ export function Hero() {
           />
 
           {/* Floating UI: Total Employees */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.6, type: "spring" }}
+          <FadeIn
+            direction="up"
+            delay={0.6}
             className="absolute top-[28%] left-[25%] z-20 bg-white rounded-2xl p-5 shadow-[0_8px_30px_rgb(0,0,0,0.06)] w-[210px]"
           >
             <p className="text-[13px] font-bold text-[#111827] mb-1">Total Employees</p>
@@ -56,15 +53,10 @@ export function Hero() {
                 <div className="w-2 h-9 bg-[#0066FF] rounded-t-sm" />
               </div>
             </div>
-          </motion.div>
+          </FadeIn>
 
           {/* Floating UI: Calligraphy Text & Green Swoosh */}
-          <motion.div 
-            initial={{ opacity: 0, y: -10, rotate: -5 }}
-            animate={{ opacity: 1, y: 0, rotate: -10 }}
-            transition={{ delay: 0.8, type: "spring" }}
-            className="absolute top-[2%] right-[8%] z-20"
-          >
+          <div className="absolute top-[2%] right-[8%] z-20 transform -rotate-6">
             <div className="relative flex flex-col items-end">
               <p 
                 className="text-[44px] text-[#0055FF] leading-[1.0] whitespace-nowrap font-bold"
@@ -79,13 +71,12 @@ export function Hero() {
                 </span>
               </p>
             </div>
-          </motion.div>
+          </div>
 
           {/* Floating UI: Vertical Checklist */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1.0, type: "spring" }}
+          <FadeIn
+            direction="left"
+            delay={1.0}
             className="absolute top-[32%] right-[8%] z-20 bg-white rounded-2xl p-4 shadow-[0_8px_30px_rgb(0,0,0,0.06)] flex flex-col gap-4"
           >
             {[
@@ -94,7 +85,7 @@ export function Hero() {
               { label: "Manage", icon: <Settings className="w-4 h-4 text-[#0066FF]" /> },
               { label: "Grow", icon: <TrendingUp className="w-4 h-4 text-[#0066FF]" /> },
               { label: "Succeed", icon: <Trophy className="w-4 h-4 text-[#0066FF]" /> }
-            ].map((item, i) => (
+            ].map((item) => (
               <div key={item.label} className="flex items-center gap-5">
                 <div className="w-9 h-9 rounded-full bg-[#E5F0FF] flex items-center justify-center shrink-0">
                   {item.icon}
@@ -102,13 +93,12 @@ export function Hero() {
                 <span className="font-bold text-[#111827] text-[14px] w-16">{item.label}</span>
               </div>
             ))}
-          </motion.div>
+          </FadeIn>
 
           {/* Floating UI: HR Transformation */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, type: "spring" }}
+          <FadeIn
+            direction="up"
+            delay={1.2}
             className="absolute bottom-[12%] right-[15%] z-30 bg-white rounded-[24px] p-4 pr-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex items-center gap-5 w-[340px]"
           >
             <div className="w-14 h-14 rounded-2xl bg-[#0066FF] flex items-center justify-center shrink-0">
@@ -124,7 +114,7 @@ export function Hero() {
             <div className="w-10 h-10 rounded-full bg-[#E5F0FF] flex items-center justify-center hover:bg-blue-200 transition-colors cursor-pointer shrink-0">
               <ArrowRight className="w-5 h-5 text-[#0066FF]" />
             </div>
-          </motion.div>
+          </FadeIn>
         </div>
       </div>
 
@@ -133,11 +123,7 @@ export function Hero() {
         
         {/* Left Column (Text & CTAs) */}
         <div className="lg:col-span-6 flex flex-col gap-5 z-20 pt-0 lg:pt-4 pb-2 lg:pb-0 pointer-events-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-          >
+          <div>
             <div className="flex items-center gap-4 mb-4">
               <p className="text-xs lg:text-[13px] font-bold tracking-[0.15em] text-[#0066FF] uppercase">
                 {overline}
@@ -153,24 +139,14 @@ export function Hero() {
                 </svg>
               </span>
             </h1>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
-            className="text-base lg:text-[17px] text-[#4B5563] max-w-xl leading-relaxed mt-1"
-          >
+          <div className="text-base lg:text-[17px] text-[#4B5563] max-w-xl leading-relaxed mt-1">
             <p className="mb-3 lg:mb-4">From hiring your first employee to managing a global workforce, The Co HR provides everything your business needs under one roof.</p>
             <p>Powerful HR ERP Software, Remote HR Services, and Expert Training — designed to simplify people management and <strong className="text-[#111827] font-bold">accelerate business growth.</strong></p>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
-            className="flex flex-col sm:flex-row gap-4 mt-2 lg:mt-3"
-          >
+          <div className="flex flex-col sm:flex-row gap-4 mt-2 lg:mt-3">
             <Link
               href="/contact"
               className={cn(
@@ -189,15 +165,10 @@ export function Hero() {
             >
               {ctas.secondary}
             </Link>
-          </motion.div>
+          </div>
 
           {/* Trust Badges */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
-            className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-x-8 gap-y-4 pt-2 lg:pt-5"
-          >
+          <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-x-8 gap-y-4 pt-2 lg:pt-5">
             {trustBadges.map((badge, idx) => (
               <React.Fragment key={idx}>
                 <div className="flex items-center gap-3">
@@ -214,39 +185,33 @@ export function Hero() {
                 )}
               </React.Fragment>
             ))}
-          </motion.div>
+          </div>
         </div>
 
         {/* Right Column Mobile (Image & Reorganized UI) */}
         <div className="lg:col-span-6 relative w-full block lg:hidden flex-col items-center mt-2">
           
-          {/* Mobile Calligraphy Text placed elegantly above the image, overlapping slightly */}
-          <div className="w-full flex justify-end mb-[-12px] pr-3 relative z-20 pointer-events-none">
-            <motion.div 
-              initial={{ opacity: 0, y: -10, rotate: -5 }}
-              animate={{ opacity: 1, y: 0, rotate: -8 }}
-              transition={{ delay: 0.8, type: "spring" }}
-            >
-              <div className="relative flex flex-col items-end">
-                <p 
-                  className="text-[36px] text-[#0055FF] leading-[1.0] whitespace-nowrap font-bold"
-                  style={{ fontFamily: "'Caveat', cursive" }}
-                >
-                  Better People<br />
-                  <span className="relative inline-block mt-1">
-                    Brighter Possibilities
-                    <svg className="absolute -bottom-3 left-0 w-[110%] h-[16px]" viewBox="0 0 100 20" preserveAspectRatio="none">
-                      <path d="M0,15 Q50,15 100,5" fill="none" stroke="#22c55e" strokeWidth="3" strokeLinecap="round" />
-                    </svg>
-                  </span>
-                </p>
-              </div>
-            </motion.div>
+          {/* Mobile Calligraphy Text placed elegantly above the image */}
+          <div className="w-full flex justify-end mb-[-12px] pr-3 relative z-20 pointer-events-none -rotate-6">
+            <div className="relative flex flex-col items-end">
+              <p 
+                className="text-[36px] text-[#0055FF] leading-[1.0] whitespace-nowrap font-bold"
+                style={{ fontFamily: "'Caveat', cursive" }}
+              >
+                Better People<br />
+                <span className="relative inline-block mt-1">
+                  Brighter Possibilities
+                  <svg className="absolute -bottom-3 left-0 w-[110%] h-[16px]" viewBox="0 0 100 20" preserveAspectRatio="none">
+                    <path d="M0,15 Q50,15 100,5" fill="none" stroke="#22c55e" strokeWidth="3" strokeLinecap="round" />
+                  </svg>
+                </span>
+              </p>
+            </div>
           </div>
 
           {/* Image Block */}
           <div className="relative w-full h-[400px] rounded-[32px] overflow-hidden bg-gray-50 shadow-inner">
-            <Image
+            <ProtectedImage
               src="/images/hero-new.jpg"
               alt="The Co HR Platform Overview"
               fill
@@ -258,12 +223,7 @@ export function Hero() {
             <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/80 to-transparent z-10" />
             
             {/* Mobile Floating UI: Total Employees tucked in bottom left */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.6, type: "spring" }}
-              className="absolute bottom-4 left-4 z-20 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-white/50 w-[160px]"
-            >
+            <div className="absolute bottom-4 left-4 z-20 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-white/50 w-[160px]">
               <p className="text-[11px] font-bold text-[#111827] mb-1">Total Employees</p>
               <div className="flex justify-between items-end">
                 <div>
@@ -276,15 +236,10 @@ export function Hero() {
                   <div className="w-1.5 h-7 bg-[#0066FF] rounded-t-sm" />
                 </div>
               </div>
-            </motion.div>
+            </div>
 
             {/* Mobile Floating UI: Vertical Checklist (Mini Icons Only) */}
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.0, type: "spring" }}
-              className="absolute top-[20%] right-2 z-20 bg-white/95 backdrop-blur-md rounded-[20px] p-2 shadow-xl border border-white/50 flex flex-col gap-2 scale-90 origin-right"
-            >
+            <div className="absolute top-[20%] right-2 z-20 bg-white/95 backdrop-blur-md rounded-[20px] p-2 shadow-xl border border-white/50 flex flex-col gap-2 scale-90 origin-right">
               {[
                 { icon: <UserPlus className="w-3.5 h-3.5 text-[#0055FF]" /> },
                 { icon: <Users className="w-3.5 h-3.5 text-[#0055FF]" /> },
@@ -296,16 +251,11 @@ export function Hero() {
                   {item.icon}
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
 
           {/* Mobile Floating UI: HR Transformation Card cleanly overlapping below */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, type: "spring" }}
-            className="w-[92%] -mt-6 mx-auto relative z-30 bg-white rounded-[24px] p-3 shadow-[0_8px_30px_rgb(0,0,0,0.15)] border border-gray-100 flex items-center justify-between"
-          >
+          <div className="w-[92%] -mt-6 mx-auto relative z-30 bg-white rounded-[24px] p-3 shadow-[0_8px_30px_rgb(0,0,0,0.15)] border border-gray-100 flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-xl bg-[#0055FF] flex items-center justify-center shrink-0">
                 <div className="relative w-6 h-6 flex items-center justify-center">
@@ -321,7 +271,7 @@ export function Hero() {
             <div className="w-10 h-10 rounded-full bg-[#E5F0FF] flex items-center justify-center shrink-0">
               <ArrowRight className="w-4 h-4 text-[#0055FF]" />
             </div>
-          </motion.div>
+          </div>
           
         </div>
       </div>

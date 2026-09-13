@@ -1,7 +1,5 @@
-"use client";
-
-import { motion } from "framer-motion";
-import Image from "next/image";
+import { FadeIn } from "@/components/ui/fade-in";
+import { ProtectedImage } from "@/components/ui/protected-image";
 import { Users, Settings, TrendingUp } from "lucide-react";
 
 export function AboutHero() {
@@ -11,12 +9,7 @@ export function AboutHero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
           
           {/* Left Column: Text & Badges */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="lg:col-span-6 space-y-4"
-          >
+          <FadeIn direction="right" duration={0.6} className="lg:col-span-6 space-y-4">
             {/* Eyebrow */}
             <div className="text-xs font-bold uppercase tracking-widest text-[#0066FF]">
               ABOUT US
@@ -58,26 +51,22 @@ export function AboutHero() {
                 <span className="text-xs sm:text-sm font-semibold text-slate-700">A Stronger Tomorrow</span>
               </div>
             </div>
-          </motion.div>
+          </FadeIn>
 
           {/* Right Column: Team Image */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="lg:col-span-6 relative"
-          >
+          <FadeIn direction="left" duration={0.6} delay={0.1} className="lg:col-span-6 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-blue-100/80 bg-white">
-              <Image
+              <ProtectedImage
                 src="/images/about-team.jpg"
                 alt="The Co HR Team"
                 width={700}
                 height={500}
                 className="w-full h-auto object-cover transform hover:scale-102 transition-transform duration-500"
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
               />
             </div>
-          </motion.div>
+          </FadeIn>
 
         </div>
       </div>

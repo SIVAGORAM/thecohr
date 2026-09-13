@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Image from "next/image";
+import { useEffect } from "react";
+import { FadeIn } from "@/components/ui/fade-in";
+import { ProtectedImage } from "@/components/ui/protected-image";
 import Link from "next/link";
 import {
   Monitor,
@@ -33,6 +34,18 @@ import {
 } from "lucide-react";
 
 export function ServicesSolutions() {
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash) {
+      const hash = window.location.hash.substring(1);
+      const element = document.getElementById(hash);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 150);
+      }
+    }
+  }, []);
+
   return (
     <section className="bg-slate-50/60 py-2 lg:py-3 relative overflow-hidden">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
@@ -54,12 +67,11 @@ export function ServicesSolutions() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
           
           {/* ==================== CARD 1: HR ERP Software ==================== */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="bg-white rounded-3xl p-6 sm:p-8 border border-blue-100 shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all flex flex-col justify-between"
+          <FadeIn
+            id="hr-erp-software"
+            direction="up"
+            duration={0.5}
+            className="bg-white rounded-3xl p-6 sm:p-8 border border-blue-100 shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all flex flex-col justify-between scroll-mt-28"
           >
             <div>
               {/* Card Header */}
@@ -87,12 +99,14 @@ export function ServicesSolutions() {
 
               {/* Dashboard Preview Image */}
               <div className="relative rounded-2xl overflow-hidden border border-slate-100 shadow-sm mb-6 bg-slate-50">
-                <Image
+                <ProtectedImage
                   src="/images/dashboard-mockup.png"
                   alt="HR ERP Software Dashboard"
                   width={600}
                   height={380}
                   className="w-full h-auto object-cover"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  loading="lazy"
                 />
               </div>
 
@@ -199,16 +213,16 @@ export function ServicesSolutions() {
               <span className="whitespace-nowrap">Explore HR ERP Software</span>
               <ArrowRight className="w-4 h-4 shrink-0" />
             </Link>
-          </motion.div>
+          </FadeIn>
 
 
           {/* ==================== CARD 2: Remote HR Services ==================== */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-white rounded-3xl p-6 sm:p-8 border border-emerald-100 shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all flex flex-col justify-between"
+          <FadeIn
+            id="remote-hr-services"
+            direction="up"
+            duration={0.5}
+            delay={0.1}
+            className="bg-white rounded-3xl p-6 sm:p-8 border border-emerald-100 shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all flex flex-col justify-between scroll-mt-28"
           >
             <div>
               {/* Card Header */}
@@ -236,12 +250,14 @@ export function ServicesSolutions() {
 
               {/* Team Photo with Floating Overlay */}
               <div className="relative rounded-2xl overflow-hidden border border-slate-100 shadow-sm mb-6 bg-slate-50">
-                <Image
+                <ProtectedImage
                   src="/images/remote-hr.jpg"
                   alt="Remote HR Team Services"
                   width={600}
                   height={380}
                   className="w-full h-48 object-cover"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  loading="lazy"
                 />
                 <div className="absolute bottom-3 left-3 bg-white/95 backdrop-blur-md rounded-xl p-2.5 shadow-md border border-emerald-100 text-center max-w-[130px] z-10">
                   <p className="text-xs font-bold text-[#051332]">
@@ -304,16 +320,16 @@ export function ServicesSolutions() {
               <span className="whitespace-nowrap">Explore Remote HR Services</span>
               <ArrowRight className="w-4 h-4 shrink-0" />
             </Link>
-          </motion.div>
+          </FadeIn>
 
 
           {/* ==================== CARD 3: ERP Training & Upskilling ==================== */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-white rounded-3xl p-6 sm:p-8 border border-purple-100 shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all flex flex-col justify-between"
+          <FadeIn
+            id="erp-training"
+            direction="up"
+            duration={0.5}
+            delay={0.2}
+            className="bg-white rounded-3xl p-6 sm:p-8 border border-purple-100 shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all flex flex-col justify-between scroll-mt-28"
           >
             <div>
               {/* Card Header */}
@@ -341,12 +357,14 @@ export function ServicesSolutions() {
 
               {/* Training Image */}
               <div className="relative rounded-2xl overflow-hidden border border-slate-100 shadow-sm mb-6 bg-slate-50">
-                <Image
+                <ProtectedImage
                   src="/images/training.jpg"
                   alt="ERP Training & Upskilling"
                   width={600}
                   height={380}
                   className="w-full h-48 object-cover"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  loading="lazy"
                 />
               </div>
 
@@ -421,7 +439,7 @@ export function ServicesSolutions() {
               <span className="whitespace-nowrap">Explore ERP Training</span>
               <ArrowRight className="w-4 h-4 shrink-0" />
             </Link>
-          </motion.div>
+          </FadeIn>
 
         </div>
       </div>

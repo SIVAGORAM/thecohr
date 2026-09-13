@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { ProtectedImage } from "@/components/ui/protected-image";
 
 export default function Loading() {
   return (
@@ -17,7 +17,7 @@ export default function Loading() {
 
           {/* Logo / Brand Icon */}
           <div className="w-14 h-14 rounded-2xl bg-white p-2.5 shadow-xl shadow-blue-500/20 flex items-center justify-center border border-slate-100">
-            <Image
+            <ProtectedImage
               src="/fav.svg"
               alt="The Co HR Logo"
               width={36}

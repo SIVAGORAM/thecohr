@@ -1,7 +1,5 @@
-"use client";
-
-import { motion } from "framer-motion";
-import Image from "next/image";
+import { FadeIn } from "@/components/ui/fade-in";
+import { ProtectedImage } from "@/components/ui/protected-image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -12,13 +10,7 @@ export function ServicesCTA() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
           {/* Left Column: Content & Buttons */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="lg:col-span-6 space-y-5"
-          >
+          <FadeIn direction="right" duration={0.6} className="lg:col-span-6 space-y-5">
             <div className="text-xs font-bold uppercase tracking-widest text-[#0066FF]">
               LET'S WORK TOGETHER
             </div>
@@ -47,27 +39,22 @@ export function ServicesCTA() {
                 Talk to an Expert
               </Link>
             </div>
-          </motion.div>
+          </FadeIn>
 
           {/* Right Column: Team Image */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="lg:col-span-6 relative"
-          >
+          <FadeIn direction="left" duration={0.6} delay={0.1} className="lg:col-span-6 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-xl border border-blue-100/80 bg-white">
-              <Image
+              <ProtectedImage
                 src="/images/cta-team.jpg"
                 alt="Transform Your HR Today - The Co HR"
                 width={700}
                 height={480}
                 className="w-full h-auto object-cover"
-                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                loading="lazy"
               />
             </div>
-          </motion.div>
+          </FadeIn>
 
         </div>
       </div>

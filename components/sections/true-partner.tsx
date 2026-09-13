@@ -1,19 +1,10 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { FadeIn } from "@/components/ui/fade-in";
 import { homeContent } from "@/lib/content";
 import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { ArrowRight, Database, RefreshCw, Building, ShieldCheck, Play } from "lucide-react";
+import { ArrowRight, Database, RefreshCw, Building, ShieldCheck, Headset } from "lucide-react";
 import React from "react";
-
-const iconsMap: Record<string, React.ReactNode> = {
-  database: <Database className="w-6 h-6 text-[#0055FF]" strokeWidth={1.5} />,
-  refreshCw: <RefreshCw className="w-6 h-6 text-[#0055FF]" strokeWidth={1.5} />,
-  building: <Building className="w-6 h-6 text-[#0055FF]" strokeWidth={1.5} />,
-  shieldCheck: <ShieldCheck className="w-6 h-6 text-[#0055FF]" strokeWidth={1.5} />
-};
 
 export function TruePartner() {
   const { eyebrow, heading, paragraph, cta, cards } = homeContent.truePartner;
@@ -80,49 +71,28 @@ export function TruePartner() {
           <div className="lg:col-span-5 flex flex-col justify-between">
             <div>
               {/* Eyebrow */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="flex items-center gap-3 mb-3"
-              >
+              <FadeIn direction="up" className="flex items-center gap-3 mb-3">
                 <div className="h-[2px] w-8 bg-[#0055FF]" />
                 <span className="text-[12px] font-bold tracking-[0.16em] text-[#0055FF] uppercase">
                   {eyebrow}
                 </span>
-              </motion.div>
+              </FadeIn>
               
               {/* Heading */}
-              <motion.h2
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="text-[32px] sm:text-[38px] lg:text-[42px] font-heading font-extrabold text-[#111827] tracking-tight leading-[1.14] mb-4"
-              >
-                More Than Software.<br />
-                A True <span className="text-[#0055FF]">HR Partner.</span>
-              </motion.h2>
+              <FadeIn direction="up" delay={0.1} className="text-[32px] sm:text-[38px] lg:text-[42px] font-heading font-extrabold text-[#111827] tracking-tight leading-[1.14] mb-4">
+                <h2>
+                  More Than Software.<br />
+                  A True <span className="text-[#0055FF]">HR Partner.</span>
+                </h2>
+              </FadeIn>
               
               {/* Paragraph */}
-              <motion.p
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="text-[15px] text-gray-600 leading-relaxed mb-6 max-w-lg"
-              >
-                {paragraph}
-              </motion.p>
+              <FadeIn direction="up" delay={0.2} className="text-[15px] text-gray-600 leading-relaxed mb-6 max-w-lg">
+                <p>{paragraph}</p>
+              </FadeIn>
 
               {/* CTA + Video Button */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-                className="flex flex-wrap items-center gap-5 mb-8"
-              >
+              <FadeIn direction="up" delay={0.3} className="flex flex-wrap items-center gap-5 mb-8">
                 <Link 
                   href="/about"
                   className={cn(
@@ -133,27 +103,23 @@ export function TruePartner() {
                   {cta} <ArrowRight className="w-4 h-4" />
                 </Link>
                 
-                <div className="flex items-center gap-3 group cursor-pointer">
-                  <div className="w-10 h-10 rounded-full bg-[#EAF3FF] flex items-center justify-center group-hover:scale-105 transition-transform">
-                    <Play className="w-4 h-4 text-[#0055FF] fill-[#0055FF] ml-0.5" />
+                <Link href="/contact" className="flex items-center gap-3 group">
+                  <div className="w-10 h-10 rounded-full bg-[#EAF3FF] flex items-center justify-center group-hover:scale-105 transition-transform text-[#0055FF] shadow-sm">
+                    <Headset className="w-4 h-4" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="font-bold text-[13px] text-[#111827] leading-tight">Watch Our Story</span>
-                    <span className="text-[11px] text-gray-500">(2 min)</span>
+                    <span className="font-bold text-[13px] text-[#111827] group-hover:text-[#0055FF] transition-colors leading-tight">
+                      Talk to an Expert
+                    </span>
+                    <span className="text-[11px] text-gray-500 font-medium leading-none">Free Consultation</span>
                   </div>
-                </div>
-              </motion.div>
+                </Link>
+              </FadeIn>
             </div>
 
             {/* Stats Row at the bottom */}
             {stats && (
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 }}
-                className="flex items-center pt-2"
-              >
+              <FadeIn direction="up" delay={0.4} className="flex items-center pt-2">
                 {stats.map((stat, idx) => (
                   <React.Fragment key={stat.label}>
                     <div className="flex flex-col">
@@ -169,7 +135,7 @@ export function TruePartner() {
                     )}
                   </React.Fragment>
                 ))}
-              </motion.div>
+              </FadeIn>
             )}
           </div>
 
@@ -177,12 +143,10 @@ export function TruePartner() {
           <div className="lg:col-span-7 flex items-center justify-between gap-4 lg:gap-6 relative">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-1">
               {cardConfig.map((card, idx) => (
-                <motion.div
+                <FadeIn
                   key={card.title}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.08 }}
+                  direction="up"
+                  delay={idx * 0.08}
                   className="bg-white border border-blue-50/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-[22px] p-5 lg:p-6 flex items-start gap-3.5 hover:shadow-[0_8px_26px_rgba(0,85,255,0.08)] hover:-translate-y-0.5 transition-all group"
                 >
                   <div className={`w-13 h-13 rounded-full ${card.bg} flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform p-3`}>
@@ -199,18 +163,12 @@ export function TruePartner() {
                   <div className="w-8 h-8 rounded-full bg-[#F0F6FF] flex items-center justify-center shrink-0 self-center group-hover:bg-[#0055FF] group-hover:text-white transition-colors text-[#0055FF]">
                     <ArrowRight className="w-3.5 h-3.5" />
                   </div>
-                </motion.div>
+                </FadeIn>
               ))}
             </div>
 
             {/* Floating Calligraphy - inside flex flow to never clip */}
-            <motion.div
-              initial={{ opacity: 0, rotate: -15 }}
-              whileInView={{ opacity: 1, rotate: -9 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5, type: "spring" }}
-              className="hidden xl:flex flex-col items-start shrink-0 text-[#0055FF] pointer-events-none select-none ml-3 font-[family-name:var(--font-playball)]"
-            >
+            <div className="hidden xl:flex flex-col items-start shrink-0 text-[#0055FF] pointer-events-none select-none ml-3 font-[family-name:var(--font-playball)] -rotate-6">
               <span className="text-[25px] xl:text-[28px] leading-[1.2] whitespace-nowrap">
                 People<br />
                 Performance<br />
@@ -219,7 +177,7 @@ export function TruePartner() {
               <svg viewBox="0 0 120 12" fill="none" className="w-28 mt-1 text-[#0055FF]/80">
                 <path d="M2 9C35 2 85 2 118 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
               </svg>
-            </motion.div>
+            </div>
           </div>
 
         </div>

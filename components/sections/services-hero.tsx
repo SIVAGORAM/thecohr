@@ -1,7 +1,5 @@
-"use client";
-
-import { motion } from "framer-motion";
-import Image from "next/image";
+import { FadeIn } from "@/components/ui/fade-in";
+import { ProtectedImage } from "@/components/ui/protected-image";
 import { Settings, Users, ShieldCheck, TrendingUp } from "lucide-react";
 
 export function ServicesHero() {
@@ -14,12 +12,7 @@ export function ServicesHero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Column: Text & 4 Pill Badges */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="lg:col-span-7 space-y-4 sm:space-y-5"
-          >
+          <FadeIn direction="right" duration={0.6} className="lg:col-span-7 space-y-4 sm:space-y-5">
             {/* Eyebrow */}
             <div className="text-xs font-bold uppercase tracking-widest text-[#0066FF]">
               OUR SERVICES
@@ -78,28 +71,24 @@ export function ServicesHero() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </FadeIn>
 
           {/* Right Column: Image & Overlay Elements */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="lg:col-span-5 relative flex items-center justify-end"
-          >
+          <FadeIn direction="left" duration={0.6} delay={0.1} className="lg:col-span-5 relative flex items-center justify-end">
             {/* Image Frame */}
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-blue-100/80 bg-white max-w-[560px] w-full">
-              <Image
+              <ProtectedImage
                 src="/images/services-hero-tablet.jpg"
                 alt="Our Services - The Co HR"
                 width={600}
                 height={420}
                 className="w-full h-auto object-cover transform hover:scale-102 transition-transform duration-500"
+                sizes="(max-width: 1024px) 100vw, 45vw"
                 priority
               />
 
               {/* Floating Cursive Script Calligraphy on top-right (visible on sm and larger screens) */}
-              <div className="absolute top-3 right-4 sm:top-5 sm:right-6 z-20 pointer-events-none transform rotate-[-3deg] hidden sm:block">
+              <div className="absolute top-3 right-4 sm:top-5 sm:right-6 z-20 pointer-events-none transform -rotate-3 hidden sm:block">
                 <span className="block text-2xl sm:text-3xl lg:text-[32px] text-[#2B74E2] font-normal font-[family-name:var(--font-playball)] leading-tight drop-shadow-sm">
                   People<br />
                   Performance<br />
@@ -121,7 +110,7 @@ export function ServicesHero() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </FadeIn>
 
         </div>
       </div>

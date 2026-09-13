@@ -1,7 +1,5 @@
-"use client";
-
-import { motion } from "framer-motion";
-import Image from "next/image";
+import { FadeIn } from "@/components/ui/fade-in";
+import { ProtectedImage } from "@/components/ui/protected-image";
 
 export function OurStory() {
   return (
@@ -10,32 +8,22 @@ export function OurStory() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Office Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="lg:col-span-6 relative"
-          >
+          <FadeIn direction="right" duration={0.6} className="lg:col-span-6 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-xl border border-slate-100 bg-slate-50">
-              <Image
+              <ProtectedImage
                 src="/images/about-office.jpg"
                 alt="The Co HR Office"
                 width={700}
                 height={500}
                 className="w-full h-auto object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                loading="lazy"
               />
             </div>
-          </motion.div>
+          </FadeIn>
 
           {/* Right Column: Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="lg:col-span-6 space-y-6 pt-6 lg:pt-0"
-          >
+          <FadeIn direction="left" duration={0.6} delay={0.1} className="lg:col-span-6 space-y-6 pt-6 lg:pt-0">
             {/* Eyebrow */}
             <div className="text-xs font-bold uppercase tracking-widest text-[#0066FF]">
               OUR STORY
@@ -62,11 +50,10 @@ export function OurStory() {
                 Whether you're implementing your first HR system, outsourcing HR operations, or training your workforce, The Co HR delivers tailored solutions designed to support your growth at every stage.
               </p>
             </div>
-          </motion.div>
+          </FadeIn>
 
         </div>
       </div>
     </section>
   );
 }
-

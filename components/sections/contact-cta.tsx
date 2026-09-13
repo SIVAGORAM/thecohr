@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { FadeIn } from "@/components/ui/fade-in";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -8,13 +6,7 @@ export function ContactCTA() {
   return (
     <section className="bg-white py-3 sm:py-5 lg:py-6">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="bg-gradient-to-r from-[#031846] via-[#05215E] to-[#031846] rounded-3xl p-8 sm:p-12 text-white shadow-xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6"
-        >
+        <FadeIn direction="up" duration={0.5} className="bg-gradient-to-r from-[#031846] via-[#05215E] to-[#031846] rounded-3xl p-8 sm:p-12 text-white shadow-xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Subtle background glow */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -38,7 +30,7 @@ export function ContactCTA() {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
-        </motion.div>
+        </FadeIn>
       </div>
     </section>
   );

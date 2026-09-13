@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import { FadeIn } from "@/components/ui/fade-in";
 import { Users, Building, ShieldCheck, TrendingUp } from "lucide-react";
 
 const stats = [
@@ -35,12 +33,11 @@ export function ServicesStats() {
             {stats.map((item, index) => {
               const Icon = item.icon;
               return (
-                <motion.div
+                <FadeIn
                   key={index}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  direction="up"
+                  duration={0.4}
+                  delay={index * 0.1}
                   className={`flex items-center gap-4 ${index !== 0 ? "pt-3 sm:pt-2 lg:pt-0 lg:pl-6" : ""}`}
                 >
                   <div className="w-12 h-12 rounded-2xl bg-blue-100/70 flex items-center justify-center text-[#0066FF] shrink-0">
@@ -54,7 +51,7 @@ export function ServicesStats() {
                       {item.label}
                     </div>
                   </div>
-                </motion.div>
+                </FadeIn>
               );
             })}
           </div>

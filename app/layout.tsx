@@ -3,10 +3,7 @@ import { Sora, Inter, Playball, Caveat } from "next/font/google";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { JsonLd } from "@/components/seo/json-ld";
-import { WhatsAppButton } from "@/components/ui/whatsapp-button";
-import { CookieBanner } from "@/components/ui/cookie-banner";
-import { MobileStickyCTA } from "@/components/ui/mobile-sticky-cta";
-import { NetworkStatus } from "@/components/ui/network-status";
+import { ClientWidgets } from "@/components/layout/client-widgets";
 import "./globals.css";
 
 const sora = Sora({
@@ -90,14 +87,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       className={`${sora.variable} ${inter.variable} ${playball.variable} ${caveat.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans text-ink">
-        <NetworkStatus />
         <JsonLd data={orgSchema} />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
-        <WhatsAppButton />
-        <MobileStickyCTA />
-        <CookieBanner />
+        <ClientWidgets />
       </body>
     </html>
   );
