@@ -37,12 +37,13 @@ export function ServicesSolutions() {
   useEffect(() => {
     if (typeof window !== "undefined" && window.location.hash) {
       const hash = window.location.hash.substring(1);
-      const element = document.getElementById(hash);
-      if (element) {
-        setTimeout(() => {
+      const timer = setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
           element.scrollIntoView({ behavior: "smooth" });
-        }, 150);
-      }
+        }
+      }, 300);
+      return () => clearTimeout(timer);
     }
   }, []);
 

@@ -402,26 +402,60 @@ export function Navbar() {
                   </Link>
 
                   <div className="flex flex-col">
-                    <button
-                      onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                    <div
                       className={cn(
-                        "flex items-center justify-between px-4 py-3 rounded-xl font-bold text-base transition-colors w-full text-left",
+                        "flex items-center justify-between px-4 py-3 rounded-xl font-bold text-base transition-colors w-full",
                         pathname.startsWith("/services")
                           ? "bg-blue-50 text-[#0066FF]"
                           : "text-slate-800 hover:bg-slate-50"
                       )}
                     >
-                      <span>Services</span>
-                      <ChevronDown
-                        className={cn(
-                          "w-5 h-5 transition-transform duration-200 text-slate-400",
-                          mobileServicesOpen ? "rotate-180 text-[#0066FF]" : ""
-                        )}
-                      />
-                    </button>
+                      <Link
+                        href="/services"
+                        onClick={() => {
+                          setIsOpen(false);
+                          if (pathname === "/services") {
+                            window.scrollTo({ top: 0, behavior: "smooth" });
+                          }
+                        }}
+                        className="flex-1 text-left"
+                      >
+                        Services
+                      </Link>
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setMobileServicesOpen(!mobileServicesOpen);
+                        }}
+                        className="p-1 -mr-1 hover:bg-blue-100/50 rounded-lg transition-colors"
+                        aria-label="Toggle Services submenu"
+                      >
+                        <ChevronDown
+                          className={cn(
+                            "w-5 h-5 transition-transform duration-200 text-slate-400",
+                            mobileServicesOpen ? "rotate-180 text-[#0066FF]" : ""
+                          )}
+                        />
+                      </button>
+                    </div>
 
                     {mobileServicesOpen && (
                       <div className="ml-4 pl-3 border-l-2 border-blue-100 flex flex-col gap-1.5 my-1 py-1">
+                        <Link
+                          href="/services"
+                          onClick={() => {
+                            setIsOpen(false);
+                            setMobileServicesOpen(false);
+                            if (pathname === "/services") {
+                              window.scrollTo({ top: 0, behavior: "smooth" });
+                            }
+                          }}
+                          className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-[#0066FF] hover:bg-slate-50 font-bold"
+                        >
+                          <Sparkles className="w-3.5 h-3.5" />
+                          <span>All Services Overview</span>
+                        </Link>
                         {servicesItems.map((item) => (
                           <Link
                             key={item.title}
@@ -432,10 +466,12 @@ export function Navbar() {
                               if (pathname === "/services") {
                                 const hash = item.href.split("#")[1];
                                 if (hash) {
-                                  const el = document.getElementById(hash);
-                                  if (el) {
-                                    el.scrollIntoView({ behavior: "smooth" });
-                                  }
+                                  setTimeout(() => {
+                                    const el = document.getElementById(hash);
+                                    if (el) {
+                                      el.scrollIntoView({ behavior: "smooth" });
+                                    }
+                                  }, 100);
                                 }
                               }
                             }}
