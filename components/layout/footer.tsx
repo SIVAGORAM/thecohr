@@ -78,7 +78,7 @@ export function Footer() {
           <defs>
             <linearGradient id="footer-wave-grad" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#0055FF" stopOpacity="0.3" />
-              <stop offset="50%" stopColor="#00A3FF" stopOpacity="0.1" />
+              <stop offset="50%" stopColor="#0066FF" stopOpacity="0.1" />
               <stop offset="100%" stopColor="#003399" stopOpacity="0.4" />
             </linearGradient>
           </defs>
@@ -107,7 +107,7 @@ export function Footer() {
             {/* Headline */}
             <div className="text-xl sm:text-2xl lg:text-[26px] font-extrabold text-white tracking-tight leading-snug">
               Empowering People.<br />
-              Building <span className="text-[#00A3FF]">Tomorrow.</span>
+              Building <span className="text-[#0066FF]">Tomorrow.</span>
             </div>
 
             {/* Description */}
@@ -143,14 +143,14 @@ export function Footer() {
 
             {/* Calligraphy Script Accent */}
             <div className="pt-2 sm:pt-3">
-              <div className="font-[family-name:var(--font-playball)] text-[#00A3FF] text-xl sm:text-2xl lg:text-3xl -rotate-2 leading-tight tracking-wide">
+              <div className="font-[family-name:var(--font-playball)] text-[#0066FF] text-xl sm:text-2xl lg:text-3xl -rotate-2 leading-tight tracking-wide">
                 Better People
               </div>
               <div className="relative inline-block">
-                <span className="font-[family-name:var(--font-playball)] text-[#00A3FF] text-xl sm:text-2xl lg:text-3xl -rotate-2 leading-tight tracking-wide">
+                <span className="font-[family-name:var(--font-playball)] text-[#0066FF] text-xl sm:text-2xl lg:text-3xl -rotate-2 leading-tight tracking-wide">
                   Brighter Possibilities
                 </span>
-                <svg className="absolute -bottom-2 left-0 w-full h-3 text-[#00A3FF]/60 overflow-visible" viewBox="0 0 200 12" fill="none">
+                <svg className="absolute -bottom-2 left-0 w-full h-3 text-[#0066FF]/60 overflow-visible" viewBox="0 0 200 12" fill="none">
                   <path d="M2,8 Q100,-2 198,8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
                 </svg>
               </div>
@@ -174,7 +174,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link href={link.href} className="group flex items-center justify-between text-slate-400 hover:text-white transition-colors">
                     <span>{link.label}</span>
-                    <ChevronRight className="w-3.5 h-3.5 text-slate-600 group-hover:text-[#00A3FF] group-hover:translate-x-1 transition-all" />
+                    <ChevronRight className="w-3.5 h-3.5 text-slate-600 group-hover:text-[#0066FF] group-hover:translate-x-1 transition-all" />
                   </Link>
                 </li>
               ))}
@@ -188,10 +188,10 @@ export function Footer() {
             </h4>
             <ul className="space-y-3.5 sm:space-y-4">
               {[
-                { label: "HR ERP Software", icon: <Monitor className="w-4 h-4 text-[#00A3FF]" />, href: "/services#hr-erp-software" },
-                { label: "Remote HR Services", icon: <Users className="w-4 h-4 text-[#00A3FF]" />, href: "/services#remote-hr-services" },
-                { label: "ERP Training & Upskilling", icon: <GraduationCap className="w-4 h-4 text-[#00A3FF]" />, href: "/services#erp-training" },
-                { label: "Book a Demo", icon: <Headset className="w-4 h-4 text-[#00A3FF]" />, href: "/contact" },
+                { label: "HR ERP Software", icon: <Monitor className="w-4 h-4 text-[#0066FF]" />, href: "/services#hr-erp-software" },
+                { label: "Remote HR Services", icon: <Users className="w-4 h-4 text-[#0066FF]" />, href: "/services#remote-hr-services" },
+                { label: "ERP Training & Upskilling", icon: <GraduationCap className="w-4 h-4 text-[#0066FF]" />, href: "/services#erp-training" },
+                { label: "Book a Demo", icon: <Headset className="w-4 h-4 text-[#0066FF]" />, href: "/contact" },
               ].map((service) => (
                 <li key={service.label}>
                   <Link href={service.href} className="group flex items-center gap-3 text-xs lg:text-sm text-slate-400 hover:text-white transition-colors">
@@ -218,7 +218,7 @@ export function Footer() {
                   <Mail className="w-4 h-4" />
                 </div>
                 <div className="min-w-0">
-                  <a href="mailto:info@thecohr.com" className="text-white font-medium hover:text-[#00A3FF] transition-colors block truncate">
+                  <a href="mailto:info@thecohr.com" className="text-white font-medium hover:text-[#0066FF] transition-colors block truncate">
                     info@thecohr.com
                   </a>
                   <span className="text-[11px] text-slate-400 block mt-0.5">We reply within 24 hours</span>
@@ -231,7 +231,7 @@ export function Footer() {
                   <Phone className="w-4 h-4" />
                 </div>
                 <div className="min-w-0">
-                  <a href="tel:+919019724365" className="text-white font-medium hover:text-[#00A3FF] transition-colors block">
+                  <a href="tel:+919019724365" className="text-white font-medium hover:text-[#0066FF] transition-colors block">
                     +91 90197 24365
                   </a>
                   <span className="text-[11px] text-slate-400 block mt-0.5 whitespace-nowrap">Mon - Sat, 9:00 AM - 6:00 PM</span>
@@ -262,21 +262,21 @@ export function Footer() {
                     <circle cx="110" cy="25" r="1.5" /><circle cx="120" cy="22" r="1.5" /><circle cx="125" cy="30" r="1.5" />
                     <circle cx="115" cy="45" r="1.5" /><circle cx="120" cy="55" r="1.5" /><circle cx="125" cy="65" r="1.5" />
                     <circle cx="150" cy="25" r="1.5" /><circle cx="165" cy="20" r="1.5" /><circle cx="175" cy="30" r="1.5" />
-                    <circle cx="155" cy="40" r="2.5" className="text-[#00A3FF] animate-pulse" />
+                    <circle cx="155" cy="40" r="2.5" className="text-[#0066FF] animate-pulse" />
                     <circle cx="165" cy="42" r="1.5" /><circle cx="180" cy="45" r="1.5" />
                     <circle cx="190" cy="70" r="1.5" /><circle cx="200" cy="75" r="1.5" />
                   </g>
-                  <path d="M50,22 Q100,5 155,40" stroke="#00A3FF" strokeWidth="1" strokeDasharray="2,2" opacity="0.6" />
-                  <path d="M120,22 Q140,10 155,40" stroke="#00A3FF" strokeWidth="1" strokeDasharray="2,2" opacity="0.6" />
+                  <path d="M50,22 Q100,5 155,40" stroke="#0066FF" strokeWidth="1" strokeDasharray="2,2" opacity="0.6" />
+                  <path d="M120,22 Q140,10 155,40" stroke="#0066FF" strokeWidth="1" strokeDasharray="2,2" opacity="0.6" />
                 </svg>
               </div>
 
               {/* Overlaid Calligraphy */}
               <div className="absolute top-4 left-0 w-full text-center pointer-events-none transform -rotate-2">
-                <div className="font-[family-name:var(--font-playball)] text-[#00A3FF] text-base sm:text-lg lg:text-xl leading-tight drop-shadow-md">
+                <div className="font-[family-name:var(--font-playball)] text-[#0066FF] text-base sm:text-lg lg:text-xl leading-tight drop-shadow-md">
                   Supporting Businesses
                 </div>
-                <div className="font-[family-name:var(--font-playball)] text-[#00A3FF] text-base sm:text-lg lg:text-xl leading-tight drop-shadow-md">
+                <div className="font-[family-name:var(--font-playball)] text-[#0066FF] text-base sm:text-lg lg:text-xl leading-tight drop-shadow-md">
                   Across the Globe
                 </div>
               </div>
@@ -344,7 +344,7 @@ export function Footer() {
                     )}
                     
                     <div className="flex items-center gap-1.5 text-[11px] text-slate-400 px-2">
-                      <Lock className="w-3.5 h-3.5 text-[#00A3FF]" />
+                      <Lock className="w-3.5 h-3.5 text-[#0066FF]" />
                       <span>We respect your privacy.</span>
                     </div>
                   </form>
@@ -352,7 +352,7 @@ export function Footer() {
               </div>
 
               {/* Solid Vibrant Corner Gradient Swoop from Mockup */}
-              <div className="w-28 sm:w-32 h-28 sm:h-32 bg-gradient-to-tr from-[#0044FF] to-[#00A3FF] rounded-tl-full absolute -bottom-2 -right-2 pointer-events-none opacity-80" />
+              <div className="w-28 sm:w-32 h-28 sm:h-32 bg-gradient-to-tr from-[#0044FF] to-[#0066FF] rounded-tl-full absolute -bottom-2 -right-2 pointer-events-none opacity-80" />
             </div>
           </div>
 

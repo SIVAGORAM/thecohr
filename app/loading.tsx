@@ -10,7 +10,7 @@ export default function Loading() {
         {/* Animated Brand Pulse Badge */}
         <div className="relative flex items-center justify-center w-20 h-20">
           {/* Outer Rotating Glowing Ring */}
-          <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-[#0066FF] border-r-[#00A3FF] animate-spin" />
+          <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-[#0066FF] border-r-[#0055FF] animate-spin" />
           
           {/* Subtle Inner Pulsing Ring */}
           <div className="absolute inset-2 rounded-full border border-blue-500/30 animate-ping opacity-30" />
@@ -39,7 +39,7 @@ export default function Loading() {
 
           {/* Progress Shimmer Line */}
           <div className="w-44 h-1 bg-slate-800 rounded-full overflow-hidden mx-auto mt-3">
-            <div className="h-full bg-gradient-to-r from-[#0066FF] via-[#00A3FF] to-[#0066FF] rounded-full animate-shimmer w-full" />
+            <div className="h-full bg-gradient-to-r from-[#0066FF] via-[#0055FF] to-[#0066FF] rounded-full animate-shimmer w-full" />
           </div>
         </div>
       </div>

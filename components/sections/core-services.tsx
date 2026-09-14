@@ -89,7 +89,7 @@ export function CoreServices() {
                 <div className="relative z-10 flex flex-col h-full">
                   
                   {/* Icon */}
-                  <div className="w-[72px] h-[72px] rounded-full bg-gradient-to-br from-[#00A3FF] to-[#0055FF] flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20 shrink-0">
+                  <div className="w-[72px] h-[72px] rounded-full bg-gradient-to-br from-[#0066FF] to-[#0055FF] flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20 shrink-0">
                     {iconsMap[service.icon]}
                   </div>
 

@@ -17,7 +17,7 @@ export function AboutHero() {
 
             {/* Headline */}
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#051332] tracking-tight leading-tight">
-              Empowering Businesses Through <span className="text-[#00A3FF]">People</span> and <span className="text-[#00A3FF]">Technology</span>
+              Empowering Businesses Through <span className="text-[#0066FF]">People</span> and <span className="text-[#0066FF]">Technology</span>
             </h1>
 
             {/* Paragraph */}
