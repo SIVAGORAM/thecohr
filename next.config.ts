@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   images: {
     formats: ["image/avif", "image/webp"],
-    qualities: [75, 85, 100],
+    qualities: [75, 85, 95, 100],
     minimumCacheTTL: 31536000,
   },
   experimental: {

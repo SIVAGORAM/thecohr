@@ -28,44 +28,26 @@ export function Hero() {
             alt="The Co HR Platform Overview"
             fill
             sizes="(max-width: 1024px) 100vw, 65vw"
-            className="object-cover object-center"
+            className="object-cover object-top"
             priority
           />
 
           {/* Soft fade overlay over the left edge of the photo */}
           <div className="absolute inset-y-0 left-0 w-[240px] bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
-          {/* Floating UI: Total Employees */}
-          <FadeIn
-            direction="up"
-            delay={0.6}
-            className="absolute top-[28%] left-[25%] z-40 bg-white rounded-2xl p-5 shadow-[0_8px_30px_rgb(0,0,0,0.06)] w-[210px] pointer-events-auto"
-          >
-            <p className="text-[13px] font-bold text-[#111827] mb-1">Total Employees</p>
-            <div className="flex justify-between items-end">
-              <div>
-                <p className="text-[28px] font-bold text-[#111827] leading-none mb-1">1,248</p>
-                <p className="text-[11px] font-bold text-[#22c55e]">↑ 12% this month</p>
-              </div>
-              <div className="flex items-end gap-1.5 pb-1">
-                <div className="w-2 h-4 bg-[#BFDBFE] rounded-t-sm" />
-                <div className="w-2 h-6 bg-[#60A5FA] rounded-t-sm" />
-                <div className="w-2 h-9 bg-[#0066FF] rounded-t-sm" />
-              </div>
-            </div>
-          </FadeIn>
+
 
           {/* Floating UI: Calligraphy Text & Green Swoosh */}
-          <div className="absolute top-[2%] right-[8%] z-40 transform -rotate-6 pointer-events-none">
+          <div className="absolute top-[3%] right-[2%] xl:right-[3%] z-40 transform -rotate-2 pointer-events-none">
             <div className="relative flex flex-col items-end">
               <p 
-                className="text-[44px] text-[#0055FF] leading-[1.0] whitespace-nowrap font-bold"
+                className="text-[28px] lg:text-[32px] xl:text-[36px] text-[#0055FF] leading-[1.05] whitespace-nowrap font-bold drop-shadow-sm"
                 style={{ fontFamily: "'Caveat', cursive" }}
               >
                 Better People<br />
-                <span className="relative inline-block mt-1">
+                <span className="relative inline-block mt-0.5">
                   Brighter Possibilities
-                  <svg className="absolute -bottom-4 left-0 w-[110%] h-[20px]" viewBox="0 0 100 20" preserveAspectRatio="none">
+                  <svg className="absolute -bottom-3 left-0 w-[110%] h-[15px]" viewBox="0 0 100 20" preserveAspectRatio="none">
                     <path d="M0,15 Q50,15 100,5" fill="none" stroke="#22c55e" strokeWidth="3" strokeLinecap="round" />
                   </svg>
                 </span>
@@ -161,15 +143,15 @@ export function Hero() {
             >
               {ctas.primary} <ArrowRight className="w-5 h-5" />
             </Link>
-            <Link
-              href="/contact"
+            <a
+              href="tel:+919019724365"
               className={cn(
                 buttonVariants({ variant: "outline" }),
                 "border-[1.5px] border-[#0066FF] bg-transparent text-[#0066FF] hover:bg-blue-50 rounded-lg px-8 py-6 font-medium text-[16px] flex items-center justify-center"
               )}
             >
               {ctas.secondary}
-            </Link>
+            </a>
           </div>
 
           {/* Trust Badges */}
@@ -194,19 +176,19 @@ export function Hero() {
         </div>
 
         {/* Right Column Mobile (Image & Reorganized UI) */}
-        <div className="lg:col-span-6 relative w-full block lg:hidden flex-col items-center mt-2 pointer-events-auto z-40">
+        <div className="lg:col-span-6 relative w-full block lg:hidden flex-col items-center mt-1 pointer-events-auto z-40">
           
-          {/* Mobile Calligraphy Text placed elegantly above the image */}
-          <div className="w-full flex justify-end mb-[-12px] pr-3 relative z-20 pointer-events-none -rotate-6">
-            <div className="relative flex flex-col items-end">
+          {/* Mobile Calligraphy Text centered elegantly above the image */}
+          <div className="w-full flex justify-center pt-0.5 pb-1 relative z-20 pointer-events-none -rotate-1">
+            <div className="relative flex flex-col items-center text-center">
               <p 
-                className="text-[36px] text-[#0055FF] leading-[1.0] whitespace-nowrap font-bold"
+                className="text-[26px] sm:text-[30px] text-[#0055FF] leading-[1.05] whitespace-nowrap font-bold"
                 style={{ fontFamily: "'Caveat', cursive" }}
               >
                 Better People<br />
-                <span className="relative inline-block mt-1">
+                <span className="relative inline-block mt-0.5">
                   Brighter Possibilities
-                  <svg className="absolute -bottom-3 left-0 w-[110%] h-[16px]" viewBox="0 0 100 20" preserveAspectRatio="none">
+                  <svg className="absolute -bottom-2.5 left-0 w-[110%] h-[12px]" viewBox="0 0 100 20" preserveAspectRatio="none">
                     <path d="M0,15 Q50,15 100,5" fill="none" stroke="#22c55e" strokeWidth="3" strokeLinecap="round" />
                   </svg>
                 </span>
@@ -227,21 +209,7 @@ export function Hero() {
             {/* Soft gradient at top to blend slightly with the white background */}
             <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/80 to-transparent z-10" />
             
-            {/* Mobile Floating UI: Total Employees tucked in bottom left */}
-            <div className="absolute bottom-4 left-4 z-20 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-white/50 w-[160px]">
-              <p className="text-[11px] font-bold text-[#111827] mb-1">Total Employees</p>
-              <div className="flex justify-between items-end">
-                <div>
-                  <p className="text-[20px] font-bold text-[#111827] leading-none mb-1">1,248</p>
-                  <p className="text-[9px] font-bold text-[#22c55e]">↑ 12% this month</p>
-                </div>
-                <div className="flex items-end gap-1 pb-1">
-                  <div className="w-1.5 h-3 bg-[#BFDBFE] rounded-t-sm" />
-                  <div className="w-1.5 h-5 bg-[#60A5FA] rounded-t-sm" />
-                  <div className="w-1.5 h-7 bg-[#0066FF] rounded-t-sm" />
-                </div>
-              </div>
-            </div>
+
 
             {/* Mobile Floating UI: Vertical Checklist (Mini Icons Only) */}
             <div className="absolute top-[20%] right-2 z-20 bg-white/95 backdrop-blur-md rounded-[20px] p-2 shadow-xl border border-white/50 flex flex-col gap-2 scale-90 origin-right">

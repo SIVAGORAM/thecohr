@@ -22,13 +22,13 @@ export function ContactCTA() {
 
           {/* Right Button */}
           <div className="relative z-10 shrink-0">
-            <Link
-              href="/contact"
+            <a
+              href="tel:+919019724365"
               className="bg-white hover:bg-blue-50 text-[#051332] font-bold text-sm sm:text-base px-7 py-3.5 rounded-full flex items-center gap-2 transition-all shadow-md hover:shadow-lg group"
             >
               <span>Talk to an Expert</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </a>
           </div>
         </FadeIn>
       </div>

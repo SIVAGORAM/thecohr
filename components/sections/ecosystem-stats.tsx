@@ -66,7 +66,7 @@ export function EcosystemStats() {
             {/* Bottom Row: Play Button & Mini Features */}
             <FadeIn direction="up" delay={0.3} className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-6 mt-2">
               {/* Talk to an Expert Link */}
-              <Link href="/contact" className="flex items-center gap-3 group sm:border-r sm:border-gray-300/50 sm:pr-6">
+              <a href="tel:+919019724365" className="flex items-center gap-3 group sm:border-r sm:border-gray-300/50 sm:pr-6">
                 <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#0088FF] to-[#0055FF] text-white flex items-center justify-center shadow-[0_6px_16px_rgba(0,85,255,0.35)] group-hover:scale-105 transition-transform shrink-0">
                   <Headset className="w-5 h-5" />
                 </div>
@@ -74,7 +74,7 @@ export function EcosystemStats() {
                   <span className="font-bold text-[13px] text-navy-900 leading-tight group-hover:text-[#0055FF] transition-colors">Talk to an HR Expert</span>
                   <span className="text-[11px] text-gray-500 font-medium">Free Consultation</span>
                 </div>
-              </Link>
+              </a>
 
               {/* Mini Features */}
               <div className="flex gap-5">

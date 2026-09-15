@@ -32,12 +32,12 @@ export function ServicesCTA() {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
 
-              <Link
-                href="/contact"
+              <a
+                href="tel:+919019724365"
                 className="bg-white/90 hover:bg-white border border-blue-200 text-[#0066FF] hover:text-[#0052CC] rounded-xl px-7 py-3.5 font-semibold text-base transition-all shadow-sm hover:shadow"
               >
                 Talk to an Expert
-              </Link>
+              </a>
             </div>
           </FadeIn>
 

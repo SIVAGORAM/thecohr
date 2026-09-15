@@ -33,10 +33,9 @@ const localBusinessSchema = {
   "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Hitech City, Tech Hub",
+    "streetAddress": "Pranava Business Park, 7th Floor, Kondapur",
     "addressLocality": "Hyderabad",
     "addressRegion": "Telangana",
-    "postalCode": "500081",
     "addressCountry": "IN"
   },
   "geo": {

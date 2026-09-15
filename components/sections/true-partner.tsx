@@ -103,7 +103,7 @@ export function TruePartner() {
                   {cta} <ArrowRight className="w-4 h-4" />
                 </Link>
                 
-                <Link href="/contact" className="flex items-center gap-3 group">
+                <a href="tel:+919019724365" className="flex items-center gap-3 group">
                   <div className="w-10 h-10 rounded-full bg-[#EAF3FF] flex items-center justify-center group-hover:scale-105 transition-transform text-[#0055FF] shadow-sm">
                     <Headset className="w-4 h-4" />
                   </div>
@@ -113,7 +113,7 @@ export function TruePartner() {
                     </span>
                     <span className="text-[11px] text-gray-500 font-medium leading-none">Free Consultation</span>
                   </div>
-                </Link>
+                </a>
               </FadeIn>
             </div>
 

@@ -1,70 +1,87 @@
+"use client";
+
+import { useState } from "react";
 import { FadeIn } from "@/components/ui/fade-in";
 import { ProtectedImage } from "@/components/ui/protected-image";
-import { Building2, MapPin, Plus, Minus } from "lucide-react";
+import { Building2, MapPin, Plus, Minus, ExternalLink } from "lucide-react";
 
 export function ContactLocationOffice() {
+  const [zoomLevel, setZoomLevel] = useState(15);
+
+  const handleZoomIn = () => {
+    setZoomLevel((prev) => Math.min(prev + 1, 20));
+  };
+
+  const handleZoomOut = () => {
+    setZoomLevel((prev) => Math.max(prev - 1, 10));
+  };
+
+  const mapQuery = encodeURIComponent("Pranava Business Park, Kondapur, Hyderabad, Telangana");
+  const googleMapsUrl = `https://maps.google.com/?q=${mapQuery}`;
+  const iframeSrc = `https://maps.google.com/maps?q=${mapQuery}&t=&z=${zoomLevel}&ie=UTF8&iwloc=&output=embed`;
+
   return (
     <section className="bg-white py-3 sm:py-4 lg:py-6">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
-          {/* ==================== LEFT CARD: Hyderabad Map Graphic ==================== */}
+          {/* ==================== LEFT CARD: Interactive Google Map ==================== */}
           <FadeIn
             direction="up"
             duration={0.5}
-            className="lg:col-span-7 bg-[#F4F8FB] rounded-3xl border border-slate-200/80 shadow-sm relative overflow-hidden min-h-[300px] flex flex-col justify-between p-6 sm:p-8"
+            className="lg:col-span-7 bg-[#F4F8FB] rounded-3xl border border-slate-200/80 shadow-sm relative overflow-hidden min-h-[340px] flex flex-col justify-between p-4 sm:p-6"
           >
-            {/* Map Visual Background Grid & Landmarks */}
-            <div className="absolute inset-0 bg-[#F4F7F6] opacity-90">
-              {/* Roads / Map vector styling */}
-              <svg className="w-full h-full text-slate-300/70" viewBox="0 0 600 350" fill="none">
-                <path d="M-20 80 Q 200 120 620 90" stroke="currentColor" strokeWidth="6" />
-                <path d="M-20 220 Q 250 180 620 250" stroke="currentColor" strokeWidth="8" />
-                <path d="M120 -20 Q 150 180 200 370" stroke="currentColor" strokeWidth="6" />
-                <path d="M400 -20 Q 380 200 450 370" stroke="currentColor" strokeWidth="6" />
-                <path d="M250 100 Q 300 250 550 320" stroke="#E2E8F0" strokeWidth="4" />
-              </svg>
+            {/* Embedded Live Google Map */}
+            <div className="absolute inset-0 z-0">
+              <iframe
+                title="Office Location Map"
+                src={iframeSrc}
+                className="w-full h-full border-0 rounded-3xl"
+                loading="lazy"
+                allowFullScreen
+              />
             </div>
 
-            {/* City Area Labels */}
-            <div className="relative z-10 font-bold text-slate-400 text-xs sm:text-sm tracking-wide select-none pointer-events-none">
-              <span className="absolute top-6 left-1/4 text-slate-600 font-extrabold text-xs">Kukatpally</span>
-              <span className="absolute top-8 right-1/4 text-slate-600 font-extrabold text-xs">Secunderabad</span>
-              <span className="absolute bottom-16 left-12 text-slate-600 font-extrabold text-xs">Banjara Hills</span>
-              <span className="absolute bottom-14 right-1/4 text-slate-600 font-extrabold text-xs">Uppal</span>
-              <span className="absolute bottom-6 right-12 text-slate-600 font-extrabold text-xs">Nagole</span>
-            </div>
-
-            {/* Main City Title */}
-            <div className="relative z-10 mt-auto pt-16">
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-800 tracking-tight">
-                Hyderabad<br />
-                <span className="text-sm font-bold text-slate-500 font-sans">హైదరాబాద్</span>
-              </h3>
-            </div>
-
-            {/* Center Map Location Pin Overlay */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 flex items-center gap-2 bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-3.5 shadow-xl border border-slate-100 max-w-[260px]">
-              <div className="w-9 h-9 rounded-full bg-red-500 text-white flex items-center justify-center shrink-0 shadow-md">
-                <MapPin className="w-5 h-5 fill-white text-red-500" />
-              </div>
-              <div className="text-left">
-                <div className="text-xs sm:text-sm font-extrabold text-[#051332]">
-                  The Co HR Private Limited
+            {/* Bottom-Left City / Directions Info Badge */}
+            <a
+              href={googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative z-20 mt-auto self-start bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-4 shadow-xl border border-slate-200/80 hover:border-[#0066FF] transition-all group max-w-[320px]"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-red-500 text-white flex items-center justify-center shrink-0 shadow-md group-hover:scale-110 transition-transform">
+                  <MapPin className="w-5 h-5 fill-white text-red-500" />
                 </div>
-                <div className="text-[10px] sm:text-xs font-semibold text-slate-500">
-                  Hyderabad, Telangana
+                <div className="text-left">
+                  <div className="text-xs sm:text-sm font-extrabold text-[#051332] flex items-center gap-1 group-hover:text-[#0066FF] transition-colors">
+                    <span>The Co HR Private Limited</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </div>
+                  <div className="text-[11px] sm:text-xs font-semibold text-slate-600 line-clamp-2">
+                    Pranava Business Park, 7th Floor, Kondapur, Hyderabad, Telangana
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
 
             {/* Zoom Controls on Top-Right */}
-            <div className="absolute top-4 right-4 z-20 bg-white rounded-xl shadow-md border border-slate-200 flex flex-col divide-y divide-slate-100 overflow-hidden">
-              <button className="p-2 text-slate-600 hover:bg-slate-50 transition-colors" aria-label="Zoom in">
-                <Plus className="w-4 h-4" />
+            <div className="absolute top-4 right-4 z-20 bg-white rounded-xl shadow-lg border border-slate-200 flex flex-col divide-y divide-slate-100 overflow-hidden">
+              <button
+                onClick={handleZoomIn}
+                className="p-2.5 text-slate-700 hover:bg-slate-100 active:bg-slate-200 transition-colors"
+                aria-label="Zoom in"
+                title="Zoom in"
+              >
+                <Plus className="w-4 h-4 stroke-[2.5]" />
               </button>
-              <button className="p-2 text-slate-600 hover:bg-slate-50 transition-colors" aria-label="Zoom out">
-                <Minus className="w-4 h-4" />
+              <button
+                onClick={handleZoomOut}
+                className="p-2.5 text-slate-700 hover:bg-slate-100 active:bg-slate-200 transition-colors"
+                aria-label="Zoom out"
+                title="Zoom out"
+              >
+                <Minus className="w-4 h-4 stroke-[2.5]" />
               </button>
             </div>
           </FadeIn>
@@ -89,7 +106,7 @@ export function ContactLocationOffice() {
                   The Co HR Private Limited
                 </p>
                 <p className="text-xs font-medium text-slate-500">
-                  Hyderabad, Telangana, India - 500081
+                  Pranava Business Park, 7th Floor, Kondapur, Hyderabad, Telangana
                 </p>
               </div>
             </div>
@@ -101,6 +118,7 @@ export function ContactLocationOffice() {
                 alt="The Co HR Office - Hyderabad"
                 width={600}
                 height={380}
+                priority
                 className="w-full h-52 sm:h-60 object-cover transform hover:scale-102 transition-transform duration-500"
                 sizes="(max-width: 1024px) 100vw, 40vw"
               />

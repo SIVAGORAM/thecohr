@@ -36,9 +36,9 @@ const contactSchema = {
     "email": "info@thecohr.com",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Pranava Business Park, 7th Floor, Kondapur",
       "addressLocality": "Hyderabad",
       "addressRegion": "Telangana",
-      "postalCode": "500081",
       "addressCountry": "IN"
     }
   }

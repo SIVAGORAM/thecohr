@@ -226,7 +226,6 @@ export function Footer() {
                   <a href="mailto:info@thecohr.com" className="text-white font-medium hover:text-[#0066FF] transition-colors block truncate">
                     info@thecohr.com
                   </a>
-                  <span className="text-[11px] text-slate-400 block mt-0.5">We reply within 24 hours</span>
                 </div>
               </div>
 
@@ -239,7 +238,6 @@ export function Footer() {
                   <a href="tel:+919019724365" className="text-white font-medium hover:text-[#0066FF] transition-colors block">
                     +91 90197 24365
                   </a>
-                  <span className="text-[11px] text-slate-400 block mt-0.5 whitespace-nowrap">Mon - Sat, 9:00 AM - 6:00 PM</span>
                 </div>
               </div>
 
@@ -249,8 +247,8 @@ export function Footer() {
                   <MapPin className="w-4 h-4" />
                 </div>
                 <div>
-                  <span className="text-white font-medium block">Hyderabad, India</span>
-                  <span className="text-[11px] text-slate-400 block mt-0.5">Our Global Presence</span>
+                  <span className="text-white font-medium block">Pranava Business Park, 7th Floor, Kondapur, Hyderabad, Telangana</span>
+                  <span className="text-[11px] text-slate-400 block mt-0.5">Corporate Office</span>
                 </div>
               </div>
             </div>

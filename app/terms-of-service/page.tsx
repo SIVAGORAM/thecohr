@@ -83,7 +83,7 @@ export default function TermsOfServicePage() {
               <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-xs sm:text-sm font-medium text-slate-800 space-y-1">
                 <p><strong>The Co HR Private Limited</strong></p>
                 <p>Email: <a href="mailto:info@thecohr.com" className="text-[#0066FF] underline">info@thecohr.com</a></p>
-                <p>Address: Hyderabad, Telangana, India - 500081</p>
+                <p>Address: Pranava Business Park, 7th Floor, Kondapur, Hyderabad, Telangana</p>
               </div>
             </section>
 

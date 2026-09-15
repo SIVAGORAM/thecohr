@@ -292,7 +292,7 @@ export function ContactMain() {
                   Message Sent Successfully!
                 </h3>
                 <p className="text-sm text-slate-600 max-w-md mx-auto">
-                  Thank you for reaching out to The Co HR. Our HR specialists will review your message and contact you within 24 hours.
+                  Thank you for reaching out to The Co HR. Our HR specialists will review your message and contact you shortly.
                 </p>
                 <div className="flex items-center justify-center gap-4 pt-2">
                   <button
@@ -479,9 +479,6 @@ export function ContactMain() {
                   >
                     +91 90197 24365
                   </a>
-                  <p className="text-xs font-medium text-slate-500 mt-0.5">
-                    Mon - Fri, 9:00 AM - 6:00 PM (IST)
-                  </p>
                 </div>
               </div>
 
@@ -521,9 +518,6 @@ export function ContactMain() {
                   >
                     info@thecohr.com
                   </a>
-                  <p className="text-xs font-medium text-slate-500 mt-0.5">
-                    We typically respond within 24 hours.
-                  </p>
                 </div>
               </div>
 
@@ -538,10 +532,10 @@ export function ContactMain() {
                     The Co HR Private Limited
                   </p>
                   <p className="text-xs font-medium text-slate-500">
-                    Hyderabad, Telangana, India - 500081
+                    Pranava Business Park, 7th Floor, Kondapur, Hyderabad, Telangana
                   </p>
                   <a
-                    href="https://maps.google.com/?q=Hyderabad,+Telangana"
+                    href="https://maps.google.com/?q=Pranava+Business+Park,+Kondapur,+Hyderabad"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-xs font-bold text-[#0066FF] hover:underline mt-1"

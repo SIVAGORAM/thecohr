@@ -195,7 +195,7 @@ export const contactContent = {
   info: {
     email: "info@thecohr.com",
     phone: "+91 90197 24365",
-    address: "Hyderabad, India",
+    address: "Pranava Business Park, 7th Floor, Kondapur, Hyderabad, Telangana",
     social: [
       { platform: "LinkedIn", url: "https://www.linkedin.com/in/the-co-hr-1a4842428/" },
       { platform: "X (Twitter)", url: "https://x.com/thecohr" },
