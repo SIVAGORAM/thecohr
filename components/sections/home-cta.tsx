@@ -49,8 +49,20 @@ export function HomeCta() {
               </h2>
             </FadeIn>
             
-            <FadeIn direction="up" delay={0.2} className="text-[15px] text-gray-600 leading-relaxed mb-6 max-w-md">
+            <FadeIn direction="up" delay={0.2} className="text-[15px] text-gray-600 leading-relaxed mb-4 max-w-md">
               <p>{body}</p>
+            </FadeIn>
+
+            {/* Calligraphy Tagline */}
+            <FadeIn direction="up" delay={0.25} className="mb-5">
+              <div className="inline-block text-[#0055FF] font-[family-name:var(--font-playball)] -rotate-2">
+                <span className="text-[20px] sm:text-[23px] leading-tight block font-normal">
+                  Better People, Brighter Possibilities
+                </span>
+                <svg className="w-48 h-2.5 text-[#22C55E] mt-0.5" viewBox="0 0 100 12" preserveAspectRatio="none">
+                  <path d="M2 9 Q50 1 98 5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+                </svg>
+              </div>
             </FadeIn>
 
             {/* CTA Buttons */}
@@ -64,19 +76,19 @@ export function HomeCta() {
               >
                 {ctas.primary} <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link 
-                href="/contact"
+              <a
+                href="tel:+919019724365"
                 className={cn(
                   buttonVariants({ variant: "outline" }),
                   "border-2 border-[#0055FF] text-[#0055FF] bg-white hover:bg-blue-50/50 rounded-xl px-7 py-3.5 font-bold text-[14px] flex items-center transition-colors"
                 )}
               >
                 {ctas.secondary}
-              </Link>
+              </a>
             </FadeIn>
           </div>
 
-          {/* Right Visual Area: Photo + Floating Card + Calligraphy */}
+          {/* Right Visual Area: Photo + Floating Card */}
           <div className="lg:col-span-7 relative min-h-[320px] lg:min-h-[380px] flex items-center">
             
             {/* The Full Photo */}
@@ -86,19 +98,19 @@ export function HomeCta() {
                 alt="Professional working at desk"
                 fill
                 loading="lazy"
-                className="object-cover object-center"
+                className="object-cover object-[85%_center]"
                 sizes="(max-width: 1024px) 100vw, 55vw"
               />
               
               {/* Soft left-edge blend into banner background */}
-              <div className="absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-[#F0F7FF] via-[#F0F7FF]/70 to-transparent z-10 hidden lg:block" />
+              <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#F0F7FF] via-[#F0F7FF]/80 to-transparent z-10 hidden lg:block" />
 
               {/* Far-right soft light-blue swoosh matching reference */}
               <div className="absolute top-0 right-0 w-[150px] h-full bg-gradient-to-l from-[#BCE0FE]/70 via-[#DCF0FE]/30 to-transparent z-20 pointer-events-none" />
             </div>
 
-            {/* Floating List Card: Overlapping the left of the photo */}
-            <FadeIn direction="up" delay={0.4} className="relative z-30 ml-4 lg:-ml-12 my-6 lg:my-0 bg-white rounded-[22px] p-5 shadow-[0_14px_40px_rgba(0,0,0,0.08)] border border-blue-50/90 flex flex-col gap-4 w-[245px] shrink-0">
+            {/* Floating List Card: Hidden on mobile to keep photo unobstructed, shown on desktop */}
+            <FadeIn direction="up" delay={0.4} className="hidden lg:flex relative z-30 lg:-ml-16 xl:-ml-24 lg:my-0 bg-white rounded-[22px] p-5 shadow-[0_14px_40px_rgba(0,0,0,0.08)] border border-blue-50/90 flex-col gap-4 w-[240px] shrink-0">
               {floatingList?.map((item) => (
                 <div key={item.label} className="flex items-center gap-3.5">
                   <div className="w-9 h-9 rounded-full bg-[#EBF4FF] flex items-center justify-center shrink-0">
@@ -116,15 +128,28 @@ export function HomeCta() {
               ))}
             </FadeIn>
 
-            {/* Floating Calligraphy */}
-            <div className="absolute top-5 right-4 sm:right-6 lg:right-8 z-30 text-[#0055FF] pointer-events-none select-none hidden sm:block font-[family-name:var(--font-playball)] -rotate-6">
-              <span className="text-[20px] sm:text-[23px] lg:text-[26px] leading-[1.15] whitespace-nowrap block">
-                Better People<br />
-                Brighter Possibilities
-              </span>
-              <svg className="w-28 mt-0.5 text-[#22C55E]" viewBox="0 0 100 12" preserveAspectRatio="none">
-                <path d="M2 9 Q50 1 98 5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-              </svg>
+            {/* Mobile Bottom Feature Bar (positioned at bottom away from face) */}
+            <div className="absolute bottom-2.5 left-2 right-2 sm:left-4 sm:right-4 z-30 lg:hidden bg-white/95 backdrop-blur-md rounded-2xl p-1.5 sm:p-2.5 shadow-lg border border-blue-100 flex items-center justify-around overflow-hidden">
+              <div className="flex items-center gap-1 sm:gap-1.5">
+                <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#EBF4FF] flex items-center justify-center shrink-0">
+                  <Users className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#0055FF]" />
+                </div>
+                <span className="text-[9.5px] sm:text-[11px] font-bold text-[#111827] whitespace-nowrap">People</span>
+              </div>
+              <div className="h-3.5 w-px bg-slate-200/80 shrink-0" />
+              <div className="flex items-center gap-1 sm:gap-1.5">
+                <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#EBF4FF] flex items-center justify-center shrink-0">
+                  <BarChart2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#0055FF]" />
+                </div>
+                <span className="text-[9.5px] sm:text-[11px] font-bold text-[#111827] whitespace-nowrap">Performance</span>
+              </div>
+              <div className="h-3.5 w-px bg-slate-200/80 shrink-0" />
+              <div className="flex items-center gap-1 sm:gap-1.5">
+                <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#EBF4FF] flex items-center justify-center shrink-0">
+                  <Lightbulb className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#0055FF]" />
+                </div>
+                <span className="text-[9.5px] sm:text-[11px] font-bold text-[#111827] whitespace-nowrap">Possibilities</span>
+              </div>
             </div>
 
           </div>

@@ -59,8 +59,20 @@ export function EcosystemStats() {
               </h2>
             </FadeIn>
 
-            <FadeIn direction="up" delay={0.2} className="text-[14px] sm:text-[15px] text-gray-600 leading-relaxed mb-8 max-w-md">
+            <FadeIn direction="up" delay={0.2} className="text-[14px] sm:text-[15px] text-gray-600 leading-relaxed mb-6 max-w-md">
               <p>{description}</p>
+            </FadeIn>
+
+            {/* Calligraphy Tagline */}
+            <FadeIn direction="up" delay={0.25} className="mb-6">
+              <div className="inline-block text-[#0055FF] font-[family-name:var(--font-playball)] -rotate-2">
+                <span className="text-[20px] sm:text-[23px] leading-tight block font-normal">
+                  Better People, Brighter Possibilities
+                </span>
+                <svg className="w-48 h-2.5 text-[#22C55E] mt-0.5" viewBox="0 0 100 12" preserveAspectRatio="none">
+                  <path d="M2 9 Q50 1 98 5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+                </svg>
+              </div>
             </FadeIn>
 
             {/* Bottom Row: Play Button & Mini Features */}
@@ -113,11 +125,7 @@ export function EcosystemStats() {
               <div className="absolute inset-y-0 -left-1 w-20 bg-gradient-to-r from-[#F0F7FF] to-transparent hidden lg:block" />
             </FadeIn>
 
-            {/* Floating Calligraphy Text */}
-            <div className="absolute top-6 left-4 lg:top-[8%] lg:left-[6%] z-20 text-[#0055FF] text-[18px] sm:text-[26px] lg:text-[30px] leading-tight drop-shadow-sm pointer-events-none font-[family-name:var(--font-playball)] -rotate-6">
-              Better People<br />
-              Brighter Possibilities
-            </div>
+
 
             {/* Floating Stats Card */}
             <FadeIn direction="up" delay={0.4} className="absolute bottom-4 right-4 lg:bottom-auto lg:top-[50%] lg:right-8 transform-none lg:-translate-y-1/2 bg-white/95 backdrop-blur-sm rounded-[20px] p-4 sm:p-5 shadow-[0_16px_40px_rgba(0,0,0,0.12)] w-[160px] sm:w-[210px] z-20 flex flex-col gap-2">
