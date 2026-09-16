@@ -18,7 +18,7 @@ export default function GlobalError({
     <html lang="en">
       <body className="bg-[#020612] text-white min-h-screen flex items-center justify-center p-6 font-sans">
         <div className="max-w-md w-full text-center space-y-6">
-          <div className="w-16 h-16 rounded-full bg-blue-500/10 border border-blue-500/20 text-[#0066FF] flex items-center justify-center mx-auto shadow-xl">
+          <div className="w-16 h-16 rounded-full bg-blue-500/10 border border-blue-500/20 text-[#1E90FF] flex items-center justify-center mx-auto shadow-xl">
             <WifiOff className="w-8 h-8" />
           </div>
 
@@ -31,7 +31,7 @@ export default function GlobalError({
 
           <button
             onClick={() => reset()}
-            className="inline-flex items-center justify-center gap-2 bg-[#0066FF] hover:bg-[#0052CC] text-white font-bold text-sm py-3 px-6 rounded-xl transition-all shadow-md cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 bg-[#1E90FF] hover:bg-[#187BCD] text-white font-bold text-sm py-3 px-6 rounded-xl transition-all shadow-md cursor-pointer"
           >
             <RefreshCw className="w-4 h-4" />
             <span>Reload Application</span>

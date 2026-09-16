@@ -8,9 +8,9 @@ export function EcosystemStats() {
   const { eyebrow, description, stats } = homeContent.ecosystem;
 
   const statIcons = [
-    <Building2 key="1" className="w-5 h-5 text-[#0055FF]" />,
-    <Users key="2" className="w-5 h-5 text-[#0055FF]" />,
-    <Star key="3" className="w-5 h-5 fill-[#0055FF] text-[#0055FF]" />
+    <Building2 key="1" className="w-5 h-5 text-[#1E90FF]" />,
+    <Users key="2" className="w-5 h-5 text-[#1E90FF]" />,
+    <Star key="3" className="w-5 h-5 fill-[#1E90FF] text-[#1E90FF]" />
   ];
 
   return (
@@ -19,20 +19,20 @@ export function EcosystemStats() {
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
         {/* Top-right blue triangle accents */}
-        <svg className="absolute top-0 right-0 w-[250px] h-[200px] text-[#0055FF]/10" viewBox="0 0 100 80" preserveAspectRatio="none">
+        <svg className="absolute top-0 right-0 w-[250px] h-[200px] text-[#1E90FF]/10" viewBox="0 0 100 80" preserveAspectRatio="none">
           <polygon points="60,0 100,0 100,50" fill="currentColor" />
-          <polygon points="80,0 100,0 100,25" fill="rgba(0,85,255,0.15)" />
+          <polygon points="80,0 100,0 100,25" fill="rgba(30,144,255,0.15)" />
         </svg>
 
         {/* Dot patterns */}
         <div className="absolute top-12 left-[38%] grid grid-cols-5 gap-3 opacity-25 hidden lg:grid">
           {Array.from({ length: 20 }).map((_, i) => (
-            <div key={i} className="w-1.5 h-1.5 rounded-full bg-[#0055FF]" />
+            <div key={i} className="w-1.5 h-1.5 rounded-full bg-[#1E90FF]" />
           ))}
         </div>
         <div className="absolute top-8 right-[18%] grid grid-cols-4 gap-3 opacity-25 hidden lg:grid">
           {Array.from({ length: 12 }).map((_, i) => (
-            <div key={i} className="w-1.5 h-1.5 rounded-full bg-[#0055FF]" />
+            <div key={i} className="w-1.5 h-1.5 rounded-full bg-[#1E90FF]" />
           ))}
         </div>
       </div>
@@ -44,7 +44,7 @@ export function EcosystemStats() {
           {/* Left Column: Text & Features */}
           <div className="flex flex-col justify-center py-6 lg:py-8 px-6 lg:pl-12 lg:pr-6 relative z-20">
             {/* Pill Eyebrow */}
-            <FadeIn direction="up" className="inline-flex self-start bg-white text-[#0055FF] px-5 py-2 rounded-full text-[11px] font-bold tracking-[0.18em] uppercase mb-5 shadow-sm border border-blue-100">
+            <FadeIn direction="up" className="inline-flex self-start bg-white text-[#1E90FF] px-5 py-2 rounded-full text-[11px] font-bold tracking-[0.18em] uppercase mb-5 shadow-sm border border-blue-100">
               {eyebrow}
             </FadeIn>
 
@@ -55,7 +55,7 @@ export function EcosystemStats() {
                   Technology + Expertise + Learning
                 </span>{" "}
                 <br className="hidden xl:block" />
-                for a <span className="text-[#0055FF]">Stronger Tomorrow</span>
+                for a <span className="text-[#1E90FF]">Stronger Tomorrow</span>
               </h2>
             </FadeIn>
 
@@ -65,7 +65,7 @@ export function EcosystemStats() {
 
             {/* Calligraphy Tagline */}
             <FadeIn direction="up" delay={0.25} className="mb-6">
-              <div className="inline-block text-[#0055FF] font-[family-name:var(--font-playball)] -rotate-2">
+              <div className="inline-block text-[#1E90FF] font-[family-name:var(--font-playball)] -rotate-2">
                 <span className="text-[20px] sm:text-[23px] leading-tight block font-normal">
                   Better People, Brighter Possibilities
                 </span>
@@ -79,11 +79,11 @@ export function EcosystemStats() {
             <FadeIn direction="up" delay={0.3} className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-6 mt-2">
               {/* Talk to an Expert Link */}
               <a href="tel:+919019724365" className="flex items-center gap-3 group sm:border-r sm:border-gray-300/50 sm:pr-6">
-                <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#0088FF] to-[#0055FF] text-white flex items-center justify-center shadow-[0_6px_16px_rgba(0,85,255,0.35)] group-hover:scale-105 transition-transform shrink-0">
+                <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#1E90FF] to-[#187BCD] text-white flex items-center justify-center shadow-[0_6px_16px_rgba(30,144,255,0.35)] group-hover:scale-105 transition-transform shrink-0">
                   <Headset className="w-5 h-5" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-bold text-[13px] text-navy-900 leading-tight group-hover:text-[#0055FF] transition-colors">Talk to an HR Expert</span>
+                  <span className="font-bold text-[13px] text-navy-900 leading-tight group-hover:text-[#1E90FF] transition-colors">Talk to an HR Expert</span>
                   <span className="text-[11px] text-gray-500 font-medium">Free Consultation</span>
                 </div>
               </a>
@@ -91,9 +91,9 @@ export function EcosystemStats() {
               {/* Mini Features */}
               <div className="flex gap-5">
                 {[
-                  { icon: <Settings className="w-4 h-4 text-[#0055FF]" strokeWidth={1.8} />, label: "Innovative\nTechnology" },
-                  { icon: <Users className="w-4 h-4 text-[#0055FF]" strokeWidth={1.8} />, label: "Industry\nExpertise" },
-                  { icon: <GraduationCap className="w-4 h-4 text-[#0055FF]" strokeWidth={1.8} />, label: "Continuous\nLearning" }
+                  { icon: <Settings className="w-4 h-4 text-[#1E90FF]" strokeWidth={1.8} />, label: "Innovative\nTechnology" },
+                  { icon: <Users className="w-4 h-4 text-[#1E90FF]" strokeWidth={1.8} />, label: "Industry\nExpertise" },
+                  { icon: <GraduationCap className="w-4 h-4 text-[#1E90FF]" strokeWidth={1.8} />, label: "Continuous\nLearning" }
                 ].map((item, i) => (
                   <div key={i} className="flex flex-col items-center gap-1.5 text-center">
                     <div className="w-9 h-9 rounded-full border-2 border-blue-200/60 bg-white flex items-center justify-center">

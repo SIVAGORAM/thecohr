@@ -11,13 +11,13 @@ export function AboutHero() {
           {/* Left Column: Text & Badges */}
           <FadeIn direction="right" duration={0.6} className="lg:col-span-6 space-y-4">
             {/* Eyebrow */}
-            <div className="text-xs font-bold uppercase tracking-widest text-[#0066FF]">
+            <div className="text-xs font-bold uppercase tracking-widest text-[#1E90FF]">
               ABOUT US
             </div>
 
             {/* Headline */}
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#051332] tracking-tight leading-tight">
-              Empowering Businesses Through <span className="text-[#0066FF]">People</span> and <span className="text-[#0066FF]">Technology</span>
+              Empowering Businesses Through <span className="text-[#1E90FF]">People</span> and <span className="text-[#1E90FF]">Technology</span>
             </h1>
 
             {/* Paragraph */}
@@ -29,7 +29,7 @@ export function AboutHero() {
             <div className="pt-4 flex flex-wrap items-center gap-4 sm:gap-6">
               {/* Badge 1 */}
               <div className="flex items-center gap-3 bg-white px-4 py-2.5 rounded-full border border-blue-100 shadow-sm">
-                <div className="w-8 h-8 rounded-full bg-blue-100/80 flex items-center justify-center text-[#0066FF]">
+                <div className="w-8 h-8 rounded-full bg-blue-100/80 flex items-center justify-center text-[#1E90FF]">
                   <Users className="w-4 h-4" />
                 </div>
                 <span className="text-xs sm:text-sm font-semibold text-slate-700">People Centric</span>
@@ -37,7 +37,7 @@ export function AboutHero() {
 
               {/* Badge 2 */}
               <div className="flex items-center gap-3 bg-white px-4 py-2.5 rounded-full border border-blue-100 shadow-sm">
-                <div className="w-8 h-8 rounded-full bg-blue-100/80 flex items-center justify-center text-[#0066FF]">
+                <div className="w-8 h-8 rounded-full bg-blue-100/80 flex items-center justify-center text-[#1E90FF]">
                   <Settings className="w-4 h-4" />
                 </div>
                 <span className="text-xs sm:text-sm font-semibold text-slate-700">Technology Driven</span>
@@ -45,7 +45,7 @@ export function AboutHero() {
 
               {/* Badge 3 */}
               <div className="flex items-center gap-3 bg-white px-4 py-2.5 rounded-full border border-blue-100 shadow-sm">
-                <div className="w-8 h-8 rounded-full bg-blue-100/80 flex items-center justify-center text-[#0066FF]">
+                <div className="w-8 h-8 rounded-full bg-blue-100/80 flex items-center justify-center text-[#1E90FF]">
                   <TrendingUp className="w-4 h-4" />
                 </div>
                 <span className="text-xs sm:text-sm font-semibold text-slate-700">A Stronger Tomorrow</span>

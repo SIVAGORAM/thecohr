@@ -172,8 +172,8 @@ export async function POST(request: Request) {
                 <!-- Email -->
                 <tr>
                   <td style="padding: 14px 18px; font-size: 13px; font-weight: 700; color: #475569; border-bottom: 1px solid #e2e8f0; background-color: #f1f5f9;">Email Address</td>
-                  <td style="padding: 14px 18px; font-size: 14px; font-weight: 600; color: #0066FF; border-bottom: 1px solid #e2e8f0; background-color: #ffffff;">
-                    <a href="mailto:${escapeHtml(trimmedEmail)}" style="color: #0066FF; text-decoration: none;">${escapeHtml(trimmedEmail)}</a>
+                  <td style="padding: 14px 18px; font-size: 14px; font-weight: 600; color: #1E90FF; border-bottom: 1px solid #e2e8f0; background-color: #ffffff;">
+                    <a href="mailto:${escapeHtml(trimmedEmail)}" style="color: #1E90FF; text-decoration: none;">${escapeHtml(trimmedEmail)}</a>
                   </td>
                 </tr>
 
@@ -187,12 +187,12 @@ export async function POST(request: Request) {
               <!-- Message Area -->
               <div style="margin-bottom: 24px;">
                 <label style="display: block; margin-bottom: 8px; font-size: 13px; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.5px;">Message Content</label>
-                <div style="background-color: #f0f6ff; border-left: 4px solid #0066FF; border-radius: 8px; padding: 18px 20px; color: #1e293b; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${escapeHtml(trimmedMessage)}</div>
+                <div style="background-color: #f0f6ff; border-left: 4px solid #1E90FF; border-radius: 8px; padding: 18px 20px; color: #1e293b; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${escapeHtml(trimmedMessage)}</div>
               </div>
 
               <!-- Action Callout -->
               <div style="text-align: center; margin-top: 32px; padding-top: 24px; border-top: 1px dashed #cbd5e1;">
-                <a href="mailto:${escapeHtml(trimmedEmail)}?subject=Re:%20The%20Co%20HR%20Enquiry" style="display: inline-block; background-color: #0066FF; color: #ffffff; text-decoration: none; font-size: 14px; font-weight: 700; padding: 12px 28px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 102, 255, 0.25);">Reply to ${escapeHtml(trimmedName)}</a>
+                <a href="mailto:${escapeHtml(trimmedEmail)}?subject=Re:%20The%20Co%20HR%20Enquiry" style="display: inline-block; background-color: #1E90FF; color: #ffffff; text-decoration: none; font-size: 14px; font-weight: 700; padding: 12px 28px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 102, 255, 0.25);">Reply to ${escapeHtml(trimmedName)}</a>
               </div>
             </td>
           </tr>
@@ -202,7 +202,7 @@ export async function POST(request: Request) {
             <td style="background-color: #f8fafc; padding: 24px 40px; text-align: center; border-top: 1px solid #e2e8f0;">
               <p style="margin: 0 0 6px 0; font-size: 13px; font-weight: 700; color: #334155;">The Co HR</p>
               <p style="margin: 0 0 10px 0; font-size: 11px; color: #64748b;">People | Performance | Possibilities</p>
-              <p style="margin: 0; font-size: 11px; color: #94a3b8;">This email was automatically generated from a submission on the official <a href="https://thecohr.com" style="color: #0066FF; text-decoration: none;">The Co HR website</a>.</p>
+              <p style="margin: 0; font-size: 11px; color: #94a3b8;">This email was automatically generated from a submission on the official <a href="https://thecohr.com" style="color: #1E90FF; text-decoration: none;">The Co HR website</a>.</p>
             </td>
           </tr>
 

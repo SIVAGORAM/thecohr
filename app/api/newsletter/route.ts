@@ -85,13 +85,13 @@ export async function POST(request: Request) {
         html: `
           <div style="font-family: Arial, sans-serif; background-color: #f8fafc; padding: 24px; color: #0f172a;">
             <div style="max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0; overflow: hidden;">
-              <div style="background-color: #0066FF; padding: 20px 24px; color: #ffffff;">
+              <div style="background-color: #1E90FF; padding: 20px 24px; color: #ffffff;">
                 <h2 style="margin: 0; font-size: 18px; font-weight: 700;">📬 New Newsletter Subscription</h2>
               </div>
               <div style="padding: 24px;">
                 <p style="font-size: 14px; margin-top: 0;">A new visitor has subscribed to receive updates from <strong>The Co HR</strong>.</p>
                 <div style="background-color: #f1f5f9; border-radius: 8px; padding: 16px; margin: 16px 0;">
-                  <p style="margin: 0; font-size: 14px;"><strong>Subscriber Email:</strong> <a href="mailto:${escapedEmail}" style="color: #0066FF; text-decoration: none;">${escapedEmail}</a></p>
+                  <p style="margin: 0; font-size: 14px;"><strong>Subscriber Email:</strong> <a href="mailto:${escapedEmail}" style="color: #1E90FF; text-decoration: none;">${escapedEmail}</a></p>
                   <p style="margin: 8px 0 0 0; font-size: 12px; color: #64748b;">Subscribed on: ${new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" })} IST</p>
                 </div>
               </div>
@@ -109,14 +109,14 @@ export async function POST(request: Request) {
         html: `
           <div style="font-family: Arial, sans-serif; background-color: #f8fafc; padding: 24px; color: #0f172a;">
             <div style="max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0; overflow: hidden;">
-              <div style="background-color: #0066FF; padding: 24px; color: #ffffff; text-align: center;">
+              <div style="background-color: #1E90FF; padding: 24px; color: #ffffff; text-align: center;">
                 <h2 style="margin: 0; font-size: 22px; font-weight: 700;">Welcome to The Co HR!</h2>
               </div>
               <div style="padding: 28px; font-size: 15px; line-height: 1.6; color: #334155;">
                 <p>Hello,</p>
                 <p>Thank you for subscribing to <strong>The Co HR Insights</strong>. You will now be the first to receive our curated HR trends, compliance updates, enterprise HR tech innovations, and strategic workforce solutions delivered straight to your inbox.</p>
                 <div style="margin: 24px 0; text-align: center;">
-                  <a href="https://www.thecohr.com" style="background-color: #0066FF; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; display: inline-block;">Explore Our Services</a>
+                  <a href="https://www.thecohr.com" style="background-color: #1E90FF; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; display: inline-block;">Explore Our Services</a>
                 </div>
                 <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 24px 0;" />
                 <p style="font-size: 12px; color: #64748b; margin: 0;">The Co HR Private Limited | Hyderabad, India<br/>Phone: +91 90197 24365 | Email: info@thecohr.com</p>

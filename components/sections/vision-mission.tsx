@@ -8,7 +8,7 @@ export function VisionMission() {
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-4 space-y-1">
-          <div className="text-xs font-bold uppercase tracking-widest text-[#0066FF]">
+          <div className="text-xs font-bold uppercase tracking-widest text-[#1E90FF]">
             OUR DIRECTION
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#051332] tracking-tight">
@@ -31,7 +31,7 @@ export function VisionMission() {
             {/* Soft decorative background circles */}
             <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-blue-200/30 rounded-full blur-2xl pointer-events-none" />
 
-            <div className="w-14 h-14 rounded-full bg-white/90 shadow-sm border border-blue-200/60 flex items-center justify-center shrink-0 text-[#0066FF]">
+            <div className="w-14 h-14 rounded-full bg-white/90 shadow-sm border border-blue-200/60 flex items-center justify-center shrink-0 text-[#1E90FF]">
               <Eye className="w-7 h-7" />
             </div>
 

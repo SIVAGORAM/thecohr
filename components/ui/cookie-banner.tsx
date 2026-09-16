@@ -33,7 +33,7 @@ export function CookieBanner() {
       <div className="bg-[#051332] text-white rounded-2xl p-5 border border-slate-700/60 shadow-[0_12px_40px_rgba(0,0,0,0.35)] space-y-3">
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-center gap-2 text-sm font-bold text-white">
-            <div className="w-8 h-8 rounded-lg bg-[#0066FF] flex items-center justify-center text-white shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-[#1E90FF] flex items-center justify-center text-white shrink-0">
               <Cookie className="w-4 h-4" />
             </div>
             <span>Cookie & Privacy Choice</span>
@@ -58,7 +58,7 @@ export function CookieBanner() {
         <div className="flex items-center gap-2 pt-1">
           <button
             onClick={handleAccept}
-            className="flex-1 bg-[#0066FF] hover:bg-[#0052CC] text-white text-xs font-bold py-2.5 px-4 rounded-xl transition-all shadow-md flex items-center justify-center gap-1.5 cursor-pointer"
+            className="flex-1 bg-[#1E90FF] hover:bg-[#187BCD] text-white text-xs font-bold py-2.5 px-4 rounded-xl transition-all shadow-md flex items-center justify-center gap-1.5 cursor-pointer"
           >
             <Check className="w-3.5 h-3.5" />
             <span>Accept All</span>

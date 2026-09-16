@@ -120,7 +120,7 @@ function CountrySelector({
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between gap-1.5 bg-slate-50/80 hover:bg-slate-100/90 border border-slate-200 rounded-xl px-3 py-3 w-[115px] shrink-0 font-bold text-xs sm:text-sm text-slate-800 transition-all focus:outline-none focus:border-[#0066FF] cursor-pointer select-none"
+        className="flex items-center justify-between gap-1.5 bg-slate-50/80 hover:bg-slate-100/90 border border-slate-200 rounded-xl px-3 py-3 w-[115px] shrink-0 font-bold text-xs sm:text-sm text-slate-800 transition-all focus:outline-none focus:border-[#1E90FF] cursor-pointer select-none"
       >
         <span className="flex items-center gap-1.5 truncate">
           <span>{activeCountry.flag}</span>
@@ -141,7 +141,7 @@ function CountrySelector({
               placeholder="Search country or code..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-9 pr-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0066FF] focus:bg-white"
+              className="w-full pl-9 pr-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#1E90FF] focus:bg-white"
             />
           </div>
 
@@ -160,7 +160,7 @@ function CountrySelector({
                     setSearch("");
                   }}
                   className={`w-full flex items-center justify-between px-2.5 py-2 text-xs font-medium rounded-lg text-left transition-colors cursor-pointer ${
-                    c.code === activeCountry.code ? "bg-blue-50 text-[#0066FF] font-bold" : "hover:bg-slate-50 text-slate-700"
+                    c.code === activeCountry.code ? "bg-blue-50 text-[#1E90FF] font-bold" : "hover:bg-slate-50 text-slate-700"
                   }`}
                 >
                   <span className="flex items-center gap-2 truncate pr-2">
@@ -285,7 +285,7 @@ export function ContactMain() {
 
             {isSuccess ? (
               <div className="bg-blue-50/60 rounded-2xl p-8 text-center space-y-3 border border-blue-100 my-8">
-                <div className="w-14 h-14 bg-[#0066FF] text-white rounded-full flex items-center justify-center mx-auto shadow-md">
+                <div className="w-14 h-14 bg-[#1E90FF] text-white rounded-full flex items-center justify-center mx-auto shadow-md">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-bold text-[#051332]">
@@ -305,14 +305,14 @@ export function ContactMain() {
                         message: "",
                       });
                     }}
-                    className="text-xs font-bold text-[#0066FF] underline hover:text-blue-700 cursor-pointer"
+                    className="text-xs font-bold text-[#1E90FF] underline hover:text-[#187BCD] cursor-pointer"
                   >
                     Send another message
                   </button>
                   <span className="text-slate-300">|</span>
                   <a
                     href="/thank-you"
-                    className="text-xs font-bold text-slate-600 hover:text-[#0066FF] transition-colors"
+                    className="text-xs font-bold text-slate-600 hover:text-[#1E90FF] transition-colors"
                   >
                     View Confirmation Page →
                   </a>
@@ -339,7 +339,7 @@ export function ContactMain() {
                         placeholder="Enter your name"
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                        className="w-full pl-10 pr-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl text-sm font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0066FF] focus:bg-white transition-all"
+                        className="w-full pl-10 pr-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl text-sm font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#1E90FF] focus:bg-white transition-all"
                       />
                     </div>
                   </div>
@@ -359,7 +359,7 @@ export function ContactMain() {
                         placeholder="Enter your email"
                         value={formData.businessEmail}
                         onChange={(e) => setFormData({ ...formData, businessEmail: e.target.value })}
-                        className="w-full pl-10 pr-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl text-sm font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0066FF] focus:bg-white transition-all"
+                        className="w-full pl-10 pr-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl text-sm font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#1E90FF] focus:bg-white transition-all"
                       />
                     </div>
                   </div>
@@ -390,7 +390,7 @@ export function ContactMain() {
                         placeholder="Enter your phone number"
                         value={formData.phoneNumber}
                         onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
-                        className="w-full pl-10 pr-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl text-sm font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0066FF] focus:bg-white transition-all"
+                        className="w-full pl-10 pr-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl text-sm font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#1E90FF] focus:bg-white transition-all"
                       />
                     </div>
                   </div>
@@ -413,7 +413,7 @@ export function ContactMain() {
                       placeholder="How can we help you?"
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full pl-10 pr-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl text-sm font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#0066FF] focus:bg-white transition-all resize-none"
+                      className="w-full pl-10 pr-4 py-3 bg-slate-50/80 border border-slate-200 rounded-xl text-sm font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#1E90FF] focus:bg-white transition-all resize-none"
                     />
                   </div>
                 </div>
@@ -430,7 +430,7 @@ export function ContactMain() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-[#0066FF] hover:bg-[#0052CC] disabled:bg-blue-400 text-white font-bold text-base py-3.5 sm:py-4 px-6 rounded-2xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 mt-6 cursor-pointer disabled:cursor-not-allowed"
+                  className="w-full bg-[#1E90FF] hover:bg-[#187BCD] disabled:bg-blue-400 text-white font-bold text-base py-3.5 sm:py-4 px-6 rounded-2xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 mt-6 cursor-pointer disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <>
@@ -468,14 +468,14 @@ export function ContactMain() {
             <div className="space-y-5">
               {/* Item 1: Call Us */}
               <div className="flex items-start gap-4">
-                <div className="w-11 h-11 rounded-full bg-blue-100 flex items-center justify-center text-[#0066FF] shrink-0 mt-0.5 shadow-sm">
+                <div className="w-11 h-11 rounded-full bg-blue-100 flex items-center justify-center text-[#1E90FF] shrink-0 mt-0.5 shadow-sm">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-[#051332]">Call Us</h4>
                   <a
                     href="tel:+919019724365"
-                    className="text-sm font-bold text-[#0066FF] hover:underline block"
+                    className="text-sm font-bold text-[#1E90FF] hover:underline block"
                   >
                     +91 90197 24365
                   </a>
@@ -507,14 +507,14 @@ export function ContactMain() {
 
               {/* Item 3: Email Us */}
               <div className="flex items-start gap-4">
-                <div className="w-11 h-11 rounded-full bg-blue-100 flex items-center justify-center text-[#0066FF] shrink-0 mt-0.5 shadow-sm">
+                <div className="w-11 h-11 rounded-full bg-blue-100 flex items-center justify-center text-[#1E90FF] shrink-0 mt-0.5 shadow-sm">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-[#051332]">Email Us</h4>
                   <a
                     href="mailto:info@thecohr.com"
-                    className="text-sm font-bold text-[#0066FF] hover:underline block"
+                    className="text-sm font-bold text-[#1E90FF] hover:underline block"
                   >
                     info@thecohr.com
                   </a>
@@ -523,7 +523,7 @@ export function ContactMain() {
 
               {/* Item 4: Visit Us */}
               <div className="flex items-start gap-4">
-                <div className="w-11 h-11 rounded-full bg-blue-100 flex items-center justify-center text-[#0066FF] shrink-0 mt-0.5 shadow-sm">
+                <div className="w-11 h-11 rounded-full bg-blue-100 flex items-center justify-center text-[#1E90FF] shrink-0 mt-0.5 shadow-sm">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
@@ -538,7 +538,7 @@ export function ContactMain() {
                     href="https://maps.google.com/?q=Pranava+Business+Park,+Kondapur,+Hyderabad"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs font-bold text-[#0066FF] hover:underline mt-1"
+                    className="inline-flex items-center gap-1 text-xs font-bold text-[#1E90FF] hover:underline mt-1"
                   >
                     <span>Get Directions</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -548,7 +548,7 @@ export function ContactMain() {
 
               {/* Item 5: Follow & Connect */}
               <div className="flex items-start gap-4 pt-2 border-t border-blue-100/80">
-                <div className="w-11 h-11 rounded-full bg-blue-100 flex items-center justify-center text-[#0066FF] shrink-0 mt-0.5 shadow-sm">
+                <div className="w-11 h-11 rounded-full bg-blue-100 flex items-center justify-center text-[#1E90FF] shrink-0 mt-0.5 shadow-sm">
                   <Globe className="w-5 h-5" />
                 </div>
                 <div>
@@ -559,7 +559,7 @@ export function ContactMain() {
                       href="https://www.linkedin.com/in/the-co-hr-1a4842428/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-8 h-8 rounded-lg bg-[#0066FF] text-white flex items-center justify-center hover:opacity-90 transition-opacity shadow-sm"
+                      className="w-8 h-8 rounded-lg bg-[#1E90FF] text-white flex items-center justify-center hover:opacity-90 transition-opacity shadow-sm"
                       aria-label="LinkedIn"
                     >
                       <svg className="w-4 h-4 fill-white" viewBox="0 0 24 24">
@@ -621,7 +621,7 @@ export function ContactMain() {
                       href="https://thecohr.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-8 h-8 rounded-lg bg-[#0066FF] text-white flex items-center justify-center hover:opacity-90 transition-opacity shadow-sm"
+                      className="w-8 h-8 rounded-lg bg-[#1E90FF] text-white flex items-center justify-center hover:opacity-90 transition-opacity shadow-sm"
                       aria-label="Website"
                     >
                       <Globe className="w-4 h-4 text-white" />

@@ -24,14 +24,14 @@ export function OurStory() {
           {/* Right Column: Content */}
           <FadeIn direction="left" duration={0.6} delay={0.1} className="lg:col-span-6 space-y-6 pt-6 lg:pt-0">
             {/* Eyebrow */}
-            <div className="text-xs font-bold uppercase tracking-widest text-[#0066FF]">
+            <div className="text-xs font-bold uppercase tracking-widest text-[#1E90FF]">
               OUR STORY
             </div>
 
             {/* Heading */}
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#051332] tracking-tight leading-tight">
               Built to Solve Real<br />
-              <span className="text-[#0066FF]">HR Challenges</span>
+              <span className="text-[#1E90FF]">HR Challenges</span>
             </h2>
 
             {/* Paragraphs */}

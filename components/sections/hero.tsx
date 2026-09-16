@@ -8,9 +8,9 @@ import { ArrowRight, Settings, Handshake, Users, UserPlus, TrendingUp, Trophy } 
 import React from "react";
 
 const badgeIcons: Record<string, React.ReactNode> = {
-  monitor: <Settings className="w-5 h-5 text-[#0066FF]" />,
-  shield: <Handshake className="w-5 h-5 text-[#0066FF]" />,
-  users: <Users className="w-5 h-5 text-[#0066FF]" />
+  monitor: <Settings className="w-5 h-5 text-[#1E90FF]" />,
+  shield: <Handshake className="w-5 h-5 text-[#1E90FF]" />,
+  users: <Users className="w-5 h-5 text-[#1E90FF]" />
 };
 
 export function Hero() {
@@ -41,7 +41,7 @@ export function Hero() {
           <div className="absolute top-[3%] right-[2%] xl:right-[3%] z-40 transform -rotate-2 pointer-events-none">
             <div className="relative flex flex-col items-end">
               <p 
-                className="text-[28px] lg:text-[32px] xl:text-[36px] text-[#0055FF] leading-[1.05] whitespace-nowrap font-bold drop-shadow-sm"
+                className="text-[28px] lg:text-[32px] xl:text-[36px] text-[#1E90FF] leading-[1.05] whitespace-nowrap font-bold drop-shadow-sm"
                 style={{ fontFamily: "'Caveat', cursive" }}
               >
                 Better People<br />
@@ -62,11 +62,11 @@ export function Hero() {
             className="absolute top-[32%] right-[8%] z-40 bg-white rounded-2xl p-4 shadow-[0_8px_30px_rgb(0,0,0,0.06)] flex flex-col gap-4 pointer-events-auto"
           >
             {[
-              { label: "Recruit", icon: <UserPlus className="w-4 h-4 text-[#0066FF]" /> },
-              { label: "Onboard", icon: <Users className="w-4 h-4 text-[#0066FF]" /> },
-              { label: "Manage", icon: <Settings className="w-4 h-4 text-[#0066FF]" /> },
-              { label: "Grow", icon: <TrendingUp className="w-4 h-4 text-[#0066FF]" /> },
-              { label: "Succeed", icon: <Trophy className="w-4 h-4 text-[#0066FF]" /> }
+              { label: "Recruit", icon: <UserPlus className="w-4 h-4 text-[#1E90FF]" /> },
+              { label: "Onboard", icon: <Users className="w-4 h-4 text-[#1E90FF]" /> },
+              { label: "Manage", icon: <Settings className="w-4 h-4 text-[#1E90FF]" /> },
+              { label: "Grow", icon: <TrendingUp className="w-4 h-4 text-[#1E90FF]" /> },
+              { label: "Succeed", icon: <Trophy className="w-4 h-4 text-[#1E90FF]" /> }
             ].map((item) => (
               <div key={item.label} className="flex items-center gap-5">
                 <div className="w-9 h-9 rounded-full bg-[#E5F0FF] flex items-center justify-center shrink-0">
@@ -85,9 +85,9 @@ export function Hero() {
           >
             <Link
               href="/services"
-              className="bg-white rounded-[24px] p-4 pr-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex items-center gap-5 w-[340px] border border-blue-50/80 hover:shadow-[0_12px_40px_rgba(0,102,255,0.18)] hover:border-blue-200 transition-all duration-300 group cursor-pointer pointer-events-auto relative z-50"
+              className="bg-white rounded-[24px] p-4 pr-6 shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex items-center gap-5 w-[340px] border border-blue-50/80 hover:shadow-[0_12px_40px_rgba(30,144,255,0.18)] hover:border-blue-200 transition-all duration-300 group cursor-pointer pointer-events-auto relative z-50"
             >
-              <div className="w-14 h-14 rounded-2xl bg-[#0066FF] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-300">
+              <div className="w-14 h-14 rounded-2xl bg-[#1E90FF] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-300">
                 <div className="relative w-7 h-7 flex items-center justify-center">
                   <div className="absolute inset-0 rounded-full border-[3px] border-white" />
                   <div className="absolute w-3 h-3 rounded-full border-[3px] border-white" />
@@ -95,10 +95,10 @@ export function Hero() {
               </div>
               <div className="flex-1 pr-2">
                 <p className="text-[11px] font-bold text-[#111827] uppercase tracking-[0.1em] mb-1">HR TRANSFORMATION</p>
-                <p className="text-[#0066FF] font-bold text-[17px] leading-none group-hover:text-[#0052CC] transition-colors">Starts Here</p>
+                <p className="text-[#1E90FF] font-bold text-[17px] leading-none group-hover:text-[#187BCD] transition-colors">Starts Here</p>
               </div>
-              <div className="w-10 h-10 rounded-full bg-[#E5F0FF] flex items-center justify-center group-hover:bg-[#0066FF] transition-all duration-300 shrink-0">
-                <ArrowRight className="w-5 h-5 text-[#0066FF] group-hover:text-white transition-colors" />
+              <div className="w-10 h-10 rounded-full bg-[#E5F0FF] flex items-center justify-center group-hover:bg-[#1E90FF] transition-all duration-300 shrink-0">
+                <ArrowRight className="w-5 h-5 text-[#1E90FF] group-hover:text-white transition-colors" />
               </div>
             </Link>
           </FadeIn>
@@ -112,14 +112,14 @@ export function Hero() {
         <div className="lg:col-span-6 flex flex-col gap-5 z-20 pt-0 lg:pt-4 pb-2 lg:pb-0 pointer-events-auto">
           <div>
             <div className="flex items-center gap-4 mb-4">
-              <p className="text-xs lg:text-[13px] font-bold tracking-[0.15em] text-[#0066FF] uppercase">
+              <p className="text-xs lg:text-[13px] font-bold tracking-[0.15em] text-[#1E90FF] uppercase">
                 {overline}
               </p>
-              <div className="h-px w-12 bg-[#0066FF]/20" />
+              <div className="h-px w-12 bg-[#1E90FF]/20" />
             </div>
             <h1 className="text-5xl lg:text-[62px] leading-[1.05] lg:leading-[1.05] font-extrabold text-[#111827] tracking-tight">
               {headlineParts[0]}
-              <span className="text-[#0066FF] relative inline-block whitespace-nowrap">
+              <span className="text-[#1E90FF] relative inline-block whitespace-nowrap">
                 Smarter.
                 <svg className="absolute -bottom-2 left-0 w-full h-3" viewBox="0 0 100 20" preserveAspectRatio="none">
                   <path d="M0,15 Q50,0 100,8" fill="none" stroke="#22c55e" strokeWidth="6" strokeLinecap="round" />
@@ -138,7 +138,7 @@ export function Hero() {
               href="/contact"
               className={cn(
                 buttonVariants({ variant: "default" }),
-                "bg-[#0066FF] hover:bg-blue-700 text-white rounded-lg px-8 py-6 font-medium text-[16px] flex items-center justify-center gap-2"
+                "bg-[#1E90FF] hover:bg-[#187BCD] text-white rounded-lg px-8 py-6 font-medium text-[16px] flex items-center justify-center gap-2"
               )}
             >
               {ctas.primary} <ArrowRight className="w-5 h-5" />
@@ -147,7 +147,7 @@ export function Hero() {
               href="tel:+919019724365"
               className={cn(
                 buttonVariants({ variant: "outline" }),
-                "border-[1.5px] border-[#0066FF] bg-transparent text-[#0066FF] hover:bg-blue-50 rounded-lg px-8 py-6 font-medium text-[16px] flex items-center justify-center"
+                "border-[1.5px] border-[#1E90FF] bg-transparent text-[#1E90FF] hover:bg-blue-50 rounded-lg px-8 py-6 font-medium text-[16px] flex items-center justify-center"
               )}
             >
               {ctas.secondary}
@@ -182,7 +182,7 @@ export function Hero() {
           <div className="w-full flex justify-center pt-0.5 pb-1 relative z-20 pointer-events-none -rotate-1">
             <div className="relative flex flex-col items-center text-center">
               <p 
-                className="text-[26px] sm:text-[30px] text-[#0055FF] leading-[1.05] whitespace-nowrap font-bold"
+                className="text-[26px] sm:text-[30px] text-[#1E90FF] leading-[1.05] whitespace-nowrap font-bold"
                 style={{ fontFamily: "'Caveat', cursive" }}
               >
                 Better People<br />
@@ -214,11 +214,11 @@ export function Hero() {
             {/* Mobile Floating UI: Vertical Checklist (Mini Icons Only) */}
             <div className="absolute top-[20%] right-2 z-20 bg-white/95 backdrop-blur-md rounded-[20px] p-2 shadow-xl border border-white/50 flex flex-col gap-2 scale-90 origin-right">
               {[
-                { icon: <UserPlus className="w-3.5 h-3.5 text-[#0055FF]" /> },
-                { icon: <Users className="w-3.5 h-3.5 text-[#0055FF]" /> },
-                { icon: <Settings className="w-3.5 h-3.5 text-[#0055FF]" /> },
-                { icon: <TrendingUp className="w-3.5 h-3.5 text-[#0055FF]" /> },
-                { icon: <Trophy className="w-3.5 h-3.5 text-[#0055FF]" /> }
+                { icon: <UserPlus className="w-3.5 h-3.5 text-[#1E90FF]" /> },
+                { icon: <Users className="w-3.5 h-3.5 text-[#1E90FF]" /> },
+                { icon: <Settings className="w-3.5 h-3.5 text-[#1E90FF]" /> },
+                { icon: <TrendingUp className="w-3.5 h-3.5 text-[#1E90FF]" /> },
+                { icon: <Trophy className="w-3.5 h-3.5 text-[#1E90FF]" /> }
               ].map((item, i) => (
                 <div key={i} className="w-8 h-8 rounded-full bg-[#E5F0FF] flex items-center justify-center shrink-0">
                   {item.icon}
@@ -233,7 +233,7 @@ export function Hero() {
             className="w-[92%] -mt-6 mx-auto relative z-50 bg-white rounded-[24px] p-3.5 shadow-[0_8px_30px_rgb(0,0,0,0.15)] border border-gray-100 hover:border-blue-200 flex items-center justify-between group cursor-pointer transition-all duration-200 active:scale-[0.98] pointer-events-auto"
           >
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-[#0055FF] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+              <div className="w-12 h-12 rounded-xl bg-[#1E90FF] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                 <div className="relative w-6 h-6 flex items-center justify-center">
                   <div className="absolute inset-0 rounded-full border-2 border-white" />
                   <div className="absolute w-2.5 h-2.5 rounded-full border-2 border-white" />
@@ -241,11 +241,11 @@ export function Hero() {
               </div>
               <div>
                 <p className="text-[10px] font-bold text-[#111827] uppercase tracking-wider mb-0.5">HR TRANSFORMATION</p>
-                <p className="text-[#0055FF] font-bold text-[15px] leading-none group-hover:text-[#0044CC]">Starts Here</p>
+                <p className="text-[#1E90FF] font-bold text-[15px] leading-none group-hover:text-[#187BCD]">Starts Here</p>
               </div>
             </div>
-            <div className="w-10 h-10 rounded-full bg-[#E5F0FF] group-hover:bg-[#0055FF] flex items-center justify-center shrink-0 transition-colors">
-              <ArrowRight className="w-4 h-4 text-[#0055FF] group-hover:text-white transition-colors" />
+            <div className="w-10 h-10 rounded-full bg-[#E5F0FF] group-hover:bg-[#1E90FF] flex items-center justify-center shrink-0 transition-colors">
+              <ArrowRight className="w-4 h-4 text-[#1E90FF] group-hover:text-white transition-colors" />
             </div>
           </Link>
           

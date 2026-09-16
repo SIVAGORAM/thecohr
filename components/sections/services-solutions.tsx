@@ -53,7 +53,7 @@ export function ServicesSolutions() {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-5 space-y-1">
-          <div className="text-xs font-bold uppercase tracking-widest text-[#0066FF]">
+          <div className="text-xs font-bold uppercase tracking-widest text-[#1E90FF]">
             OUR CORE SERVICES
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#051332] tracking-tight">
@@ -78,7 +78,7 @@ export function ServicesSolutions() {
               {/* Card Header */}
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-2xl bg-[#0066FF] flex items-center justify-center text-white shadow-md shadow-blue-500/20 shrink-0">
+                  <div className="w-14 h-14 rounded-2xl bg-[#1E90FF] flex items-center justify-center text-white shadow-md shadow-blue-500/20 shrink-0">
                     <Monitor className="w-7 h-7" />
                   </div>
                   <div>
@@ -92,7 +92,7 @@ export function ServicesSolutions() {
                 </div>
                 <Link
                   href="/services#hr-erp-software"
-                  className="w-9 h-9 rounded-full border border-blue-100 flex items-center justify-center text-[#0066FF] hover:bg-blue-50 transition-colors shrink-0"
+                  className="w-9 h-9 rounded-full border border-blue-100 flex items-center justify-center text-[#1E90FF] hover:bg-blue-50 transition-colors shrink-0"
                 >
                   <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -118,59 +118,59 @@ export function ServicesSolutions() {
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <div className="flex items-center gap-2.5 text-xs font-semibold text-slate-700 bg-slate-50 hover:bg-blue-50/60 px-3 py-2 rounded-xl border border-slate-200/80 transition-colors">
-                    <Users className="w-4 h-4 text-[#0066FF] shrink-0" />
+                    <Users className="w-4 h-4 text-[#1E90FF] shrink-0" />
                     <span className="leading-tight">Employee Information</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-xs font-semibold text-slate-700 bg-slate-50 hover:bg-blue-50/60 px-3 py-2 rounded-xl border border-slate-200/80 transition-colors">
-                    <CreditCard className="w-4 h-4 text-[#0066FF] shrink-0" />
+                    <CreditCard className="w-4 h-4 text-[#1E90FF] shrink-0" />
                     <span className="leading-tight">Payroll</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-xs font-semibold text-slate-700 bg-slate-50 hover:bg-blue-50/60 px-3 py-2 rounded-xl border border-slate-200/80 transition-colors">
-                    <UserPlus className="w-4 h-4 text-[#0066FF] shrink-0" />
+                    <UserPlus className="w-4 h-4 text-[#1E90FF] shrink-0" />
                     <span className="leading-tight">Recruitment</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-xs font-semibold text-slate-700 bg-slate-50 hover:bg-blue-50/60 px-3 py-2 rounded-xl border border-slate-200/80 transition-colors">
-                    <BarChart3 className="w-4 h-4 text-[#0066FF] shrink-0" />
+                    <BarChart3 className="w-4 h-4 text-[#1E90FF] shrink-0" />
                     <span className="leading-tight">Performance</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-xs font-semibold text-slate-700 bg-slate-50 hover:bg-blue-50/60 px-3 py-2 rounded-xl border border-slate-200/80 transition-colors">
-                    <Search className="w-4 h-4 text-[#0066FF] shrink-0" />
+                    <Search className="w-4 h-4 text-[#1E90FF] shrink-0" />
                     <span className="leading-tight">Applicant Tracking</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-xs font-semibold text-slate-700 bg-slate-50 hover:bg-blue-50/60 px-3 py-2 rounded-xl border border-slate-200/80 transition-colors">
-                    <GraduationCap className="w-4 h-4 text-[#0066FF] shrink-0" />
+                    <GraduationCap className="w-4 h-4 text-[#1E90FF] shrink-0" />
                     <span className="leading-tight">Training</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-xs font-semibold text-slate-700 bg-slate-50 hover:bg-blue-50/60 px-3 py-2 rounded-xl border border-slate-200/80 transition-colors">
-                    <FileText className="w-4 h-4 text-[#0066FF] shrink-0" />
+                    <FileText className="w-4 h-4 text-[#1E90FF] shrink-0" />
                     <span className="leading-tight">Offer Management</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-xs font-semibold text-slate-700 bg-slate-50 hover:bg-blue-50/60 px-3 py-2 rounded-xl border border-slate-200/80 transition-colors">
-                    <UserCheck className="w-4 h-4 text-[#0066FF] shrink-0" />
+                    <UserCheck className="w-4 h-4 text-[#1E90FF] shrink-0" />
                     <span className="leading-tight">Employee Self Service</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-xs font-semibold text-slate-700 bg-slate-50 hover:bg-blue-50/60 px-3 py-2 rounded-xl border border-slate-200/80 transition-colors">
-                    <Laptop className="w-4 h-4 text-[#0066FF] shrink-0" />
+                    <Laptop className="w-4 h-4 text-[#1E90FF] shrink-0" />
                     <span className="leading-tight">Digital Onboarding</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-xs font-semibold text-slate-700 bg-slate-50 hover:bg-blue-50/60 px-3 py-2 rounded-xl border border-slate-200/80 transition-colors">
-                    <PieChart className="w-4 h-4 text-[#0066FF] shrink-0" />
+                    <PieChart className="w-4 h-4 text-[#1E90FF] shrink-0" />
                     <span className="leading-tight">Reports</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-xs font-semibold text-slate-700 bg-slate-50 hover:bg-blue-50/60 px-3 py-2 rounded-xl border border-slate-200/80 transition-colors">
-                    <Calendar className="w-4 h-4 text-[#0066FF] shrink-0" />
+                    <Calendar className="w-4 h-4 text-[#1E90FF] shrink-0" />
                     <span className="leading-tight">Attendance</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-xs font-semibold text-slate-700 bg-slate-50 hover:bg-blue-50/60 px-3 py-2 rounded-xl border border-slate-200/80 transition-colors">
-                    <ShieldCheck className="w-4 h-4 text-[#0066FF] shrink-0" />
+                    <ShieldCheck className="w-4 h-4 text-[#1E90FF] shrink-0" />
                     <span className="leading-tight">Compliance</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-xs font-semibold text-slate-700 bg-slate-50 hover:bg-blue-50/60 px-3 py-2 rounded-xl border border-slate-200/80 transition-colors">
-                    <CalendarDays className="w-4 h-4 text-[#0066FF] shrink-0" />
+                    <CalendarDays className="w-4 h-4 text-[#1E90FF] shrink-0" />
                     <span className="leading-tight">Leave</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-xs font-semibold text-slate-700 bg-slate-50 hover:bg-blue-50/60 px-3 py-2 rounded-xl border border-slate-200/80 transition-colors">
-                    <LogOut className="w-4 h-4 text-[#0066FF] shrink-0" />
+                    <LogOut className="w-4 h-4 text-[#1E90FF] shrink-0" />
                     <span className="leading-tight">Exit Management</span>
                   </div>
                 </div>
@@ -183,23 +183,23 @@ export function ServicesSolutions() {
                 </h4>
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 text-center">
                   <div className="bg-blue-50/60 rounded-xl p-2 border border-blue-100/60 flex flex-col items-center justify-center">
-                    <Cloud className="w-4 h-4 text-[#0066FF] mb-1" />
+                    <Cloud className="w-4 h-4 text-[#1E90FF] mb-1" />
                     <span className="text-[10px] font-bold text-slate-700 leading-tight">Cloud SaaS</span>
                   </div>
                   <div className="bg-blue-50/60 rounded-xl p-2 border border-blue-100/60 flex flex-col items-center justify-center">
-                    <Server className="w-4 h-4 text-[#0066FF] mb-1" />
+                    <Server className="w-4 h-4 text-[#1E90FF] mb-1" />
                     <span className="text-[10px] font-bold text-slate-700 leading-tight">Private Cloud</span>
                   </div>
                   <div className="bg-blue-50/60 rounded-xl p-2 border border-blue-100/60 flex flex-col items-center justify-center">
-                    <Building className="w-4 h-4 text-[#0066FF] mb-1" />
+                    <Building className="w-4 h-4 text-[#1E90FF] mb-1" />
                     <span className="text-[10px] font-bold text-slate-700 leading-tight">On-Premise</span>
                   </div>
                   <div className="bg-blue-50/60 rounded-xl p-2 border border-blue-100/60 flex flex-col items-center justify-center">
-                    <Calendar className="w-4 h-4 text-[#0066FF] mb-1" />
+                    <Calendar className="w-4 h-4 text-[#1E90FF] mb-1" />
                     <span className="text-[10px] font-bold text-slate-700 leading-tight">Subscription</span>
                   </div>
                   <div className="col-span-2 sm:col-span-1 bg-blue-50/60 rounded-xl p-2 border border-blue-100/60 flex flex-col items-center justify-center">
-                    <Award className="w-4 h-4 text-[#0066FF] mb-1" />
+                    <Award className="w-4 h-4 text-[#1E90FF] mb-1" />
                     <span className="text-[10px] font-bold text-slate-700 leading-tight">Perpetual Licence</span>
                   </div>
                 </div>
@@ -209,7 +209,7 @@ export function ServicesSolutions() {
             {/* Button */}
             <Link
               href="/services#hr-erp-software"
-              className="w-full bg-[#0066FF] hover:bg-[#0052CC] text-white font-bold text-xs sm:text-sm py-3.5 px-4 rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 mt-4"
+              className="w-full bg-[#1E90FF] hover:bg-[#187BCD] text-white font-bold text-xs sm:text-sm py-3.5 px-4 rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 mt-4"
             >
               <span className="whitespace-nowrap">Explore HR ERP Software</span>
               <ArrowRight className="w-4 h-4 shrink-0" />

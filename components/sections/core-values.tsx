@@ -41,7 +41,7 @@ export function CoreValues() {
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-4 space-y-1">
-          <div className="text-xs font-bold uppercase tracking-widest text-[#0066FF]">
+          <div className="text-xs font-bold uppercase tracking-widest text-[#1E90FF]">
             OUR CORE VALUES
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#051332] tracking-tight">
@@ -64,7 +64,7 @@ export function CoreValues() {
                 delay={index * 0.08}
                 className="bg-white rounded-2xl p-4 sm:p-5 border border-blue-50/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-lg hover:border-blue-100 transition-all flex flex-col items-center text-center group h-full"
               >
-                <div className="w-12 h-12 rounded-xl bg-blue-50/80 group-hover:bg-[#0066FF] group-hover:text-white transition-colors flex items-center justify-center text-[#0066FF] mb-3 shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-blue-50/80 group-hover:bg-[#1E90FF] group-hover:text-white transition-colors flex items-center justify-center text-[#1E90FF] mb-3 shrink-0">
                   <Icon className="w-6 h-6" />
                 </div>
                 <h3 className="text-base sm:text-lg font-bold text-[#051332] mb-1.5 leading-snug">

@@ -8,9 +8,9 @@ import { ArrowRight, Users, BarChart2, Lightbulb } from "lucide-react";
 import React from "react";
 
 const iconsMap: Record<string, React.ReactNode> = {
-  users: <Users className="w-4 h-4 text-[#0055FF]" />,
-  trendingUp: <BarChart2 className="w-4 h-4 text-[#0055FF]" />,
-  lightbulb: <Lightbulb className="w-4 h-4 text-[#0055FF]" />
+  users: <Users className="w-4 h-4 text-[#1E90FF]" />,
+  trendingUp: <BarChart2 className="w-4 h-4 text-[#1E90FF]" />,
+  lightbulb: <Lightbulb className="w-4 h-4 text-[#1E90FF]" />
 };
 
 export function HomeCta() {
@@ -24,7 +24,7 @@ export function HomeCta() {
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
           <div className="absolute top-8 left-[38%] grid grid-cols-5 gap-3 opacity-20 hidden lg:grid">
             {Array.from({length: 20}).map((_, i) => (
-              <div key={i} className="w-1.5 h-1.5 rounded-full bg-[#0055FF]" />
+              <div key={i} className="w-1.5 h-1.5 rounded-full bg-[#1E90FF]" />
             ))}
           </div>
           {/* Top-left subtle swoosh */}
@@ -37,15 +37,15 @@ export function HomeCta() {
           <div className="lg:col-span-5 flex flex-col justify-center py-10 lg:py-14 pl-6 lg:pl-12 pr-6 z-20">
             {/* Eyebrow */}
             <FadeIn direction="up" className="flex items-center gap-3 mb-3">
-              <div className="h-[2px] w-8 bg-[#0055FF]" />
-              <span className="text-[12px] font-bold tracking-[0.16em] text-[#0055FF] uppercase">
+              <div className="h-[2px] w-8 bg-[#1E90FF]" />
+              <span className="text-[12px] font-bold tracking-[0.16em] text-[#1E90FF] uppercase">
                 {eyebrow}
               </span>
             </FadeIn>
             
             <FadeIn direction="up" delay={0.1} className="text-[30px] sm:text-[36px] lg:text-[40px] font-heading font-extrabold text-[#111827] tracking-tight leading-[1.15] mb-4">
               <h2>
-                Let&apos;s Build a Better <span className="text-[#0055FF]">Workplace Together</span>
+                Let&apos;s Build a Better <span className="text-[#1E90FF]">Workplace Together</span>
               </h2>
             </FadeIn>
             
@@ -55,7 +55,7 @@ export function HomeCta() {
 
             {/* Calligraphy Tagline */}
             <FadeIn direction="up" delay={0.25} className="mb-5">
-              <div className="inline-block text-[#0055FF] font-[family-name:var(--font-playball)] -rotate-2">
+              <div className="inline-block text-[#1E90FF] font-[family-name:var(--font-playball)] -rotate-2">
                 <span className="text-[20px] sm:text-[23px] leading-tight block font-normal">
                   Better People, Brighter Possibilities
                 </span>
@@ -71,7 +71,7 @@ export function HomeCta() {
                 href="/contact"
                 className={cn(
                   buttonVariants({ variant: "default" }),
-                  "bg-gradient-to-r from-[#0055FF] to-[#0077FF] hover:from-blue-700 hover:to-blue-600 text-white rounded-xl px-7 py-3.5 font-bold text-[14px] flex items-center gap-2 shadow-lg shadow-blue-500/20"
+                  "bg-[#1E90FF] hover:bg-[#187BCD] text-white rounded-xl px-7 py-3.5 font-bold text-[14px] flex items-center gap-2 shadow-lg shadow-blue-500/20"
                 )}
               >
                 {ctas.primary} <ArrowRight className="w-4 h-4" />
@@ -80,7 +80,7 @@ export function HomeCta() {
                 href="tel:+919019724365"
                 className={cn(
                   buttonVariants({ variant: "outline" }),
-                  "border-2 border-[#0055FF] text-[#0055FF] bg-white hover:bg-blue-50/50 rounded-xl px-7 py-3.5 font-bold text-[14px] flex items-center transition-colors"
+                  "border-2 border-[#1E90FF] text-[#1E90FF] bg-white hover:bg-blue-50/50 rounded-xl px-7 py-3.5 font-bold text-[14px] flex items-center transition-colors"
                 )}
               >
                 {ctas.secondary}
@@ -132,21 +132,21 @@ export function HomeCta() {
             <div className="absolute bottom-2.5 left-2 right-2 sm:left-4 sm:right-4 z-30 lg:hidden bg-white/95 backdrop-blur-md rounded-2xl p-1.5 sm:p-2.5 shadow-lg border border-blue-100 flex items-center justify-around overflow-hidden">
               <div className="flex items-center gap-1 sm:gap-1.5">
                 <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#EBF4FF] flex items-center justify-center shrink-0">
-                  <Users className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#0055FF]" />
+                  <Users className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#1E90FF]" />
                 </div>
                 <span className="text-[9.5px] sm:text-[11px] font-bold text-[#111827] whitespace-nowrap">People</span>
               </div>
               <div className="h-3.5 w-px bg-slate-200/80 shrink-0" />
               <div className="flex items-center gap-1 sm:gap-1.5">
                 <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#EBF4FF] flex items-center justify-center shrink-0">
-                  <BarChart2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#0055FF]" />
+                  <BarChart2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#1E90FF]" />
                 </div>
                 <span className="text-[9.5px] sm:text-[11px] font-bold text-[#111827] whitespace-nowrap">Performance</span>
               </div>
               <div className="h-3.5 w-px bg-slate-200/80 shrink-0" />
               <div className="flex items-center gap-1 sm:gap-1.5">
                 <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#EBF4FF] flex items-center justify-center shrink-0">
-                  <Lightbulb className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#0055FF]" />
+                  <Lightbulb className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#1E90FF]" />
                 </div>
                 <span className="text-[9.5px] sm:text-[11px] font-bold text-[#111827] whitespace-nowrap">Possibilities</span>
               </div>

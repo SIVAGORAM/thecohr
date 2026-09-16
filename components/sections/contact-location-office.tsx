@@ -47,14 +47,14 @@ export function ContactLocationOffice() {
               href={googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative z-20 mt-auto self-start bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-4 shadow-xl border border-slate-200/80 hover:border-[#0066FF] transition-all group max-w-[320px]"
+              className="relative z-20 mt-auto self-start bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-4 shadow-xl border border-slate-200/80 hover:border-[#1E90FF] transition-all group max-w-[320px]"
             >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-red-500 text-white flex items-center justify-center shrink-0 shadow-md group-hover:scale-110 transition-transform">
                   <MapPin className="w-5 h-5 fill-white text-red-500" />
                 </div>
                 <div className="text-left">
-                  <div className="text-xs sm:text-sm font-extrabold text-[#051332] flex items-center gap-1 group-hover:text-[#0066FF] transition-colors">
+                  <div className="text-xs sm:text-sm font-extrabold text-[#051332] flex items-center gap-1 group-hover:text-[#1E90FF] transition-colors">
                     <span>The Co HR Private Limited</span>
                     <ExternalLink className="w-3.5 h-3.5" />
                   </div>
@@ -95,7 +95,7 @@ export function ContactLocationOffice() {
           >
             {/* Office Info Header */}
             <div className="flex items-start gap-4 mb-6">
-              <div className="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center text-[#0066FF] shrink-0 shadow-sm">
+              <div className="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center text-[#1E90FF] shrink-0 shadow-sm">
                 <Building2 className="w-6 h-6" />
               </div>
               <div>

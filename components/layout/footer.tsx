@@ -61,12 +61,12 @@ export function Footer() {
     <footer className="relative bg-[#020612] text-slate-300 pt-12 lg:pt-16 pb-8 overflow-hidden font-sans border-t border-slate-800/60">
       {/* Background Ambient Glows & Vector Waves */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute top-0 left-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-blue-900/15 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-80 sm:w-[500px] h-80 sm:h-[500px] bg-blue-700/10 rounded-full blur-[120px]" />
+        <div className="absolute top-0 left-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-[#1E90FF]/15 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-80 sm:w-[500px] h-80 sm:h-[500px] bg-[#1E90FF]/10 rounded-full blur-[120px]" />
         
         {/* Soft wavy lines vector overlay */}
         <svg
-          className="absolute bottom-0 left-0 right-0 w-full h-32 sm:h-48 opacity-25 text-blue-500/20"
+          className="absolute bottom-0 left-0 right-0 w-full h-32 sm:h-48 opacity-25 text-[#1E90FF]/20"
           viewBox="0 0 1440 200"
           fill="none"
           preserveAspectRatio="none"
@@ -77,9 +77,9 @@ export function Footer() {
           />
           <defs>
             <linearGradient id="footer-wave-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#0055FF" stopOpacity="0.3" />
-              <stop offset="50%" stopColor="#0066FF" stopOpacity="0.1" />
-              <stop offset="100%" stopColor="#003399" stopOpacity="0.4" />
+              <stop offset="0%" stopColor="#1E90FF" stopOpacity="0.3" />
+              <stop offset="50%" stopColor="#1E90FF" stopOpacity="0.1" />
+              <stop offset="100%" stopColor="#187BCD" stopOpacity="0.4" />
             </linearGradient>
           </defs>
         </svg>
@@ -107,7 +107,7 @@ export function Footer() {
             {/* Headline */}
             <div className="text-xl sm:text-2xl lg:text-[26px] font-extrabold text-white tracking-tight leading-snug">
               Empowering People.<br />
-              Building <span className="text-[#0066FF]">Tomorrow.</span>
+              Building <span className="text-[#1E90FF]">Tomorrow.</span>
             </div>
 
             {/* Description */}
@@ -117,17 +117,17 @@ export function Footer() {
 
             {/* Social Icons */}
             <div className="flex items-center gap-3 pt-1">
-              <a href="https://www.linkedin.com/in/the-co-hr-1a4842428/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-slate-700/80 bg-slate-900/60 flex items-center justify-center text-slate-300 hover:border-blue-500 hover:bg-[#0055FF] hover:text-white transition-all" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/the-co-hr-1a4842428/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-slate-700/80 bg-slate-900/60 flex items-center justify-center text-slate-300 hover:border-blue-500 hover:bg-[#1E90FF] hover:text-white transition-all" aria-label="LinkedIn">
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
                 </svg>
               </a>
-              <a href="https://x.com/thecohr" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-slate-700/80 bg-slate-900/60 flex items-center justify-center text-slate-300 hover:border-blue-500 hover:bg-[#0055FF] hover:text-white transition-all" aria-label="X Twitter">
+              <a href="https://x.com/thecohr" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-slate-700/80 bg-slate-900/60 flex items-center justify-center text-slate-300 hover:border-blue-500 hover:bg-[#1E90FF] hover:text-white transition-all" aria-label="X Twitter">
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                 </svg>
               </a>
-              <a href="https://www.facebook.com/people/TheCo-HR/pfbid0Y9dBJZkUCq9jrpMwukbksVvaF3b7EPD6GvEdWDWLHTAEtzFMZmmxKznuax2S5Gsql/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-slate-700/80 bg-slate-900/60 flex items-center justify-center text-slate-300 hover:border-blue-500 hover:bg-[#0055FF] hover:text-white transition-all" aria-label="Facebook">
+              <a href="https://www.facebook.com/people/TheCo-HR/pfbid0Y9dBJZkUCq9jrpMwukbksVvaF3b7EPD6GvEdWDWLHTAEtzFMZmmxKznuax2S5Gsql/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-slate-700/80 bg-slate-900/60 flex items-center justify-center text-slate-300 hover:border-blue-500 hover:bg-[#1E90FF] hover:text-white transition-all" aria-label="Facebook">
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                 </svg>
@@ -148,14 +148,14 @@ export function Footer() {
 
             {/* Calligraphy Script Accent */}
             <div className="pt-2 sm:pt-3">
-              <div className="font-[family-name:var(--font-playball)] text-[#0066FF] text-xl sm:text-2xl lg:text-3xl -rotate-2 leading-tight tracking-wide">
+              <div className="font-[family-name:var(--font-playball)] text-[#1E90FF] text-xl sm:text-2xl lg:text-3xl -rotate-2 leading-tight tracking-wide">
                 Better People
               </div>
               <div className="relative inline-block">
-                <span className="font-[family-name:var(--font-playball)] text-[#0066FF] text-xl sm:text-2xl lg:text-3xl -rotate-2 leading-tight tracking-wide">
+                <span className="font-[family-name:var(--font-playball)] text-[#1E90FF] text-xl sm:text-2xl lg:text-3xl -rotate-2 leading-tight tracking-wide">
                   Brighter Possibilities
                 </span>
-                <svg className="absolute -bottom-2 left-0 w-full h-3 text-[#0066FF]/60 overflow-visible" viewBox="0 0 200 12" fill="none">
+                <svg className="absolute -bottom-2 left-0 w-full h-3 text-[#1E90FF]/60 overflow-visible" viewBox="0 0 200 12" fill="none">
                   <path d="M2,8 Q100,-2 198,8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
                 </svg>
               </div>
@@ -179,7 +179,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link href={link.href} className="group flex items-center justify-between text-slate-400 hover:text-white transition-colors">
                     <span>{link.label}</span>
-                    <ChevronRight className="w-3.5 h-3.5 text-slate-600 group-hover:text-[#0066FF] group-hover:translate-x-1 transition-all" />
+                    <ChevronRight className="w-3.5 h-3.5 text-slate-600 group-hover:text-[#1E90FF] group-hover:translate-x-1 transition-all" />
                   </Link>
                 </li>
               ))}
@@ -193,14 +193,14 @@ export function Footer() {
             </h4>
             <ul className="space-y-3.5 sm:space-y-4">
               {[
-                { label: "HR ERP Software", icon: <Monitor className="w-4 h-4 text-[#0066FF]" />, href: "/services#hr-erp-software" },
-                { label: "Remote HR Services", icon: <Users className="w-4 h-4 text-[#0066FF]" />, href: "/services#remote-hr-services" },
-                { label: "ERP Training & Upskilling", icon: <GraduationCap className="w-4 h-4 text-[#0066FF]" />, href: "/services#erp-training" },
-                { label: "Book a Demo", icon: <Headset className="w-4 h-4 text-[#0066FF]" />, href: "/contact" },
+                { label: "HR ERP Software", icon: <Monitor className="w-4 h-4 text-[#1E90FF]" />, href: "/services#hr-erp-software" },
+                { label: "Remote HR Services", icon: <Users className="w-4 h-4 text-[#1E90FF]" />, href: "/services#remote-hr-services" },
+                { label: "ERP Training & Upskilling", icon: <GraduationCap className="w-4 h-4 text-[#1E90FF]" />, href: "/services#erp-training" },
+                { label: "Book a Demo", icon: <Headset className="w-4 h-4 text-[#1E90FF]" />, href: "/contact" },
               ].map((service) => (
                 <li key={service.label}>
                   <Link href={service.href} className="group flex items-center gap-3 text-xs lg:text-sm text-slate-400 hover:text-white transition-colors">
-                    <div className="w-8 h-8 rounded-lg bg-blue-950/60 border border-blue-500/20 flex items-center justify-center shrink-0 group-hover:border-blue-400 group-hover:bg-blue-900/40 transition-all">
+                    <div className="w-8 h-8 rounded-lg bg-[#1E90FF]/10 border border-[#1E90FF]/30 flex items-center justify-center shrink-0 group-hover:border-[#1E90FF] group-hover:bg-[#1E90FF]/25 transition-all">
                       {service.icon}
                     </div>
                     <span className="leading-snug">{service.label}</span>
@@ -219,11 +219,11 @@ export function Footer() {
             <div className="space-y-3.5 sm:space-y-4 text-xs lg:text-sm">
               {/* Mail */}
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-full bg-[#0055FF] flex items-center justify-center shrink-0 text-white mt-0.5 shadow-sm">
+                <div className="w-8 h-8 rounded-full bg-[#1E90FF] flex items-center justify-center shrink-0 text-white mt-0.5 shadow-sm">
                   <Mail className="w-4 h-4" />
                 </div>
                 <div className="min-w-0">
-                  <a href="mailto:info@thecohr.com" className="text-white font-medium hover:text-[#0066FF] transition-colors block truncate">
+                  <a href="mailto:info@thecohr.com" className="text-white font-medium hover:text-[#1E90FF] transition-colors block truncate">
                     info@thecohr.com
                   </a>
                 </div>
@@ -231,11 +231,11 @@ export function Footer() {
 
               {/* Phone */}
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-full bg-[#0055FF] flex items-center justify-center shrink-0 text-white mt-0.5 shadow-sm">
+                <div className="w-8 h-8 rounded-full bg-[#1E90FF] flex items-center justify-center shrink-0 text-white mt-0.5 shadow-sm">
                   <Phone className="w-4 h-4" />
                 </div>
                 <div className="min-w-0">
-                  <a href="tel:+919019724365" className="text-white font-medium hover:text-[#0066FF] transition-colors block">
+                  <a href="tel:+919019724365" className="text-white font-medium hover:text-[#1E90FF] transition-colors block">
                     +91 90197 24365
                   </a>
                 </div>
@@ -243,7 +243,7 @@ export function Footer() {
 
               {/* MapPin */}
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-full bg-[#0055FF] flex items-center justify-center shrink-0 text-white mt-0.5 shadow-sm">
+                <div className="w-8 h-8 rounded-full bg-[#1E90FF] flex items-center justify-center shrink-0 text-white mt-0.5 shadow-sm">
                   <MapPin className="w-4 h-4" />
                 </div>
                 <div>
@@ -257,7 +257,7 @@ export function Footer() {
             <div className="relative pt-2 mt-4">
               <div className="w-full h-24 relative opacity-80">
                 {/* SVG Dotted World Map */}
-                <svg className="w-full h-full text-blue-400/50" viewBox="0 0 240 100" fill="none">
+                <svg className="w-full h-full text-[#1E90FF]/40" viewBox="0 0 240 100" fill="none">
                   <g fill="currentColor">
                     <circle cx="30" cy="25" r="1.5" /><circle cx="40" cy="20" r="1.5" /><circle cx="50" cy="22" r="1.5" />
                     <circle cx="25" cy="35" r="1.5" /><circle cx="35" cy="32" r="1.5" /><circle cx="45" cy="38" r="1.5" />
@@ -265,21 +265,21 @@ export function Footer() {
                     <circle cx="110" cy="25" r="1.5" /><circle cx="120" cy="22" r="1.5" /><circle cx="125" cy="30" r="1.5" />
                     <circle cx="115" cy="45" r="1.5" /><circle cx="120" cy="55" r="1.5" /><circle cx="125" cy="65" r="1.5" />
                     <circle cx="150" cy="25" r="1.5" /><circle cx="165" cy="20" r="1.5" /><circle cx="175" cy="30" r="1.5" />
-                    <circle cx="155" cy="40" r="2.5" className="text-[#0066FF] animate-pulse" />
+                    <circle cx="155" cy="40" r="2.5" className="text-[#1E90FF] animate-pulse" />
                     <circle cx="165" cy="42" r="1.5" /><circle cx="180" cy="45" r="1.5" />
                     <circle cx="190" cy="70" r="1.5" /><circle cx="200" cy="75" r="1.5" />
                   </g>
-                  <path d="M50,22 Q100,5 155,40" stroke="#0066FF" strokeWidth="1" strokeDasharray="2,2" opacity="0.6" />
-                  <path d="M120,22 Q140,10 155,40" stroke="#0066FF" strokeWidth="1" strokeDasharray="2,2" opacity="0.6" />
+                  <path d="M50,22 Q100,5 155,40" stroke="#1E90FF" strokeWidth="1" strokeDasharray="2,2" opacity="0.6" />
+                  <path d="M120,22 Q140,10 155,40" stroke="#1E90FF" strokeWidth="1" strokeDasharray="2,2" opacity="0.6" />
                 </svg>
               </div>
 
               {/* Overlaid Calligraphy */}
               <div className="absolute top-4 left-0 w-full text-center pointer-events-none transform -rotate-2">
-                <div className="font-[family-name:var(--font-playball)] text-[#0066FF] text-base sm:text-lg lg:text-xl leading-tight drop-shadow-md">
+                <div className="font-[family-name:var(--font-playball)] text-[#1E90FF] text-base sm:text-lg lg:text-xl leading-tight drop-shadow-md">
                   Supporting Businesses
                 </div>
-                <div className="font-[family-name:var(--font-playball)] text-[#0066FF] text-base sm:text-lg lg:text-xl leading-tight drop-shadow-md">
+                <div className="font-[family-name:var(--font-playball)] text-[#1E90FF] text-base sm:text-lg lg:text-xl leading-tight drop-shadow-md">
                   Across the Globe
                 </div>
               </div>
@@ -288,10 +288,10 @@ export function Footer() {
 
           {/* Column 5: Stay Updated Newsletter Card (Col span 3) */}
           <div className="sm:col-span-1 lg:col-span-3">
-            <div className="relative rounded-2xl sm:rounded-3xl bg-gradient-to-b from-[#0A173B] via-[#071333] to-[#040B21] p-5 sm:p-6 lg:p-7 border border-blue-500/25 shadow-2xl overflow-hidden h-full flex flex-col justify-between">
+            <div className="relative rounded-2xl sm:rounded-3xl bg-gradient-to-b from-[#0A173B] via-[#071333] to-[#040B21] p-5 sm:p-6 lg:p-7 border border-[#1E90FF]/30 shadow-2xl overflow-hidden h-full flex flex-col justify-between">
               
               {/* Top-Right Floating Send Icon */}
-              <div className="absolute top-4 sm:top-5 right-4 sm:right-5 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#0055FF] flex items-center justify-center text-white shadow-[0_0_20px_rgba(0,85,255,0.6)]">
+              <div className="absolute top-4 sm:top-5 right-4 sm:right-5 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#1E90FF] flex items-center justify-center text-white shadow-[0_0_20px_rgba(30,144,255,0.6)]">
                 <Send className="w-4 h-4 sm:w-5 sm:h-5 -rotate-12 translate-x-0.5 -translate-y-0.5" />
               </div>
 
@@ -316,7 +316,7 @@ export function Footer() {
                   </div>
                 ) : (
                   <form onSubmit={handleNewsletterSubmit} className="space-y-3">
-                    <div className="relative flex items-center bg-[#050D24] border border-blue-900/80 rounded-full p-1 sm:p-1.5 focus-within:border-blue-500/80 transition-all shadow-inner">
+                    <div className="relative flex items-center bg-[#050D24] border border-[#1E90FF]/40 rounded-full p-1 sm:p-1.5 focus-within:border-[#1E90FF] transition-all shadow-inner">
                       <input
                         type="email"
                         placeholder="Your email address"
@@ -329,7 +329,7 @@ export function Footer() {
                       <button
                         type="submit"
                         disabled={newsletterSubmitting}
-                        className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#0055FF] text-white flex items-center justify-center hover:bg-blue-500 shrink-0 transition-transform active:scale-95 shadow-md disabled:opacity-50 cursor-pointer"
+                        className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1E90FF] text-white flex items-center justify-center hover:bg-[#187BCD] shrink-0 transition-transform active:scale-95 shadow-md disabled:opacity-50 cursor-pointer"
                         aria-label="Subscribe"
                       >
                         {newsletterSubmitting ? (
@@ -347,7 +347,7 @@ export function Footer() {
                     )}
                     
                     <div className="flex items-center gap-1.5 text-[11px] text-slate-400 px-2">
-                      <Lock className="w-3.5 h-3.5 text-[#0066FF]" />
+                      <Lock className="w-3.5 h-3.5 text-[#1E90FF]" />
                       <span>We respect your privacy.</span>
                     </div>
                   </form>
@@ -355,7 +355,7 @@ export function Footer() {
               </div>
 
               {/* Solid Vibrant Corner Gradient Swoop from Mockup */}
-              <div className="w-28 sm:w-32 h-28 sm:h-32 bg-gradient-to-tr from-[#0044FF] to-[#0066FF] rounded-tl-full absolute -bottom-2 -right-2 pointer-events-none opacity-80" />
+              <div className="w-28 sm:w-32 h-28 sm:h-32 bg-[#1E90FF] rounded-tl-full absolute -bottom-2 -right-2 pointer-events-none opacity-90" />
             </div>
           </div>
 

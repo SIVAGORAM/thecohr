@@ -12,7 +12,7 @@ export default function ThankYouPage() {
       <div className="max-w-xl w-full text-center space-y-8 bg-white rounded-3xl p-8 sm:p-12 border border-slate-200/80 shadow-[0_8px_30px_rgba(0,0,0,0.05)]">
         
         {/* Animated Check Icon */}
-        <div className="w-20 h-20 bg-[#0066FF] text-white rounded-full flex items-center justify-center mx-auto shadow-lg shadow-blue-500/25">
+        <div className="w-20 h-20 bg-[#1E90FF] text-white rounded-full flex items-center justify-center mx-auto shadow-lg shadow-blue-500/25">
           <CheckCircle2 className="w-12 h-12" />
         </div>
 
@@ -34,14 +34,14 @@ export default function ThankYouPage() {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs sm:text-sm font-bold">
             <a
               href="tel:+919019724365"
-              className="flex items-center gap-2 text-[#0066FF] hover:underline"
+              className="flex items-center gap-2 text-[#1E90FF] hover:underline"
             >
               <Phone className="w-4 h-4" />
               <span>+91 90197 24365</span>
             </a>
             <a
               href="mailto:info@thecohr.com"
-              className="flex items-center gap-2 text-[#0066FF] hover:underline"
+              className="flex items-center gap-2 text-[#1E90FF] hover:underline"
             >
               <Mail className="w-4 h-4" />
               <span>info@thecohr.com</span>
@@ -53,7 +53,7 @@ export default function ThankYouPage() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
           <Link
             href="/"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0066FF] hover:bg-[#0052CC] text-white font-bold text-sm py-3.5 px-6 rounded-xl transition-all shadow-md hover:shadow-lg"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#1E90FF] hover:bg-[#187BCD] text-white font-bold text-sm py-3.5 px-6 rounded-xl transition-all shadow-md hover:shadow-lg"
           >
             <Home className="w-4 h-4" />
             <span>Return to Homepage</span>

@@ -6,7 +6,7 @@ export default function NotFound() {
     <div className="min-h-[80vh] flex items-center justify-center bg-gradient-to-b from-slate-50 to-white px-6 py-16">
       <div className="max-w-md w-full text-center space-y-6">
         {/* Brand Badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-[#0066FF] text-xs font-bold uppercase tracking-wider">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-[#1E90FF] text-xs font-bold uppercase tracking-wider">
           <Search className="w-3.5 h-3.5" />
           <span>Page Not Found — 404</span>
         </div>
@@ -32,7 +32,7 @@ export default function NotFound() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
           <Link
             href="/"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0066FF] hover:bg-[#0052CC] text-white font-bold text-sm py-3.5 px-6 rounded-xl transition-all shadow-md hover:shadow-lg"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#1E90FF] hover:bg-[#187BCD] text-white font-bold text-sm py-3.5 px-6 rounded-xl transition-all shadow-md hover:shadow-lg"
           >
             <Home className="w-4 h-4" />
             <span>Back to Home</span>

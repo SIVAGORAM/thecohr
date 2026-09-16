@@ -14,7 +14,7 @@ export default function TermsOfServicePage() {
         {/* Back Link */}
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-xs font-bold text-[#0066FF] hover:underline mb-8"
+          className="inline-flex items-center gap-2 text-xs font-bold text-[#1E90FF] hover:underline mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to Home</span>
@@ -25,7 +25,7 @@ export default function TermsOfServicePage() {
           
           {/* Header */}
           <div className="border-b border-slate-100 pb-8 space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#0066FF] text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#1E90FF] text-xs font-bold uppercase tracking-wider">
               <FileText className="w-3.5 h-3.5" />
               <span>Legal Terms</span>
             </div>
@@ -43,7 +43,7 @@ export default function TermsOfServicePage() {
             <section className="space-y-3">
               <h2 className="text-xl font-bold text-[#051332]">1. Agreement to Terms</h2>
               <p>
-                These Terms of Service constitute a legally binding agreement made between you (&quot;User&quot; or &quot;Client&quot;) and The Co HR Private Limited (&quot;The Co HR,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;), concerning your access to and use of <a href="https://www.thecohr.com" className="text-[#0066FF] underline font-medium">www.thecohr.com</a> as well as any associated software applications, HR ERP tools, or consultation services.
+                These Terms of Service constitute a legally binding agreement made between you (&quot;User&quot; or &quot;Client&quot;) and The Co HR Private Limited (&quot;The Co HR,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;), concerning your access to and use of <a href="https://www.thecohr.com" className="text-[#1E90FF] underline font-medium">www.thecohr.com</a> as well as any associated software applications, HR ERP tools, or consultation services.
               </p>
             </section>
 
@@ -82,7 +82,7 @@ export default function TermsOfServicePage() {
               <h2 className="text-xl font-bold text-[#051332]">6. Contact Information</h2>
               <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-xs sm:text-sm font-medium text-slate-800 space-y-1">
                 <p><strong>The Co HR Private Limited</strong></p>
-                <p>Email: <a href="mailto:info@thecohr.com" className="text-[#0066FF] underline">info@thecohr.com</a></p>
+                <p>Email: <a href="mailto:info@thecohr.com" className="text-[#1E90FF] underline">info@thecohr.com</a></p>
                 <p>Address: Pranava Business Park, 7th Floor, Kondapur, Hyderabad, Telangana</p>
               </div>
             </section>

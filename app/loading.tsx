@@ -4,13 +4,13 @@ export default function Loading() {
   return (
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#020612]/90 backdrop-blur-md transition-opacity duration-300">
       {/* Ambient Radial Glow */}
-      <div className="absolute w-72 h-72 bg-[#0066FF]/20 rounded-full blur-3xl animate-pulse pointer-events-none" />
+      <div className="absolute w-72 h-72 bg-[#1E90FF]/20 rounded-full blur-3xl animate-pulse pointer-events-none" />
 
       <div className="relative z-10 flex flex-col items-center gap-6 px-6 text-center">
         {/* Animated Brand Pulse Badge */}
         <div className="relative flex items-center justify-center w-20 h-20">
           {/* Outer Rotating Glowing Ring */}
-          <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-[#0066FF] border-r-[#0055FF] animate-spin" />
+          <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-[#1E90FF] border-r-[#1E90FF] animate-spin" />
           
           {/* Subtle Inner Pulsing Ring */}
           <div className="absolute inset-2 rounded-full border border-blue-500/30 animate-ping opacity-30" />
@@ -39,7 +39,7 @@ export default function Loading() {
 
           {/* Progress Shimmer Line */}
           <div className="w-44 h-1 bg-slate-800 rounded-full overflow-hidden mx-auto mt-3">
-            <div className="h-full bg-gradient-to-r from-[#0066FF] via-[#0055FF] to-[#0066FF] rounded-full animate-shimmer w-full" />
+            <div className="h-full bg-gradient-to-r from-[#1E90FF] via-[#187BCD] to-[#1E90FF] rounded-full animate-shimmer w-full" />
           </div>
         </div>
       </div>

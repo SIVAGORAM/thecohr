@@ -19,12 +19,12 @@ export function MobileStickyCTA() {
           href="tel:+919019724365"
           className="flex-1 bg-slate-100 hover:bg-slate-200 text-[#051332] font-bold text-xs py-3 px-3 rounded-xl transition-colors flex items-center justify-center gap-1.5 border border-slate-200 shrink-0"
         >
-          <PhoneCall className="w-4 h-4 text-[#0066FF]" />
+          <PhoneCall className="w-4 h-4 text-[#1E90FF]" />
           <span>Call Us</span>
         </a>
         <Link
           href="/contact"
-          className="flex-[2] bg-[#0066FF] hover:bg-[#0052CC] text-white font-bold text-xs py-3 px-4 rounded-xl transition-all shadow-md flex items-center justify-center gap-1.5 shrink-0"
+          className="flex-[2] bg-[#1E90FF] hover:bg-[#187BCD] text-white font-bold text-xs py-3 px-4 rounded-xl transition-all shadow-md flex items-center justify-center gap-1.5 shrink-0"
         >
           <Calendar className="w-4 h-4" />
           <span>Book a Free Demo</span>

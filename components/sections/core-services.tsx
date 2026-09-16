@@ -41,7 +41,7 @@ export function CoreServices() {
         <div className="text-center max-w-4xl mx-auto mb-10">
           <FadeIn direction="up" className="flex items-center justify-center gap-4 mb-4">
             <div className="h-[1px] w-12 sm:w-16 bg-[#BFDBFE]" />
-            <span className="text-[11px] sm:text-xs font-bold tracking-[0.2em] text-[#0055FF] uppercase">
+            <span className="text-[11px] sm:text-xs font-bold tracking-[0.2em] text-[#1E90FF] uppercase">
               {eyebrow}
             </span>
             <div className="h-[1px] w-12 sm:w-16 bg-[#BFDBFE]" />
@@ -49,7 +49,7 @@ export function CoreServices() {
           
           <FadeIn direction="up" delay={0.1} className="text-[32px] sm:text-4xl md:text-[44px] font-heading font-bold text-[#111827] tracking-tight mb-6 leading-tight">
             <h2>
-              {headingParts[0]} <span className="text-[#0055FF]">Three Powerful HR Solutions.</span>
+              {headingParts[0]} <span className="text-[#1E90FF]">Three Powerful HR Solutions.</span>
             </h2>
           </FadeIn>
           
@@ -89,7 +89,7 @@ export function CoreServices() {
                 <div className="relative z-10 flex flex-col h-full">
                   
                   {/* Icon */}
-                  <div className="w-[72px] h-[72px] rounded-full bg-gradient-to-br from-[#0066FF] to-[#0055FF] flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20 shrink-0">
+                  <div className="w-[72px] h-[72px] rounded-full bg-gradient-to-br from-[#1E90FF] to-[#187BCD] flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20 shrink-0">
                     {iconsMap[service.icon]}
                   </div>
 
@@ -98,7 +98,7 @@ export function CoreServices() {
                     <h3 className="font-heading font-bold text-[26px] text-navy-900 mb-2 leading-tight">
                       {service.title}
                     </h3>
-                    <p className="text-[#0055FF] font-medium text-[17px] tracking-wide">
+                    <p className="text-[#1E90FF] font-medium text-[17px] tracking-wide">
                       {service.subtitle}
                     </p>
                   </div>
@@ -112,7 +112,7 @@ export function CoreServices() {
                     <ul className="flex flex-col gap-3.5 mb-5">
                       {service.features.map((feature, i) => (
                         <li key={i} className="flex items-start gap-3">
-                          <div className="w-5 h-5 rounded-full bg-[#0055FF] flex items-center justify-center shrink-0 mt-0.5">
+                          <div className="w-5 h-5 rounded-full bg-[#1E90FF] flex items-center justify-center shrink-0 mt-0.5">
                             <Check className="w-3 h-3 text-white stroke-[4]" />
                           </div>
                           <span className="text-[15px] text-gray-700 leading-snug">{feature}</span>
@@ -122,7 +122,7 @@ export function CoreServices() {
                     
                     <Link 
                       href={serviceLinks[idx]} 
-                      className="inline-block text-[14px] font-bold text-[#0055FF] hover:text-blue-700 transition-colors"
+                      className="inline-block text-[14px] font-bold text-[#1E90FF] hover:text-[#187BCD] transition-colors"
                     >
                       {service.moreLink}
                     </Link>
@@ -132,7 +132,7 @@ export function CoreServices() {
                   <div className="mt-auto pt-2">
                     <Link 
                       href={serviceLinks[idx]}
-                      className="inline-flex items-center gap-2 text-[17px] font-bold text-[#0055FF] hover:text-blue-800 transition-colors group/btn"
+                      className="inline-flex items-center gap-2 text-[17px] font-bold text-[#1E90FF] hover:text-[#187BCD] transition-colors group/btn"
                     >
                       {service.cta} 
                       <ArrowRight className="w-5 h-5 transform group-hover/btn:translate-x-1.5 transition-transform" />

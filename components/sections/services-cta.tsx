@@ -11,7 +11,7 @@ export function ServicesCTA() {
           
           {/* Left Column: Content & Buttons */}
           <FadeIn direction="right" duration={0.6} className="lg:col-span-6 space-y-5">
-            <div className="text-xs font-bold uppercase tracking-widest text-[#0066FF]">
+            <div className="text-xs font-bold uppercase tracking-widest text-[#1E90FF]">
               LET'S WORK TOGETHER
             </div>
 
@@ -26,7 +26,7 @@ export function ServicesCTA() {
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <Link
                 href="/contact"
-                className="bg-[#0066FF] hover:bg-[#0052CC] text-white rounded-xl px-7 py-3.5 font-semibold text-base transition-all shadow-md hover:shadow-lg flex items-center gap-2 group"
+                className="bg-[#1E90FF] hover:bg-[#187BCD] text-white rounded-xl px-7 py-3.5 font-semibold text-base transition-all shadow-md hover:shadow-lg flex items-center gap-2 group"
               >
                 <span>Book a Demo</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -34,7 +34,7 @@ export function ServicesCTA() {
 
               <a
                 href="tel:+919019724365"
-                className="bg-white/90 hover:bg-white border border-blue-200 text-[#0066FF] hover:text-[#0052CC] rounded-xl px-7 py-3.5 font-semibold text-base transition-all shadow-sm hover:shadow"
+                className="bg-white/90 hover:bg-white border border-blue-200 text-[#1E90FF] hover:text-[#187BCD] rounded-xl px-7 py-3.5 font-semibold text-base transition-all shadow-sm hover:shadow"
               >
                 Talk to an Expert
               </a>

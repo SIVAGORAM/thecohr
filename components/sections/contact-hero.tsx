@@ -11,16 +11,16 @@ export function ContactHero() {
           {/* Left Column: Text & 3 Features */}
           <FadeIn direction="right" duration={0.6} className="lg:col-span-6 space-y-5 sm:space-y-6">
             {/* Eyebrow with decorative line */}
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#0066FF]">
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#1E90FF]">
               <span>CONTACT US</span>
-              <span className="w-8 h-[2px] bg-[#0066FF] rounded-full" />
+              <span className="w-8 h-[2px] bg-[#1E90FF] rounded-full" />
             </div>
 
             {/* Headline */}
             <h1 className="text-3xl sm:text-4xl lg:text-[52px] font-extrabold text-[#051332] tracking-tight leading-[1.12]">
               Let's Build a<br />
               Better Workplace<br />
-              <span className="text-[#0066FF]">Together</span>
+              <span className="text-[#1E90FF]">Together</span>
             </h1>
 
             {/* Paragraph */}
@@ -32,7 +32,7 @@ export function ContactHero() {
             <div className="pt-2 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
               {/* Feature 1 */}
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#DCEBFF] flex items-center justify-center text-[#0066FF] shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[#DCEBFF] flex items-center justify-center text-[#1E90FF] shrink-0">
                   <Clock className="w-5 h-5" />
                 </div>
                 <div>
@@ -47,7 +47,7 @@ export function ContactHero() {
 
               {/* Feature 2 */}
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#DCEBFF] flex items-center justify-center text-[#0066FF] shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[#DCEBFF] flex items-center justify-center text-[#1E90FF] shrink-0">
                   <Settings className="w-5 h-5" />
                 </div>
                 <div>
@@ -62,7 +62,7 @@ export function ContactHero() {
 
               {/* Feature 3 */}
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#DCEBFF] flex items-center justify-center text-[#0066FF] shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[#DCEBFF] flex items-center justify-center text-[#1E90FF] shrink-0">
                   <Users className="w-5 h-5" />
                 </div>
                 <div>

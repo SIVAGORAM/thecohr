@@ -40,7 +40,7 @@ export function ServicesStats() {
                   delay={index * 0.1}
                   className={`flex items-center gap-4 ${index !== 0 ? "pt-3 sm:pt-2 lg:pt-0 lg:pl-6" : ""}`}
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-blue-100/70 flex items-center justify-center text-[#0066FF] shrink-0">
+                  <div className="w-12 h-12 rounded-2xl bg-blue-100/70 flex items-center justify-center text-[#1E90FF] shrink-0">
                     <Icon className="w-6 h-6" />
                   </div>
                   <div>
